@@ -262,6 +262,118 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-springBootStart" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/26/springBootStart/" class="article-date">
+      <time datetime="2017-02-26T11:30:00.000Z" itemprop="datePublished">2017-02-26</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/26/springBootStart/">SpringBoot 环境配置&amp;&amp;HelloWorld</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><blockquote>
+<p>版本这东西，说不清道不明</p>
+<ul>
+<li>开发工具：IntelliJ IDEA 2016.3.4</li>
+<li>Java version：1.8.8_101</li>
+<li>maven version： 3.3.3</li>
+</ul>
+</blockquote>
+<h2 id="开始创世纪"><a href="#开始创世纪" class="headerlink" title="开始创世纪"></a>开始创世纪</h2><h3 id="新建工程"><a href="#新建工程" class="headerlink" title="新建工程"></a>新建工程</h3><p>直接使用idea方式新建工程<br><img src="http://upload-images.jianshu.io/upload_images/4943424-69f817e5b7cc0144.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="new"><br>新建完毕，idea中会生成如下工程结构<br><img src="http://upload-images.jianshu.io/upload_images/4943424-d379ea5a6680c516.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="structure"></p>
+<h3 id="POM文件"><a href="#POM文件" class="headerlink" title="POM文件"></a>POM文件</h3><pre><code>增加依赖如下
+&lt;!-- WEB --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre><h3 id="SpringBoot启动"><a href="#SpringBoot启动" class="headerlink" title="SpringBoot启动"></a>SpringBoot启动</h3><p>除了以下这种直接启动，还可以mvn方式和jar方式<br><img src="http://upload-images.jianshu.io/upload_images/4943424-2f301d754ea8b736.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="start"></p>
+<h3 id="Controller层代码"><a href="#Controller层代码" class="headerlink" title="Controller层代码"></a>Controller层代码</h3><pre><code>/**
+ * Created by HTime on 2017/2/26.
+ */
+@RestController
+public class HelloController {
+
+    @RequestMapping(value = &quot;/hello&quot;, method = RequestMethod.GET)
+    public void sayHello() {
+        System.out.println(&quot;Hello World!&quot;);
+    }
+
+}
+</code></pre><h3 id="Junit测试"><a href="#Junit测试" class="headerlink" title="Junit测试"></a>Junit测试</h3><pre><code>@RunWith(SpringJUnit4ClassRunner.class)
+@WebAppConfiguration
+public class SpringbootApplicationTests {
+
+    //模拟mvc对象类.
+    private MockMvc mvc;
+
+    @Before
+    public void setUp() throws Exception {
+        mvc = MockMvcBuilders.standaloneSetup(new HelloController()).build();
+    }
+
+    @Test
+    public void getHello() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get(&quot;/hello&quot;).accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().string(equalTo(&quot;Hello World!&quot;)));
+    }
+
+}
+</code></pre><p>运行getHello()可以在Console中打印出 “Hello World!”</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/SpringBoot/">SpringBoot</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-springBootIndex" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
