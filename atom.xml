@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>HTime</title>
+  <subtitle>CURD</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://blog.zeyu0633.com/"/>
+  <updated>2017-02-26T13:56:06.445Z</updated>
+  <id>http://blog.zeyu0633.com/</id>
+  
+  <author>
+    <name>Htime</name>
+    <email>code@gmail.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot创世纪</title>
+    <link href="http://blog.zeyu0633.com/2017/02/26/springBootStart/"/>
+    <id>http://blog.zeyu0633.com/2017/02/26/springBootStart/</id>
+    <published>2017-02-26T11:30:00.000Z</published>
+    <updated>2017-02-26T13:56:06.445Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><blockquote>
+<p>版本这东西，说不清道不明</p>
+<ul>
+<li>开发工具：IntelliJ IDEA 2016.3.4</li>
+<li>Java version：1.8.8_101</li>
+<li>maven version： 3.3.3</li>
+</ul>
+</blockquote>
+<h2 id="开始创世纪"><a href="#开始创世纪" class="headerlink" title="开始创世纪"></a>开始创世纪</h2><h3 id="新建工程"><a href="#新建工程" class="headerlink" title="新建工程"></a>新建工程</h3><p>直接使用idea方式新建工程<br><img src="http://upload-images.jianshu.io/upload_images/4943424-69f817e5b7cc0144.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="new"><br>新建完毕，idea中会生成如下工程结构<br><img src="http://upload-images.jianshu.io/upload_images/4943424-d379ea5a6680c516.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="structure"></p>
+<h3 id="POM文件"><a href="#POM文件" class="headerlink" title="POM文件"></a>POM文件</h3><pre><code>增加依赖如下
+&lt;!-- WEB --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre><h3 id="SpringBoot启动"><a href="#SpringBoot启动" class="headerlink" title="SpringBoot启动"></a>SpringBoot启动</h3><p>除了以下这种直接启动，还可以mvn方式和jar方式<br><img src="http://upload-images.jianshu.io/upload_images/4943424-2f301d754ea8b736.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="start"></p>
+<h3 id="Controller层代码"><a href="#Controller层代码" class="headerlink" title="Controller层代码"></a>Controller层代码</h3><pre><code>/**
+ * Created by HTime on 2017/2/26.
+ */
+@RestController
+public class HelloController {
+
+    @RequestMapping(value = &quot;/hello&quot;, method = RequestMethod.GET)
+    public void sayHello() {
+        System.out.println(&quot;Hello World!&quot;);
+    }
+
+}
+</code></pre><h3 id="Junit测试"><a href="#Junit测试" class="headerlink" title="Junit测试"></a>Junit测试</h3><pre><code>@RunWith(SpringJUnit4ClassRunner.class)
+@WebAppConfiguration
+public class SpringbootApplicationTests {
+
+    //模拟mvc对象类.
+    private MockMvc mvc;
+
+    @Before
+    public void setUp() throws Exception {
+        mvc = MockMvcBuilders.standaloneSetup(new HelloController()).build();
+    }
+
+    @Test
+    public void getHello() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get(&quot;/hello&quot;).accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().string(equalTo(&quot;Hello World!&quot;)));
+    }
+
+}
+</code></pre><p>运行getHello()可以在Console中打印出 “Hello World!”</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;开发环境&quot;&gt;&lt;a href=&quot;#开发环境&quot; class=&quot;headerlink&quot; title=&quot;开发环境&quot;&gt;&lt;/a&gt;开发环境&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;版本这东西，说不清道不明&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;开发工具：IntelliJ IDEA 2016
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="http://blog.zeyu0633.com/categories/SpringBoot/"/>
+    
+    
+      <category term="Java" scheme="http://blog.zeyu0633.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot Mybatis Restful Swagger2</title>
+    <link href="http://blog.zeyu0633.com/2017/02/26/springBootMybatisSwagger/"/>
+    <id>http://blog.zeyu0633.com/2017/02/26/springBootMybatisSwagger/</id>
+    <published>2017-02-26T11:30:00.000Z</published>
+    <updated>2017-03-04T09:58:33.939Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="要完成的事情"><a href="#要完成的事情" class="headerlink" title="要完成的事情"></a>要完成的事情</h3><blockquote>
+<p>主要分为以下三点</p>
+<ul>
+<li>Mybatis集成</li>
+<li>Restful接口提供</li>
+<li>Swagger2集成</li>
+</ul>
+</blockquote>
+<h2 id="分一个割"><a href="#分一个割" class="headerlink" title="分一个割"></a>分一个割</h2><h3 id="工程结构"><a href="#工程结构" class="headerlink" title="工程结构"></a>工程结构</h3><p>工程结构尽量做到清晰，分层合理<br><img src="http://upload-images.jianshu.io/upload_images/4943424-2f4d1f94c3582730.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="structure"></p>
+<h3 id="springboot集成Mybatis"><a href="#springboot集成Mybatis" class="headerlink" title="springboot集成Mybatis"></a>springboot集成Mybatis</h3><p>pom文件中需引入</p>
+<pre><code>&lt;!-- Spring Boot Mybatis 依赖 --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;
+    &lt;version&gt;${mybatis-spring-boot}&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- MySQL 连接驱动依赖 --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;mysql&lt;/groupId&gt;
+    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+    &lt;version&gt;${mysql-connector}&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><p>在application.properties中配置</p>
+<pre><code>## 数据源配置
+spring.datasource.url=jdbc:mysql://localhost:3306/springbootdb?useUnicode=true&amp;characterEncoding=utf8
+spring.datasource.username=root
+spring.datasource.password=ning0810
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+
+## Mybatis 配置
+mybatis.typeAliasesPackage=com.htime.domain
+mybatis.mapperLocations=classpath:mapper/*.xml
+</code></pre><p>application.properties中已经指定了实体类和xml的扫描位置，还有dao层的扫描需要配置，需要在启动类中指定</p>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SpringBootApplication</span></div><div class="line"><span class="comment">// mapper 接口类扫描包配置</span></div><div class="line"><span class="meta">@MapperScan</span>(<span class="string">"com.htime.dao"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringbootLearningApplication</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        <span class="comment">// 程序启动入口</span></div><div class="line">        <span class="comment">// 启动嵌入式的 Tomcat 并初始化 Spring 环境及其各 Spring 组件</span></div><div class="line">		SpringApplication.run(SpringbootLearningApplication.class, args);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><h3 id="springboot提供Restful接口"><a href="#springboot提供Restful接口" class="headerlink" title="springboot提供Restful接口"></a>springboot提供Restful接口</h3><p>集成restful接口就比较简单啦，只需要在加上类注解@RestController，然后不同的api的指定遵循rest方式，代码如下：</p>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by HTime on 2017/3/3.</div><div class="line"> */</div><div class="line"><span class="meta">@RestController</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CityResController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    <span class="keyword">private</span> CityService cityService;</div><div class="line"></div><div class="line">    <span class="meta">@ApiOperation</span>(value=<span class="string">"获取城市详细信息"</span>, notes=<span class="string">"根据城市ID来获取城市详细信息"</span>)</div><div class="line">    <span class="meta">@ApiImplicitParam</span>(name = <span class="string">"id"</span>, value = <span class="string">"城市ID"</span>, required = <span class="keyword">true</span>, dataType = <span class="string">"Long"</span>)</div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/api/city/&#123;id&#125;"</span>, method = RequestMethod.GET)</div><div class="line">    <span class="function"><span class="keyword">public</span> City <span class="title">findOneCity</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Long id) </span>&#123;</div><div class="line">        <span class="keyword">return</span> cityService.findCityById(id);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@ApiOperation</span>(value=<span class="string">"获取所有城市"</span>, notes=<span class="string">"获取所有城市信息"</span>)</div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/api/city"</span>, method = RequestMethod.GET)</div><div class="line">    <span class="function"><span class="keyword">public</span> List&lt;City&gt; <span class="title">findAllCity</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> cityService.findAllCity();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@ApiOperation</span>(value=<span class="string">"创建城市"</span>, notes=<span class="string">"根据City实体创建城市"</span>)</div><div class="line">    <span class="meta">@ApiImplicitParam</span>(name = <span class="string">"city"</span>, value = <span class="string">"城市详细实体city"</span>, required = <span class="keyword">true</span>, dataType = <span class="string">"City"</span>)</div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/api/city"</span>, method = RequestMethod.POST)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">createCity</span><span class="params">(@RequestBody City city)</span> </span>&#123;</div><div class="line">        cityService.saveCity(city);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@ApiOperation</span>(value=<span class="string">"更新城市"</span>, notes=<span class="string">"根据传过来的City实体对是实体中的City ID进行更新"</span>)</div><div class="line">    <span class="meta">@ApiImplicitParams</span>(&#123;</div><div class="line">            <span class="meta">@ApiImplicitParam</span>(name = <span class="string">"id"</span>, value = <span class="string">"城市ID"</span>, required = <span class="keyword">true</span>, dataType = <span class="string">"Long"</span>),</div><div class="line">            <span class="meta">@ApiImplicitParam</span>(name = <span class="string">"city"</span>, value = <span class="string">"城市详细实体city"</span>, required = <span class="keyword">true</span>, dataType = <span class="string">"City"</span>)</div><div class="line">    &#125;)</div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/api/city/&#123;id&#125;"</span>, method = RequestMethod.PUT)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">modifyCity</span><span class="params">(@PathVariable Long id, @RequestBody City city)</span> </span>&#123;</div><div class="line">        City c = cityService.findCityById(id);</div><div class="line">        c.setCityName(city.getCityName());</div><div class="line">        c.setDescription(city.getDescription());</div><div class="line">        c.setProvinceId(city.getProvinceId());</div><div class="line">        cityService.updateCity(c);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@ApiOperation</span>(value=<span class="string">"删除城市"</span>, notes=<span class="string">"根据指定的城市ID来删除城市"</span>)</div><div class="line">    <span class="meta">@ApiImplicitParam</span>(name = <span class="string">"id"</span>, value = <span class="string">"城市ID"</span>, required = <span class="keyword">true</span>, dataType = <span class="string">"Long"</span>)</div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/api/city/&#123;id&#125;"</span>, method = RequestMethod.DELETE)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteCity</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Long id) </span>&#123;</div><div class="line">        cityService.deleteCity(id);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><h3 id="springboot集成Swagger2"><a href="#springboot集成Swagger2" class="headerlink" title="springboot集成Swagger2"></a>springboot集成Swagger2</h3><p>目前大多数开发都是前后端完全分离，这样的工作模式需要有很好的开发文档的支撑，swagger2就为我们提供啦这个功能<br>先看看swagger为我们提供了一个怎样的文档形式<br><img src="http://upload-images.jianshu.io/upload_images/4943424-97579134276c2413.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="swagger main"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4943424-c58f8f779d9e92e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="swagger detail"></p>
+<p>首先我们需要引入依赖</p>
+<pre><code>&lt;!-- Swagger2 RESTful API文档 --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+    &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;
+    &lt;version&gt;2.2.2&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+    &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;
+    &lt;version&gt;2.2.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><p>定义一个和Application同级的类Swagger2</p>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Configuration</span></div><div class="line"><span class="meta">@EnableSwagger</span>2</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Swagger2</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Bean</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">createRestApi</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</div><div class="line">                .apiInfo(apiInfo())</div><div class="line">                .select()</div><div class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">"com.htime.controller"</span>))</div><div class="line">                .paths(PathSelectors.any())</div><div class="line">                .build();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> ApiInfo <span class="title">apiInfo</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ApiInfoBuilder()</div><div class="line">                .title(<span class="string">"Htime API 文档"</span>)</div><div class="line">                .description(<span class="string">"更多内容请关注：http://blog.zeyu0633.com/"</span>)</div><div class="line">                .termsOfServiceUrl(<span class="string">"http://blog.zeyu0633.com/"</span>)</div><div class="line">                .contact(<span class="string">"Htime"</span>)</div><div class="line">                .version(<span class="string">"1.0"</span>)</div><div class="line">                .build();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><p>然后就是在你的接口函数上用注解的形式对你的接口进项相关描述，具体可以在以上restful那一块的代码中查看</p>
+<h2 id="分一个割-1"><a href="#分一个割-1" class="headerlink" title="分一个割"></a>分一个割</h2><p>接下来的内容是日志管理和统一异常管理~~~</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;要完成的事情&quot;&gt;&lt;a href=&quot;#要完成的事情&quot; class=&quot;headerlink&quot; title=&quot;要完成的事情&quot;&gt;&lt;/a&gt;要完成的事情&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;主要分为以下三点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mybatis集成&lt;/li&gt;
+&lt;li&gt;
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="http://blog.zeyu0633.com/categories/SpringBoot/"/>
+    
+    
+      <category term="Java" scheme="http://blog.zeyu0633.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot Learning Index</title>
+    <link href="http://blog.zeyu0633.com/2017/02/26/springBootIndex/"/>
+    <id>http://blog.zeyu0633.com/2017/02/26/springBootIndex/</id>
+    <published>2017-02-26T10:00:00.000Z</published>
+    <updated>2017-03-04T11:08:42.517Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="SpringBoot介绍"><a href="#SpringBoot介绍" class="headerlink" title="SpringBoot介绍"></a>SpringBoot介绍</h3><blockquote>
+<p>Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can “just run”. We take an opinionated view of the Spring platform and third-party libraries so you can get started with minimum fuss. Most Spring Boot applications need very little Spring configuration.</p>
+</blockquote>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><a href="http://blog.zeyu0633.com/2017/02/26/springBootIndex/">SpringBoot 目录</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/02/26/springBootStart/">SpringBoot HelloWorld</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/02/26/springBootMybatisSwagger/">SpringBoot Mybatis Restful Swagger2</a></li>
+<li><a href="http://blog.zeyu0633.com/">SpringBoot 日志管理，统一异常处理</a></li>
+<li><a href="http://blog.zeyu0633.com/">SpringBoot 登录认证与权限控制</a></li>
+<li><a href="http://blog.zeyu0633.com/">SpringBoot 集成dubbo</a></li>
+</ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;SpringBoot介绍&quot;&gt;&lt;a href=&quot;#SpringBoot介绍&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot介绍&quot;&gt;&lt;/a&gt;SpringBoot介绍&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Spring Boot makes
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="http://blog.zeyu0633.com/categories/SpringBoot/"/>
+    
+    
+      <category term="Java" scheme="http://blog.zeyu0633.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown 语法</title>
+    <link href="http://blog.zeyu0633.com/2017/02/26/markdown/"/>
+    <id>http://blog.zeyu0633.com/2017/02/26/markdown/</id>
+    <published>2017-02-26T09:58:27.000Z</published>
+    <updated>2017-02-26T11:25:56.074Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>我是一段文字1</p>
+<p>我是第二段文字2</p>
+<p>我是第三段文字3</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><blockquote>
+<p><strong>忙时专注，闲时自省，警惕忙无章法，闲生杂念</strong></p>
+<blockquote>
+<p>忙时专注，闲时自省，警惕忙无章法，闲生杂念</p>
+<ul>
+<li>吃饭</li>
+<li>睡觉</li>
+<li>打豆豆</li>
+</ul>
+</blockquote>
+</blockquote>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ul>
+<li>列表一</li>
+<li>列表二</li>
+<li>列表三</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code>public int calculateWeekStartFromZero(Date birthday) {
+     Date curDate = new Date();
+     if (birthday == null)
+         return 0;
+     long tmp = (curDate.getTime() - birthday.getTime()) / 1000 / 604800;
+     return (int) tmp;
+}
+</code></pre><h2 id="区段"><a href="#区段" class="headerlink" title="区段"></a>区段</h2><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="http://blog.zeyu0633.com/">Htime</a></p>
+<h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><p><img src="http://upload-images.jianshu.io/upload_images/4943424-f3592b168de473a2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="测试图片用路飞"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;区块&quot;&gt;&lt;a href=&quot;#区块&quot; class=&quot;headerlink&quot; title=&quot;区块&quot;&gt;&lt;/a&gt;区块&lt;/h2&gt;&lt;h3 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h3&gt;&lt;p&gt;我是一
+    
+    </summary>
+    
+      <category term="markkdown" scheme="http://blog.zeyu0633.com/categories/markkdown/"/>
+    
+    
+      <category term="技能" scheme="http://blog.zeyu0633.com/tags/%E6%8A%80%E8%83%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>鸡汤</title>
+    <link href="http://blog.zeyu0633.com/2017/02/24/new/"/>
+    <id>http://blog.zeyu0633.com/2017/02/24/new/</id>
+    <published>2017-02-24T09:58:27.000Z</published>
+    <updated>2017-02-26T03:53:26.420Z</updated>
+    
+    <content type="html"><![CDATA[<p>忙时专注，闲时自省，警惕忙无章法，闲生杂念</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;忙时专注，闲时自省，警惕忙无章法，闲生杂念&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="鸡汤" scheme="http://blog.zeyu0633.com/categories/%E9%B8%A1%E6%B1%A4/"/>
+    
+    
+      <category term="鸡汤" scheme="http://blog.zeyu0633.com/tags/%E9%B8%A1%E6%B1%A4/"/>
+    
+  </entry>
+  
+</feed>
