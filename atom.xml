@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-02-26T13:56:06.445Z</updated>
+  <updated>2017-03-04T11:11:58.357Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>SpringBoot创世纪</title>
+    <title>SpringBoot HelloWorld</title>
     <link href="http://blog.zeyu0633.com/2017/02/26/springBootStart/"/>
     <id>http://blog.zeyu0633.com/2017/02/26/springBootStart/</id>
     <published>2017-02-26T11:30:00.000Z</published>
-    <updated>2017-02-26T13:56:06.445Z</updated>
+    <updated>2017-03-04T11:11:58.357Z</updated>
     
     <content type="html"><![CDATA[<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><blockquote>
 <p>版本这东西，说不清道不明</p>
@@ -93,7 +93,7 @@ public class SpringbootApplicationTests {
     <link href="http://blog.zeyu0633.com/2017/02/26/springBootMybatisSwagger/"/>
     <id>http://blog.zeyu0633.com/2017/02/26/springBootMybatisSwagger/</id>
     <published>2017-02-26T11:30:00.000Z</published>
-    <updated>2017-03-04T09:58:33.939Z</updated>
+    <updated>2017-03-04T11:11:58.372Z</updated>
     
     <content type="html"><![CDATA[<h3 id="要完成的事情"><a href="#要完成的事情" class="headerlink" title="要完成的事情"></a>要完成的事情</h3><blockquote>
 <p>主要分为以下三点</p>
@@ -206,7 +206,7 @@ mybatis.mapperLocations=classpath:mapper/*.xml
     <link href="http://blog.zeyu0633.com/2017/02/26/markdown/"/>
     <id>http://blog.zeyu0633.com/2017/02/26/markdown/</id>
     <published>2017-02-26T09:58:27.000Z</published>
-    <updated>2017-02-26T11:25:56.074Z</updated>
+    <updated>2017-03-04T11:11:58.337Z</updated>
     
     <content type="html"><![CDATA[<h2 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>我是一段文字1</p>
 <p>我是第二段文字2</p>
@@ -255,7 +255,7 @@ mybatis.mapperLocations=classpath:mapper/*.xml
     <link href="http://blog.zeyu0633.com/2017/02/24/new/"/>
     <id>http://blog.zeyu0633.com/2017/02/24/new/</id>
     <published>2017-02-24T09:58:27.000Z</published>
-    <updated>2017-02-26T03:53:26.420Z</updated>
+    <updated>2017-03-04T11:11:58.389Z</updated>
     
     <content type="html"><![CDATA[<p>忙时专注，闲时自省，警惕忙无章法，闲生杂念</p>]]></content>
     
