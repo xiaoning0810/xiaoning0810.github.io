@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Htime">
+
+
+
+<meta name="description" content="要完成的事情
+只有一点，但是很重要，因为http是无状态的，如果我们设计出来的架构不够安全，那么这一系列的操作都是白搭。
+
+身份认证
+
+
+分一个割身份验证
+首先根据City相关操作，实现一个关于User的相关操作，从controller一直到sql，就不上代码了，比较简单整体思路就是在用户登录时生成一个token，然后以后的所有请求，header中都携带这个token，服务器对token进行检验通">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot 身份认证">
+<meta property="og:url" content="http://blog.zeyu0633.com/2017/03/05/springBootAuth/index.html">
+<meta property="og:site_name" content="HTime">
+<meta property="og:description" content="要完成的事情
+只有一点，但是很重要，因为http是无状态的，如果我们设计出来的架构不够安全，那么这一系列的操作都是白搭。
+
+身份认证
+
+
+分一个割身份验证
+首先根据City相关操作，实现一个关于User的相关操作，从controller一直到sql，就不上代码了，比较简单整体思路就是在用户登录时生成一个token，然后以后的所有请求，header中都携带这个token，服务器对token进行检验通">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-224e533671ec1a90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-f005157327dafda6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-cb03eb849051fb59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-03-05T15:55:58.049Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SpringBoot 身份认证">
+<meta name="twitter:description" content="要完成的事情
+只有一点，但是很重要，因为http是无状态的，如果我们设计出来的架构不够安全，那么这一系列的操作都是白搭。
+
+身份认证
+
+
+分一个割身份验证
+首先根据City相关操作，实现一个关于User的相关操作，从controller一直到sql，就不上代码了，比较简单整体思路就是在用户登录时生成一个token，然后以后的所有请求，header中都携带这个token，服务器对token进行检验通">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4943424-224e533671ec1a90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="HTime" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>SpringBoot 身份认证 | HTime</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Htime</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">CURD</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa StackOverflow" href="https://my.oschina.net/u/2929131/blog" title="StackOverflow"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/xiaoning0810" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="http://blog.zeyu0633.com/" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技能/">技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/鸡汤/">鸡汤</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://blog.zeyu0633.com/">HTime</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://carambola.coding.me/mixjuice">Mixjuice&#39;s Notes</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">希望这里能被你看到的是真的我</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Htime</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Htime</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">CURD</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa StackOverflow" target="_blank" href="https://my.oschina.net/u/2929131/blog" title="StackOverflow"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/xiaoning0810" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="http://blog.zeyu0633.com/" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
+</nav>
+      <div class="body-wrap"><article id="post-springBootAuth" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/05/springBootAuth/" class="article-date">
+      <time datetime="2017-03-05T15:30:00.000Z" itemprop="datePublished">2017-03-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        <h1 class="article-title" itemprop="name">
+      SpringBoot 身份认证
+    </h1>
+      </header>
+      
+      <div class="article-info article-info-post">
+        <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/SpringBoot/">SpringBoot</a>
+    </div>
+        <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="要完成的事情"><a href="#要完成的事情" class="headerlink" title="要完成的事情"></a>要完成的事情</h3><blockquote>
+<p>只有一点，但是很重要，因为http是无状态的，如果我们设计出来的架构不够安全，那么这一系列的操作都是白搭。</p>
+<ul>
+<li>身份认证</li>
+</ul>
+</blockquote>
+<h2 id="分一个割"><a href="#分一个割" class="headerlink" title="分一个割"></a>分一个割</h2><h3 id="身份验证"><a href="#身份验证" class="headerlink" title="身份验证"></a>身份验证</h3><blockquote>
+<p>首先根据City相关操作，实现一个关于User的相关操作，从controller一直到sql，就不上代码了，比较简单<br>整体思路就是在用户登录时生成一个token，然后以后的所有请求，header中都携带这个token，服务器对token进行检验<br>通过AccessTokenVerifyInterceptor，来实现拦截，要避开对auth接口的拦截</p>
+</blockquote>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccessTokenVerifyInterceptor</span> <span class="keyword">extends</span> <span class="title">HandlerInterceptorAdapter</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    ValidationService validationService;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    UserService userService;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Logger logger = Logger.getLogger(getClass());</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        logger.info(<span class="string">"AccessToken executing ..."</span>);</div><div class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</div><div class="line">        String requestUrl = request.getRequestURL().toString();</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> != requestUrl &amp;&amp; requestUrl.contains(<span class="string">"/auth"</span>)) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// token</span></div><div class="line">        String accessToken = request.getHeader(<span class="string">"token"</span>);</div><div class="line">        <span class="keyword">if</span> (StringUtils.isNotBlank(accessToken)) &#123;</div><div class="line">            ValidationModel model = <span class="keyword">new</span> ValidationModel();</div><div class="line"></div><div class="line">            <span class="comment">// 验证token</span></div><div class="line">            Boolean isOk = validationService.verifyAccessToken(accessToken, model);</div><div class="line"></div><div class="line">            <span class="comment">// 用户验证</span></div><div class="line">            <span class="keyword">if</span> (isOk) &#123;</div><div class="line">                User user = userService.getUserById(model.getUid());</div><div class="line">                <span class="keyword">if</span>(user != <span class="keyword">null</span>) &#123;</div><div class="line">                    request.setAttribute(CommonConst.PARAM_USER, user);</div><div class="line">                    logger.info(<span class="string">"AccessToken SUCCESS ...  user:"</span> + user.getUserName() + <span class="string">" - "</span> + accessToken);</div><div class="line">                    flag = <span class="keyword">true</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (!flag) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RcException(CommonRes.RES_NEED_AUTH, <span class="string">"auth fail"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> flag;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>通过ValidationService，完成对token的操作，包括生成与校验</p>
+</blockquote>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Service</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ValidationService</span> </span>&#123;</div><div class="line"></div><div class="line">    Gson gson = GsonUtil.createGson();</div><div class="line"></div><div class="line">    <span class="comment">//生成token</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">createToken</span><span class="params">(User user)</span> </span>&#123;</div><div class="line">        Map&lt;String, String&gt; param = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</div><div class="line">        param.put(<span class="string">"user"</span>, user.getUid().toString());</div><div class="line">        param.put(<span class="string">"time"</span>, <span class="keyword">new</span> Date().getTime() + <span class="string">""</span>);</div><div class="line">        String accessToken = gson.toJson(param);</div><div class="line">        <span class="keyword">return</span> accessToken;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//验证token</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Boolean <span class="title">verifyAccessToken</span><span class="params">(String accessToken, ValidationModel model)</span> </span>&#123;</div><div class="line">        Boolean isOk = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">        Map&lt;String, String&gt; param = gson.fromJson(accessToken, <span class="keyword">new</span> TypeToken&lt;HashMap&lt;String, String&gt;&gt;() &#123;&#125;.getType());</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> == param || <span class="keyword">null</span> == param.get(<span class="string">"user"</span>) || <span class="keyword">null</span> == param.get(<span class="string">"time"</span>))</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line"></div><div class="line">        <span class="comment">//验证UID</span></div><div class="line">        <span class="keyword">if</span>(!StringUtil.isNumber(param.get(<span class="string">"user"</span>).toString()))</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        Long uid = Long.parseLong(param.get(<span class="string">"user"</span>));</div><div class="line">        model.setUid(uid);</div><div class="line"></div><div class="line">        <span class="comment">//验证时间</span></div><div class="line">        Date time = <span class="keyword">new</span> Date(Long.parseLong(param.get(<span class="string">"time"</span>)));</div><div class="line">        Integer days = DateUtil.calculateDays(time, <span class="keyword">new</span> Date());</div><div class="line">        <span class="comment">//token的有效期为1天</span></div><div class="line">        <span class="keyword">if</span>(days &gt; <span class="number">1</span>)</div><div class="line">            isOk = <span class="keyword">false</span>;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> isOk;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>通过WebMvcConfig来配置拦截，对所有请求都拦截</p>
+</blockquote>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Configuration</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebMvcConfig</span> <span class="keyword">extends</span> <span class="title">WebMvcConfigurerAdapter</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Bean</span></div><div class="line">    <span class="function"><span class="keyword">public</span> AccessTokenVerifyInterceptor <span class="title">tokenVerifyInterceptor</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> AccessTokenVerifyInterceptor();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> </span>&#123;</div><div class="line">        registry.addInterceptor(tokenVerifyInterceptor()).addPathPatterns(<span class="string">"/*"</span>);</div><div class="line">        <span class="keyword">super</span>.addInterceptors(registry);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>通过UserRestController来进行auth操作，都是明文的~~~</p>
+</blockquote>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RestController</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserRestController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    UserService userService;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    ValidationService validationService;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/auth"</span>, method = RequestMethod.GET)</div><div class="line">    <span class="function"><span class="keyword">public</span> UserRes <span class="title">auth</span><span class="params">(</span></span></div><div class="line">            @RequestParam(  value = <span class="string">"userName"</span>,required = <span class="keyword">true</span> ) String userName ,</div><div class="line">            @<span class="title">RequestParam</span><span class="params">(  value = <span class="string">"userPwd"</span>,required = <span class="keyword">true</span> )</span> String userPwd) &#123;</div><div class="line"></div><div class="line">        UserRes res = <span class="keyword">new</span> UserRes();</div><div class="line">        User user = userService.getUserByAccount(userName, userPwd);</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> == user) &#123;</div><div class="line">             res.setError(CommonRes.RES_NOT_ALLOW, <span class="string">"账号密码错误"</span>);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            res.setUser(user);</div><div class="line">            <span class="comment">//生成token</span></div><div class="line">            String token = validationService.createToken(user);</div><div class="line">            res.setToken(token);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><blockquote>
+<p>首先在不auth的情况下对/hello接口进行访问，我们用postman来进行测试，结果如下，报错啦<br><img src="http://upload-images.jianshu.io/upload_images/4943424-224e533671ec1a90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="swagger main"></p>
+<p>进行auth操作，获取token，我对token的处理很简单粗暴，意思就是这么个意思<br><img src="http://upload-images.jianshu.io/upload_images/4943424-f005157327dafda6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="swagger main"></p>
+<p>将token放到header中再对/hello接口进行访问，成功返回，made it！！！<br><img src="http://upload-images.jianshu.io/upload_images/4943424-cb03eb849051fb59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="swagger main"></p>
+</blockquote>
+<h2 id="分一个割-1"><a href="#分一个割-1" class="headerlink" title="分一个割"></a>分一个割</h2><p>到这里，这个工程就不更新了，接下来与dubbo的集成，将使用新的工程</p>
+      
+    </div>
+    
+  </div>
+  
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/03/05/springBootAuth/">SpringBoot 身份认证</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Htime</a></p>
+        <p><span>发布时间:</span>2017-03-05, 23:30:00</p>
+        <p><span>最后更新:</span>2017-03-05, 23:55:58</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/05/springBootAuth/" title="SpringBoot 身份认证">http://blog.zeyu0633.com/2017/03/05/springBootAuth/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.zeyu0633.com/2017/03/05/springBootAuth/　　作者: Htime" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/03/05/springBootExceptionAOPLog4j/">
+                    SpringBoot 日志管理，统一异常处理
+                </a>
+            </div>
+        
+    </nav>
+  
+</article>
+<div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#要完成的事情"><span class="toc-number">1.</span> <span class="toc-text">要完成的事情</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#分一个割"><span class="toc-number"></span> <span class="toc-text">分一个割</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#身份验证"><span class="toc-number">1.</span> <span class="toc-text">身份验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试"><span class="toc-number">2.</span> <span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分一个割-1"><span class="toc-number"></span> <span class="toc-text">分一个割</span></a>
+        
+    </li></div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+    <div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"SpringBoot 身份认证　| HTime　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2123245';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    <script> loadComment(); </script>
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+<div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/03/05/springBootExceptionAOPLog4j/" title="下一篇: SpringBoot 日志管理，统一异常处理">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/springBootAuth/">SpringBoot 身份认证</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/springBootExceptionAOPLog4j/">SpringBoot 日志管理，统一异常处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/springBootMybatisSwagger/">SpringBoot Mybatis Restful Swagger2</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/springBootStart/">SpringBoot HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/springBootIndex/">SpringBoot Learning Index</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/markdown/">Markdown 语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/24/new/">鸡汤</a></li></ul>
+
+
+    <script>
+        
+    </script></div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017 Htime
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit" title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide()" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>

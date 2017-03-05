@@ -291,7 +291,7 @@
 <li><a href="http://blog.zeyu0633.com/2017/02/26/springBootStart/">SpringBoot HelloWorld</a></li>
 <li><a href="http://blog.zeyu0633.com/2017/03/04/springBootMybatisSwagger/">SpringBoot Mybatis Restful Swagger2</a></li>
 <li><a href="http://blog.zeyu0633.com/2017/03/05/springBootExceptionAOPLog4j/">SpringBoot 日志管理，统一异常处理</a></li>
-<li><a href="http://blog.zeyu0633.com/">SpringBoot 登录认证与权限控制</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/05/springBootAuth/">SpringBoot 身份认证</a></li>
 <li><a href="http://blog.zeyu0633.com/">SpringBoot 集成dubbo</a></li>
 </ul>
       
@@ -302,6 +302,76 @@
         <div class="article-pop-out tagcloud">
           <a class="">置顶</a>
         </div>
+      
+      <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/SpringBoot/">SpringBoot</a>
+    </div>
+      <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+  
+    <article id="post-springBootAuth" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/05/springBootAuth/" class="article-date">
+      <time datetime="2017-03-05T15:30:00.000Z" itemprop="datePublished">2017-03-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/05/springBootAuth/">SpringBoot 身份认证</a>
+    </h1>
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="要完成的事情"><a href="#要完成的事情" class="headerlink" title="要完成的事情"></a>要完成的事情</h3><blockquote>
+<p>只有一点，但是很重要，因为http是无状态的，如果我们设计出来的架构不够安全，那么这一系列的操作都是白搭。</p>
+<ul>
+<li>身份认证</li>
+</ul>
+</blockquote>
+<h2 id="分一个割"><a href="#分一个割" class="headerlink" title="分一个割"></a>分一个割</h2><h3 id="身份验证"><a href="#身份验证" class="headerlink" title="身份验证"></a>身份验证</h3><blockquote>
+<p>首先根据City相关操作，实现一个关于User的相关操作，从controller一直到sql，就不上代码了，比较简单<br>整体思路就是在用户登录时生成一个token，然后以后的所有请求，header中都携带这个token，服务器对token进行检验<br>通过AccessTokenVerifyInterceptor，来实现拦截，要避开对auth接口的拦截</p>
+</blockquote>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccessTokenVerifyInterceptor</span> <span class="keyword">extends</span> <span class="title">HandlerInterceptorAdapter</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    ValidationService validationService;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    UserService userService;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Logger logger = Logger.getLogger(getClass());</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        logger.info(<span class="string">"AccessToken executing ..."</span>);</div><div class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</div><div class="line">        String requestUrl = request.getRequestURL().toString();</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> != requestUrl &amp;&amp; requestUrl.contains(<span class="string">"/auth"</span>)) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// token</span></div><div class="line">        String accessToken = request.getHeader(<span class="string">"token"</span>);</div><div class="line">        <span class="keyword">if</span> (StringUtils.isNotBlank(accessToken)) &#123;</div><div class="line">            ValidationModel model = <span class="keyword">new</span> ValidationModel();</div><div class="line"></div><div class="line">            <span class="comment">// 验证token</span></div><div class="line">            Boolean isOk = validationService.verifyAccessToken(accessToken, model);</div><div class="line"></div><div class="line">            <span class="comment">// 用户验证</span></div><div class="line">            <span class="keyword">if</span> (isOk) &#123;</div><div class="line">                User user = userService.getUserById(model.getUid());</div><div class="line">                <span class="keyword">if</span>(user != <span class="keyword">null</span>) &#123;</div><div class="line">                    request.setAttribute(CommonConst.PARAM_USER, user);</div><div class="line">                    logger.info(<span class="string">"AccessToken SUCCESS ...  user:"</span> + user.getUserName() + <span class="string">" - "</span> + accessToken);</div><div class="line">                    flag = <span class="keyword">true</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (!flag) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RcException(CommonRes.RES_NEED_AUTH, <span class="string">"auth fail"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> flag;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>通过ValidationService，完成对token的操作，包括生成与校验</p>
+</blockquote>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Service</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ValidationService</span> </span>&#123;</div><div class="line"></div><div class="line">    Gson gson = GsonUtil.createGson();</div><div class="line"></div><div class="line">    <span class="comment">//生成token</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">createToken</span><span class="params">(User user)</span> </span>&#123;</div><div class="line">        Map&lt;String, String&gt; param = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</div><div class="line">        param.put(<span class="string">"user"</span>, user.getUid().toString());</div><div class="line">        param.put(<span class="string">"time"</span>, <span class="keyword">new</span> Date().getTime() + <span class="string">""</span>);</div><div class="line">        String accessToken = gson.toJson(param);</div><div class="line">        <span class="keyword">return</span> accessToken;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//验证token</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Boolean <span class="title">verifyAccessToken</span><span class="params">(String accessToken, ValidationModel model)</span> </span>&#123;</div><div class="line">        Boolean isOk = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">        Map&lt;String, String&gt; param = gson.fromJson(accessToken, <span class="keyword">new</span> TypeToken&lt;HashMap&lt;String, String&gt;&gt;() &#123;&#125;.getType());</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> == param || <span class="keyword">null</span> == param.get(<span class="string">"user"</span>) || <span class="keyword">null</span> == param.get(<span class="string">"time"</span>))</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line"></div><div class="line">        <span class="comment">//验证UID</span></div><div class="line">        <span class="keyword">if</span>(!StringUtil.isNumber(param.get(<span class="string">"user"</span>).toString()))</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        Long uid = Long.parseLong(param.get(<span class="string">"user"</span>));</div><div class="line">        model.setUid(uid);</div><div class="line"></div><div class="line">        <span class="comment">//验证时间</span></div><div class="line">        Date time = <span class="keyword">new</span> Date(Long.parseLong(param.get(<span class="string">"time"</span>)));</div><div class="line">        Integer days = DateUtil.calculateDays(time, <span class="keyword">new</span> Date());</div><div class="line">        <span class="comment">//token的有效期为1天</span></div><div class="line">        <span class="keyword">if</span>(days &gt; <span class="number">1</span>)</div><div class="line">            isOk = <span class="keyword">false</span>;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> isOk;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>通过WebMvcConfig来配置拦截，对所有请求都拦截</p>
+</blockquote>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Configuration</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebMvcConfig</span> <span class="keyword">extends</span> <span class="title">WebMvcConfigurerAdapter</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Bean</span></div><div class="line">    <span class="function"><span class="keyword">public</span> AccessTokenVerifyInterceptor <span class="title">tokenVerifyInterceptor</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> AccessTokenVerifyInterceptor();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> </span>&#123;</div><div class="line">        registry.addInterceptor(tokenVerifyInterceptor()).addPathPatterns(<span class="string">"/*"</span>);</div><div class="line">        <span class="keyword">super</span>.addInterceptors(registry);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>通过UserRestController来进行auth操作，都是明文的~~~</p>
+</blockquote>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RestController</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserRestController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    UserService userService;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    ValidationService validationService;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/auth"</span>, method = RequestMethod.GET)</div><div class="line">    <span class="function"><span class="keyword">public</span> UserRes <span class="title">auth</span><span class="params">(</span></span></div><div class="line">            @RequestParam(  value = <span class="string">"userName"</span>,required = <span class="keyword">true</span> ) String userName ,</div><div class="line">            @<span class="title">RequestParam</span><span class="params">(  value = <span class="string">"userPwd"</span>,required = <span class="keyword">true</span> )</span> String userPwd) &#123;</div><div class="line"></div><div class="line">        UserRes res = <span class="keyword">new</span> UserRes();</div><div class="line">        User user = userService.getUserByAccount(userName, userPwd);</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> == user) &#123;</div><div class="line">             res.setError(CommonRes.RES_NOT_ALLOW, <span class="string">"账号密码错误"</span>);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            res.setUser(user);</div><div class="line">            <span class="comment">//生成token</span></div><div class="line">            String token = validationService.createToken(user);</div><div class="line">            res.setToken(token);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><blockquote>
+<p>首先在不auth的情况下对/hello接口进行访问，我们用postman来进行测试，结果如下，报错啦<br><img src="http://upload-images.jianshu.io/upload_images/4943424-224e533671ec1a90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="swagger main"></p>
+<p>进行auth操作，获取token，我对token的处理很简单粗暴，意思就是这么个意思<br><img src="http://upload-images.jianshu.io/upload_images/4943424-f005157327dafda6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="swagger main"></p>
+<p>将token放到header中再对/hello接口进行访问，成功返回，made it！！！<br><img src="http://upload-images.jianshu.io/upload_images/4943424-cb03eb849051fb59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="swagger main"></p>
+</blockquote>
+<h2 id="分一个割-1"><a href="#分一个割-1" class="headerlink" title="分一个割"></a>分一个割</h2><p>到这里，这个工程就不更新了，接下来与dubbo的集成，将使用新的工程</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
       
       <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/SpringBoot/">SpringBoot</a>
@@ -341,7 +411,7 @@
       
           
         <h3 id="要完成的事情"><a href="#要完成的事情" class="headerlink" title="要完成的事情"></a>要完成的事情</h3><blockquote>
-<p>主要分为以下三点</p>
+<p>主要分为以下两点</p>
 <ul>
 <li>统一异常处理</li>
 <li>集成Log4j AOP统一处理web请求</li>
