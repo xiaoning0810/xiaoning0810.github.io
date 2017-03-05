@@ -4,52 +4,12 @@
 
     
   <url>
-    <loc>http://blog.zeyu0633.com/2017/02/24/new/</loc>
-    <lastmod>2017-03-04T11:11:58.389Z</lastmod>
+    <loc>http://blog.zeyu0633.com/2017/03/05/springBootExceptionAOPLog4j/</loc>
+    <lastmod>2017-03-05T06:24:24.841Z</lastmod>
     <data>
         <display>
-        <title>鸡汤</title>
-        <pubTime>2017-02-24T09:58:27.000Z</pubTime>
-        
-        <tag>鸡汤</tag>
-         
-         
-           
-             
-              <breadCrumb title="鸡汤" url="http://blog.zeyu0633.com/categories/%E9%B8%A1%E6%B1%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/02/26/springBootMybatisSwagger/</loc>
-    <lastmod>2017-03-04T11:11:58.372Z</lastmod>
-    <data>
-        <display>
-        <title>SpringBoot Mybatis Restful Swagger2</title>
-        <pubTime>2017-02-26T11:30:00.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="SpringBoot" url="http://blog.zeyu0633.com/categories/SpringBoot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/02/26/springBootStart/</loc>
-    <lastmod>2017-03-04T11:11:58.357Z</lastmod>
-    <data>
-        <display>
-        <title>SpringBoot HelloWorld</title>
-        <pubTime>2017-02-26T11:30:00.000Z</pubTime>
+        <title>SpringBoot 日志管理，统一异常处理</title>
+        <pubTime>2017-03-05T01:30:00.000Z</pubTime>
         
         <tag>Java</tag>
          
@@ -65,7 +25,7 @@
     
   <url>
     <loc>http://blog.zeyu0633.com/2017/02/26/markdown/</loc>
-    <lastmod>2017-03-04T11:11:58.337Z</lastmod>
+    <lastmod>2017-03-05T06:22:04.502Z</lastmod>
     <data>
         <display>
         <title>Markdown 语法</title>
@@ -85,11 +45,71 @@
     
   <url>
     <loc>http://blog.zeyu0633.com/2017/02/26/springBootIndex/</loc>
-    <lastmod>2017-03-04T11:08:42.517Z</lastmod>
+    <lastmod>2017-03-05T06:22:04.494Z</lastmod>
     <data>
         <display>
         <title>SpringBoot Learning Index</title>
         <pubTime>2017-02-26T10:00:00.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringBoot" url="http://blog.zeyu0633.com/categories/SpringBoot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/02/24/new/</loc>
+    <lastmod>2017-03-05T06:22:04.483Z</lastmod>
+    <data>
+        <display>
+        <title>鸡汤</title>
+        <pubTime>2017-02-24T09:58:27.000Z</pubTime>
+        
+        <tag>鸡汤</tag>
+         
+         
+           
+             
+              <breadCrumb title="鸡汤" url="http://blog.zeyu0633.com/categories/%E9%B8%A1%E6%B1%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/03/04/springBootMybatisSwagger/</loc>
+    <lastmod>2017-03-05T05:51:04.700Z</lastmod>
+    <data>
+        <display>
+        <title>SpringBoot Mybatis Restful Swagger2</title>
+        <pubTime>2017-03-04T11:30:00.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringBoot" url="http://blog.zeyu0633.com/categories/SpringBoot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/02/26/springBootStart/</loc>
+    <lastmod>2017-03-05T05:48:51.526Z</lastmod>
+    <data>
+        <display>
+        <title>SpringBoot HelloWorld</title>
+        <pubTime>2017-02-26T11:30:00.000Z</pubTime>
         
         <tag>Java</tag>
          

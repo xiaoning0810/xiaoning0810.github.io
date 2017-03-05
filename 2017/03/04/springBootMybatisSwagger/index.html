@@ -23,12 +23,10 @@ Swagger2集成
 
 分一个割工程结构工程结构尽量做到清晰，分层合理
 springboot集成Mybatispom文件中需引入
-&amp;lt;!-- Spring Boot Mybatis 依赖 --&amp;gt;
-&amp;lt;dependency&amp;gt;
-    &amp;lt;groupId&amp;gt;org.mybatis.spring.">
+12345678910111213&amp;lt;!-- Spring Boot Mybatis 依赖 --&amp;gt;&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot Mybatis Restful Swagger2">
-<meta property="og:url" content="http://blog.zeyu0633.com/2017/02/26/springBootMybatisSwagger/index.html">
+<meta property="og:url" content="http://blog.zeyu0633.com/2017/03/04/springBootMybatisSwagger/index.html">
 <meta property="og:site_name" content="HTime">
 <meta property="og:description" content="要完成的事情
 主要分为以下三点
@@ -40,13 +38,11 @@ Swagger2集成
 
 分一个割工程结构工程结构尽量做到清晰，分层合理
 springboot集成Mybatispom文件中需引入
-&amp;lt;!-- Spring Boot Mybatis 依赖 --&amp;gt;
-&amp;lt;dependency&amp;gt;
-    &amp;lt;groupId&amp;gt;org.mybatis.spring.">
+12345678910111213&amp;lt;!-- Spring Boot Mybatis 依赖 --&amp;gt;&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-2f4d1f94c3582730.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-97579134276c2413.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-c58f8f779d9e92e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-03-04T11:11:58.372Z">
+<meta property="og:updated_time" content="2017-03-05T05:51:04.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot Mybatis Restful Swagger2">
 <meta name="twitter:description" content="要完成的事情
@@ -59,9 +55,7 @@ Swagger2集成
 
 分一个割工程结构工程结构尽量做到清晰，分层合理
 springboot集成Mybatispom文件中需引入
-&amp;lt;!-- Spring Boot Mybatis 依赖 --&amp;gt;
-&amp;lt;dependency&amp;gt;
-    &amp;lt;groupId&amp;gt;org.mybatis.spring.">
+12345678910111213&amp;lt;!-- Spring Boot Mybatis 依赖 --&amp;gt;&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4943424-2f4d1f94c3582730.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -299,8 +293,8 @@ springboot集成Mybatispom文件中需引入
       <div class="body-wrap"><article id="post-springBootMybatisSwagger" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/26/springBootMybatisSwagger/" class="article-date">
-      <time datetime="2017-02-26T11:30:00.000Z" itemprop="datePublished">2017-02-26</time>
+      <a href="/2017/03/04/springBootMybatisSwagger/" class="article-date">
+      <time datetime="2017-03-04T11:30:00.000Z" itemprop="datePublished">2017-03-04</time>
 </a>
     </div>
   
@@ -339,19 +333,7 @@ springboot集成Mybatispom文件中需引入
 </blockquote>
 <h2 id="分一个割"><a href="#分一个割" class="headerlink" title="分一个割"></a>分一个割</h2><h3 id="工程结构"><a href="#工程结构" class="headerlink" title="工程结构"></a>工程结构</h3><p>工程结构尽量做到清晰，分层合理<br><img src="http://upload-images.jianshu.io/upload_images/4943424-2f4d1f94c3582730.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="structure"></p>
 <h3 id="springboot集成Mybatis"><a href="#springboot集成Mybatis" class="headerlink" title="springboot集成Mybatis"></a>springboot集成Mybatis</h3><p>pom文件中需引入</p>
-<pre><code>&lt;!-- Spring Boot Mybatis 依赖 --&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;
-    &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;
-    &lt;version&gt;${mybatis-spring-boot}&lt;/version&gt;
-&lt;/dependency&gt;
-
-&lt;!-- MySQL 连接驱动依赖 --&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;mysql&lt;/groupId&gt;
-    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-    &lt;version&gt;${mysql-connector}&lt;/version&gt;
-&lt;/dependency&gt;
+<pre><code><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Spring Boot Mybatis 依赖 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;mybatis-spring-boot&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- MySQL 连接驱动依赖 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;mysql-connector&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
 </code></pre><p>在application.properties中配置</p>
 <pre><code>## 数据源配置
 spring.datasource.url=jdbc:mysql://localhost:3306/springbootdb?useUnicode=true&amp;characterEncoding=utf8
@@ -390,13 +372,13 @@ mybatis.mapperLocations=classpath:mapper/*.xml
   </div>
   
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/26/springBootMybatisSwagger/">SpringBoot Mybatis Restful Swagger2</a></p>
+        <p><span>本文标题:</span><a href="/2017/03/04/springBootMybatisSwagger/">SpringBoot Mybatis Restful Swagger2</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Htime</a></p>
-        <p><span>发布时间:</span>2017-02-26, 19:30:00</p>
-        <p><span>最后更新:</span>2017-03-04, 19:11:58</p>
+        <p><span>发布时间:</span>2017-03-04, 19:30:00</p>
+        <p><span>最后更新:</span>2017-03-05, 13:51:04</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/26/springBootMybatisSwagger/" title="SpringBoot Mybatis Restful Swagger2">http://blog.zeyu0633.com/2017/02/26/springBootMybatisSwagger/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.zeyu0633.com/2017/02/26/springBootMybatisSwagger/　　作者: Htime" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/04/springBootMybatisSwagger/" title="SpringBoot Mybatis Restful Swagger2">http://blog.zeyu0633.com/2017/03/04/springBootMybatisSwagger/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.zeyu0633.com/2017/03/04/springBootMybatisSwagger/　　作者: Htime" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -409,15 +391,15 @@ mybatis.mapperLocations=classpath:mapper/*.xml
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/02/26/springBootStart/">
-                    SpringBoot HelloWorld
+                <a href="/2017/03/05/springBootExceptionAOPLog4j/">
+                    SpringBoot 日志管理，统一异常处理
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/02/26/springBootIndex/">
-                    SpringBoot Learning Index
+                <a href="/2017/02/26/springBootStart/">
+                    SpringBoot HelloWorld
                 </a>
             </div>
         
@@ -487,7 +469,7 @@ mybatis.mapperLocations=classpath:mapper/*.xml
 
 <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/02/26/springBootStart/" title="上一篇: SpringBoot HelloWorld">
+            <a href="/2017/03/05/springBootExceptionAOPLog4j/" title="上一篇: SpringBoot 日志管理，统一异常处理">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -495,13 +477,13 @@ mybatis.mapperLocations=classpath:mapper/*.xml
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/02/26/springBootIndex/" title="下一篇: SpringBoot Learning Index">
+            <a href="/2017/02/26/springBootStart/" title="下一篇: SpringBoot HelloWorld">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/springBootMybatisSwagger/">SpringBoot Mybatis Restful Swagger2</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/springBootStart/">SpringBoot HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/springBootIndex/">SpringBoot Learning Index</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/markdown/">Markdown 语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/24/new/">鸡汤</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/springBootExceptionAOPLog4j/">SpringBoot 日志管理，统一异常处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/springBootMybatisSwagger/">SpringBoot Mybatis Restful Swagger2</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/springBootStart/">SpringBoot HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/springBootIndex/">SpringBoot Learning Index</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/markdown/">Markdown 语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/24/new/">鸡汤</a></li></ul>
 
 
     <script>
