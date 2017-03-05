@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-03-05T16:02:32.446Z</updated>
+  <updated>2017-03-05T16:21:27.877Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot 集成Dubbo</title>
+    <link href="http://blog.zeyu0633.com/2017/03/05/springBootDubbo/"/>
+    <id>http://blog.zeyu0633.com/2017/03/05/springBootDubbo/</id>
+    <published>2017-03-05T15:45:00.000Z</published>
+    <updated>2017-03-05T16:21:27.877Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="要完成的事情"><a href="#要完成的事情" class="headerlink" title="要完成的事情"></a>要完成的事情</h3><blockquote>
+<p>ing······</p>
+</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;要完成的事情&quot;&gt;&lt;a href=&quot;#要完成的事情&quot; class=&quot;headerlink&quot; title=&quot;要完成的事情&quot;&gt;&lt;/a&gt;要完成的事情&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;ing······&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="http://blog.zeyu0633.com/categories/SpringBoot/"/>
+    
+    
+      <category term="Java" scheme="http://blog.zeyu0633.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot 身份认证</title>
@@ -280,7 +306,7 @@ public class SpringbootApplicationTests {
     <link href="http://blog.zeyu0633.com/2017/02/26/springBootIndex/"/>
     <id>http://blog.zeyu0633.com/2017/02/26/springBootIndex/</id>
     <published>2017-02-26T10:00:00.000Z</published>
-    <updated>2017-03-05T15:57:57.188Z</updated>
+    <updated>2017-03-05T16:22:21.054Z</updated>
     
     <content type="html"><![CDATA[<h3 id="SpringBoot介绍"><a href="#SpringBoot介绍" class="headerlink" title="SpringBoot介绍"></a>SpringBoot介绍</h3><blockquote>
 <p>Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can “just run”. We take an opinionated view of the Spring platform and third-party libraries so you can get started with minimum fuss. Most Spring Boot applications need very little Spring configuration.</p>
@@ -291,7 +317,7 @@ public class SpringbootApplicationTests {
 <li><a href="http://blog.zeyu0633.com/2017/03/04/springBootMybatisSwagger/">SpringBoot Mybatis Restful Swagger2</a></li>
 <li><a href="http://blog.zeyu0633.com/2017/03/05/springBootExceptionAOPLog4j/">SpringBoot 日志管理，统一异常处理</a></li>
 <li><a href="http://blog.zeyu0633.com/2017/03/05/springBootAuth/">SpringBoot 身份认证</a></li>
-<li><a href="http://blog.zeyu0633.com/">SpringBoot 集成dubbo</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/05/springBootDubbo/">SpringBoot 集成dubbo</a></li>
 </ul>]]></content>
     
     <summary type="html">
