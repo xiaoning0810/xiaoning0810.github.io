@@ -13,19 +13,38 @@
 
 
 
-<meta name="description" content="要完成的事情
-ing······">
+<meta name="description" content="概述
+我们常常使用 Springboot 暴露 HTTP 服务，并走 JSON 模式。但慢慢量大了，一种 SOA 的治理方案。这样可以暴露出 Dubbo 服务接口，提供给 Dubbo 消费者进行 RPC 调用。优点
+
+Dubbo 不单单只是高性能的 RPC 调用框架，更是 SOA 服务治理的一种方案。
+远程通信，向本地调用一样调用远程方法。
+集群容错
+服务自动发现和注册，可平滑添加或者删除服务提供">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot 集成Dubbo">
-<meta property="og:url" content="http://blog.zeyu0633.com/2017/03/05/springBootDubbo/index.html">
+<meta property="og:url" content="http://blog.zeyu0633.com/2017/03/06/springBootDubbo/index.html">
 <meta property="og:site_name" content="HTime">
-<meta property="og:description" content="要完成的事情
-ing······">
-<meta property="og:updated_time" content="2017-03-05T16:21:27.877Z">
+<meta property="og:description" content="概述
+我们常常使用 Springboot 暴露 HTTP 服务，并走 JSON 模式。但慢慢量大了，一种 SOA 的治理方案。这样可以暴露出 Dubbo 服务接口，提供给 Dubbo 消费者进行 RPC 调用。优点
+
+Dubbo 不单单只是高性能的 RPC 调用框架，更是 SOA 服务治理的一种方案。
+远程通信，向本地调用一样调用远程方法。
+集群容错
+服务自动发现和注册，可平滑添加或者删除服务提供">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-18b6d38a0f001c99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-24246882c8a25a1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-93b5cacc8a175068.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-03-06T14:55:16.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot 集成Dubbo">
-<meta name="twitter:description" content="要完成的事情
-ing······">
+<meta name="twitter:description" content="概述
+我们常常使用 Springboot 暴露 HTTP 服务，并走 JSON 模式。但慢慢量大了，一种 SOA 的治理方案。这样可以暴露出 Dubbo 服务接口，提供给 Dubbo 消费者进行 RPC 调用。优点
+
+Dubbo 不单单只是高性能的 RPC 调用框架，更是 SOA 服务治理的一种方案。
+远程通信，向本地调用一样调用远程方法。
+集群容错
+服务自动发现和注册，可平滑添加或者删除服务提供">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4943424-18b6d38a0f001c99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -139,13 +158,13 @@ ing······">
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>Friends</li>
+                        <li>友情链接</li>
                         
                         
-                        <li>About Me</li>
+                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -257,13 +276,13 @@ ing······">
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me">
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
       <div class="body-wrap"><article id="post-springBootDubbo" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/05/springBootDubbo/" class="article-date">
-      <time datetime="2017-03-05T15:45:00.000Z" itemprop="datePublished">2017-03-05</time>
+      <a href="/2017/03/06/springBootDubbo/" class="article-date">
+      <time datetime="2017-03-06T15:45:00.000Z" itemprop="datePublished">2017-03-06</time>
 </a>
     </div>
   
@@ -292,8 +311,74 @@ ing······">
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="要完成的事情"><a href="#要完成的事情" class="headerlink" title="要完成的事情"></a>要完成的事情</h3><blockquote>
-<p>ing······</p>
+        <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><blockquote>
+<p>我们常常使用 Springboot 暴露 HTTP 服务，并走 JSON 模式。但慢慢量大了，一种 SOA 的治理方案。这样可以暴露出 Dubbo 服务接口，提供给 Dubbo 消费者进行 RPC 调用。<br>优点</p>
+<ul>
+<li>Dubbo 不单单只是高性能的 RPC 调用框架，更是 SOA 服务治理的一种方案。</li>
+<li>远程通信，向本地调用一样调用远程方法。</li>
+<li>集群容错</li>
+<li>服务自动发现和注册，可平滑添加或者删除服务提供者。</li>
+</ul>
+<p>列个提纲</p>
+<ul>
+<li>分讲dubbo-provider和dubbo-consummer工程</li>
+<li>结合dubbo-admin管理平台查看服务</li>
+</ul>
+</blockquote>
+<ul>
+<li>zk 3.4.6</li>
+<li>dubbo 2.8.4</li>
+<li>jdk 1.8.0</li>
+</ul>
+<h3 id="springboot-dubbo-provider"><a href="#springboot-dubbo-provider" class="headerlink" title="springboot-dubbo-provider"></a>springboot-dubbo-provider</h3><blockquote>
+<p>配置文件中配置为服务提供者</p>
+</blockquote>
+<pre><code>## Dubbo 服务提供者配置
+spring.dubbo.application.name=provider
+spring.dubbo.registry.address=zookeeper://127.0.0.1:2181
+spring.dubbo.protocol.name=dubbo
+spring.dubbo.protocol.port=20880
+spring.dubbo.scan=com.htime.dubbo
+</code></pre><blockquote>
+<p>然后实现一个方法，该方法返回一个实体类City，verison可以区分服务版本，调用时能够区分</p>
+</blockquote>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 注册为 Dubbo 服务</span></div><div class="line"><span class="meta">@Service</span>(version = <span class="string">"1.0.0"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CityDubboServiceImpl</span> <span class="keyword">implements</span> <span class="title">CityDubboService</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> City <span class="title">findCityByName</span><span class="params">(String cityName)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> City(<span class="number">1L</span>,<span class="number">2L</span>,<span class="string">"日照"</span>,<span class="string">"是Htime的故乡"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>最重要的是要引入依赖</p>
+</blockquote>
+<pre><code>&lt;!-- Spring Boot Dubbo 依赖 --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;io.dubbo.springboot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-dubbo&lt;/artifactId&gt;
+    &lt;version&gt;${dubbo-spring-boot}&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><h3 id="springboot-dubbo-consummer"><a href="#springboot-dubbo-consummer" class="headerlink" title="springboot-dubbo-consummer"></a>springboot-dubbo-consummer</h3><blockquote>
+<p>配置文件中配置为消费者，进行服务的订阅</p>
+</blockquote>
+<pre><code>## 避免和 server 工程端口冲突
+server.port=8081
+
+## Dubbo 服务消费者配置
+spring.dubbo.application.name=consumer
+spring.dubbo.registry.address=zookeeper://127.0.0.1:2181
+spring.dubbo.scan=com.htime.dubbo
+</code></pre><blockquote>
+<p>实现方法的调用，真的就像调用本地方法一样，很棒！！！</p>
+</blockquote>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CityDubboConsumerService</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Reference</span>(version = <span class="string">"1.0.0"</span>)</div><div class="line">    CityDubboService cityDubboService;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printCity</span><span class="params">()</span> </span>&#123;</div><div class="line">        String cityName=<span class="string">"日照"</span>;</div><div class="line">        City city = cityDubboService.findCityByName(cityName);</div><div class="line">        System.out.println(city.toString());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>在启动类中直接调用printCity()方法，在控制台中打印出以下内容，那么，就成功了，made it！！！<br><img src="http://upload-images.jianshu.io/upload_images/4943424-18b6d38a0f001c99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="consummer log"></p>
+</blockquote>
+<h3 id="dubbo-admin管理平台查看服务"><a href="#dubbo-admin管理平台查看服务" class="headerlink" title="dubbo-admin管理平台查看服务"></a>dubbo-admin管理平台查看服务</h3><blockquote>
+<p>管理平台能为我们提供很多功能，我是直接以war包的形式起的，war可以把dubbo官方代码clone下来自己编译</p>
+<ul>
+<li>服务调用情况、健康情况查看</li>
+<li>提供软负载，可以对不同服务设置不同权重</li>
+<li>······</li>
+</ul>
+<p>查看服务提供者<br><img src="http://upload-images.jianshu.io/upload_images/4943424-24246882c8a25a1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="provider view"></p>
+<p>查看服务消费者<br><img src="http://upload-images.jianshu.io/upload_images/4943424-93b5cacc8a175068.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="consummer view"></p>
+<p>公司用的是dubbo，自己在学spring-cloud，这里展示dubbo，因为，遇到了坑，还有人问问，如果用spring-cloud直接上，出了问题，一脸懵逼<del>~</del></p>
 </blockquote>
       
     </div>
@@ -301,17 +386,17 @@ ing······">
   </div>
   
     <div class="copyright">
-        <p><span>Title:</span><a href="/2017/03/05/springBootDubbo/">SpringBoot 集成Dubbo</a></p>
-        <p><span>Author:</span><a href="/" title="Back to Homepage">Htime</a></p>
-        <p><span>Created:</span>2017-03-05, 23:45:00</p>
-        <p><span>Updated:</span>2017-03-06, 00:21:27</p>
+        <p><span>本文标题:</span><a href="/2017/03/06/springBootDubbo/">SpringBoot 集成Dubbo</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Htime</a></p>
+        <p><span>发布时间:</span>2017-03-06, 23:45:00</p>
+        <p><span>最后更新:</span>2017-03-06, 22:55:16</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2017/03/05/springBootDubbo/" title="SpringBoot 集成Dubbo">http://blog.zeyu0633.com/2017/03/05/springBootDubbo/</a>
-            <span class="copy-path" data-clipboard-text="From http://blog.zeyu0633.com/2017/03/05/springBootDubbo/　　By Htime" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/06/springBootDubbo/" title="SpringBoot 集成Dubbo">http://blog.zeyu0633.com/2017/03/06/springBootDubbo/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.zeyu0633.com/2017/03/06/springBootDubbo/　　作者: Htime" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
-            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
         </p>
     </div>
 
@@ -330,9 +415,9 @@ ing······">
   
 </article>
 <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
+        <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#要完成的事情"><span class="toc-number">1.</span> <span class="toc-text">要完成的事情</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#springboot-dubbo-provider"><span class="toc-number">2.</span> <span class="toc-text">springboot-dubbo-provider</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#springboot-dubbo-consummer"><span class="toc-number">3.</span> <span class="toc-text">springboot-dubbo-consummer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dubbo-admin管理平台查看服务"><span class="toc-number">4.</span> <span class="toc-text">dubbo-admin管理平台查看服务</span></a></li></ol>
         
     </div>
     <style>
@@ -346,10 +431,10 @@ ing······">
         }
     </style>
 
-    <input type="button" id="tocButton" value="Hide" title="Show or Hide Table of Contents">
+    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
     <script>
-        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
     </script>
 
 
@@ -392,19 +477,19 @@ ing······">
 
 <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
-        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/03/05/springBootAuth/" title="Next: SpringBoot 身份认证">
+            <a href="/2017/03/05/springBootAuth/" title="下一篇: SpringBoot 身份认证">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/springBootDubbo/">SpringBoot 集成Dubbo</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/springBootAuth/">SpringBoot 身份认证</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/springBootExceptionAOPLog4j/">SpringBoot 日志管理，统一异常处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/springBootMybatisSwagger/">SpringBoot Mybatis Restful Swagger2</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/springBootStart/">SpringBoot HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/springBootIndex/">SpringBoot Learning Index</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/markdown/">Markdown 语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/24/new/">鸡汤</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/06/springBootDubbo/">SpringBoot 集成Dubbo</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/springBootAuth/">SpringBoot 身份认证</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/springBootExceptionAOPLog4j/">SpringBoot 日志管理，统一异常处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/springBootMybatisSwagger/">SpringBoot Mybatis Restful Swagger2</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/springBootStart/">SpringBoot HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/springBootIndex/">SpringBoot Learning Index</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/markdown/">Markdown 语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/24/new/">鸡汤</a></li></ul>
 
 
     <script>
@@ -418,14 +503,14 @@ ing······">
                 2017 Htime
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style="display:none">
-                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -434,7 +519,7 @@ ing······">
                 
                 
                     <span id="busuanzi_container_page_pv" style="display:none">
-                        <span id="page-visit" title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit" title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -449,9 +534,9 @@ ing······">
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide()" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide()" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
