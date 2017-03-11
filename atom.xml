@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-03-11T16:30:36.624Z</updated>
+  <updated>2017-03-11T16:32:33.710Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正则表达式 Learning Index</title>
+    <link href="http://blog.zeyu0633.com/2017/03/11/zeIndex/"/>
+    <id>http://blog.zeyu0633.com/2017/03/11/zeIndex/</id>
+    <published>2017-03-11T15:00:00.000Z</published>
+    <updated>2017-03-11T16:32:33.710Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="正则表达式介绍"><a href="#正则表达式介绍" class="headerlink" title="正则表达式介绍"></a>正则表达式介绍</h3><blockquote>
+<p>在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要。正则表达式就是用于描述这些规则的工具。换句话说，正则表达式就是记录文本规则的代码。</p>
+</blockquote>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/zeIndex/">正则表达式 目录</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/zeIndex/">正则表达式 入门</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/zeIndex/">正则表达式 知识点</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/zeIndex/">正则表达式 实践</a></li>
+</ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;正则表达式介绍&quot;&gt;&lt;a href=&quot;#正则表达式介绍&quot; class=&quot;headerlink&quot; title=&quot;正则表达式介绍&quot;&gt;&lt;/a&gt;正则表达式介绍&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要
+    
+    </summary>
+    
+      <category term="正则表达式" scheme="http://blog.zeyu0633.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+    
+      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+  </entry>
   
   <entry>
     <title>Http Learning Index</title>
@@ -40,37 +71,6 @@
     </summary>
     
       <category term="HTTP" scheme="http://blog.zeyu0633.com/categories/HTTP/"/>
-    
-    
-      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>正则表达式 Learning Index</title>
-    <link href="http://blog.zeyu0633.com/2017/03/11/zeIndex/"/>
-    <id>http://blog.zeyu0633.com/2017/03/11/zeIndex/</id>
-    <published>2017-03-11T15:00:00.000Z</published>
-    <updated>2017-03-11T16:26:16.434Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="正则表达式介绍"><a href="#正则表达式介绍" class="headerlink" title="正则表达式介绍"></a>正则表达式介绍</h3><blockquote>
-<p>在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要。正则表达式就是用于描述这些规则的工具。换句话说，正则表达式就是记录文本规则的代码。</p>
-</blockquote>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/zxIndex/">正则表达式 目录</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/zxIndex/">正则表达式 入门</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/zxIndex/">正则表达式 知识点</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/zxIndex/">正则表达式 实践</a></li>
-</ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;正则表达式介绍&quot;&gt;&lt;a href=&quot;#正则表达式介绍&quot; class=&quot;headerlink&quot; title=&quot;正则表达式介绍&quot;&gt;&lt;/a&gt;正则表达式介绍&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要
-    
-    </summary>
-    
-      <category term="正则表达式" scheme="http://blog.zeyu0633.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
     
       <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>

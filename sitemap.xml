@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.zeyu0633.com/2017/03/11/zeIndex/</loc>
+    
+    <lastmod>2017-03-11T16:32:33.710Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</loc>
     
     <lastmod>2017-03-11T16:30:36.636Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://blog.zeyu0633.com/2017/03/11/httpIndex/</loc>
     
     <lastmod>2017-03-11T16:30:36.624Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/03/11/zeIndex/</loc>
-    
-    <lastmod>2017-03-11T16:26:16.434Z</lastmod>
     
   </url>
   
