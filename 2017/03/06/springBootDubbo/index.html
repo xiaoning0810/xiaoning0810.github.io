@@ -34,7 +34,7 @@ Dubbo 不单单只是高性能的 RPC 调用框架，更是 SOA 服务治理的�
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-18b6d38a0f001c99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-24246882c8a25a1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-93b5cacc8a175068.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-03-06T14:55:16.995Z">
+<meta property="og:updated_time" content="2017-03-11T15:57:11.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot 集成Dubbo">
 <meta name="twitter:description" content="概述
@@ -333,40 +333,24 @@ Dubbo 不单单只是高性能的 RPC 调用框架，更是 SOA 服务治理的�
 <h3 id="springboot-dubbo-provider"><a href="#springboot-dubbo-provider" class="headerlink" title="springboot-dubbo-provider"></a>springboot-dubbo-provider</h3><blockquote>
 <p>配置文件中配置为服务提供者</p>
 </blockquote>
-<pre><code>## Dubbo 服务提供者配置
-spring.dubbo.application.name=provider
-spring.dubbo.registry.address=zookeeper://127.0.0.1:2181
-spring.dubbo.protocol.name=dubbo
-spring.dubbo.protocol.port=20880
-spring.dubbo.scan=com.htime.dubbo
-</code></pre><blockquote>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## Dubbo 服务提供者配置</span></div><div class="line">spring.dubbo.application.name=provider</div><div class="line">spring.dubbo.registry.address=zookeeper:<span class="regexp">//</span><span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">2181</span></div><div class="line">spring.dubbo.protocol.name=dubbo</div><div class="line">spring.dubbo.protocol.port=<span class="number">20880</span></div><div class="line">spring.dubbo.scan=com.htime.dubbo</div></pre></td></tr></table></figure>
+<blockquote>
 <p>然后实现一个方法，该方法返回一个实体类City，verison可以区分服务版本，调用时能够区分</p>
 </blockquote>
-<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 注册为 Dubbo 服务</span></div><div class="line"><span class="meta">@Service</span>(version = <span class="string">"1.0.0"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CityDubboServiceImpl</span> <span class="keyword">implements</span> <span class="title">CityDubboService</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> City <span class="title">findCityByName</span><span class="params">(String cityName)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> City(<span class="number">1L</span>,<span class="number">2L</span>,<span class="string">"日照"</span>,<span class="string">"是Htime的故乡"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 注册为 Dubbo 服务</span></div><div class="line"><span class="meta">@Service</span>(version = <span class="string">"1.0.0"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CityDubboServiceImpl</span> <span class="keyword">implements</span> <span class="title">CityDubboService</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> City <span class="title">findCityByName</span><span class="params">(String cityName)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> City(<span class="number">1L</span>,<span class="number">2L</span>,<span class="string">"日照"</span>,<span class="string">"是Htime的故乡"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
 <p>最重要的是要引入依赖</p>
 </blockquote>
-<pre><code>&lt;!-- Spring Boot Dubbo 依赖 --&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;io.dubbo.springboot&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-boot-starter-dubbo&lt;/artifactId&gt;
-    &lt;version&gt;${dubbo-spring-boot}&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre><h3 id="springboot-dubbo-consummer"><a href="#springboot-dubbo-consummer" class="headerlink" title="springboot-dubbo-consummer"></a>springboot-dubbo-consummer</h3><blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Spring Boot Dubbo 依赖 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.dubbo.springboot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-dubbo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;dubbo-spring-boot&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="springboot-dubbo-consummer"><a href="#springboot-dubbo-consummer" class="headerlink" title="springboot-dubbo-consummer"></a>springboot-dubbo-consummer</h3><blockquote>
 <p>配置文件中配置为消费者，进行服务的订阅</p>
 </blockquote>
-<pre><code>## 避免和 server 工程端口冲突
-server.port=8081
-
-## Dubbo 服务消费者配置
-spring.dubbo.application.name=consumer
-spring.dubbo.registry.address=zookeeper://127.0.0.1:2181
-spring.dubbo.scan=com.htime.dubbo
-</code></pre><blockquote>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## 避免和 server 工程端口冲突</span></div><div class="line">server.port=<span class="number">8081</span></div><div class="line"></div><div class="line"><span class="comment">## Dubbo 服务消费者配置</span></div><div class="line">spring.dubbo.application.name=consumer</div><div class="line">spring.dubbo.registry.address=zookeeper:<span class="regexp">//</span><span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">2181</span></div><div class="line">spring.dubbo.scan=com.htime.dubbo</div></pre></td></tr></table></figure>
+<blockquote>
 <p>实现方法的调用，真的就像调用本地方法一样，很棒！！！</p>
 </blockquote>
-<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CityDubboConsumerService</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Reference</span>(version = <span class="string">"1.0.0"</span>)</div><div class="line">    CityDubboService cityDubboService;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printCity</span><span class="params">()</span> </span>&#123;</div><div class="line">        String cityName=<span class="string">"日照"</span>;</div><div class="line">        City city = cityDubboService.findCityByName(cityName);</div><div class="line">        System.out.println(city.toString());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CityDubboConsumerService</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Reference</span>(version = <span class="string">"1.0.0"</span>)</div><div class="line">    CityDubboService cityDubboService;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printCity</span><span class="params">()</span> </span>&#123;</div><div class="line">        String cityName=<span class="string">"日照"</span>;</div><div class="line">        City city = cityDubboService.findCityByName(cityName);</div><div class="line">        System.out.println(city.toString());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
 <p>在启动类中直接调用printCity()方法，在控制台中打印出以下内容，那么，就成功了，made it！！！<br><img src="http://upload-images.jianshu.io/upload_images/4943424-18b6d38a0f001c99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="consummer log"></p>
 </blockquote>
 <h3 id="dubbo-admin管理平台查看服务"><a href="#dubbo-admin管理平台查看服务" class="headerlink" title="dubbo-admin管理平台查看服务"></a>dubbo-admin管理平台查看服务</h3><blockquote>
@@ -389,7 +373,7 @@ spring.dubbo.scan=com.htime.dubbo
         <p><span>本文标题:</span><a href="/2017/03/06/springBootDubbo/">SpringBoot 集成Dubbo</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Htime</a></p>
         <p><span>发布时间:</span>2017-03-06, 23:45:00</p>
-        <p><span>最后更新:</span>2017-03-06, 22:55:16</p>
+        <p><span>最后更新:</span>2017-03-11, 23:57:11</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/06/springBootDubbo/" title="SpringBoot 集成Dubbo">http://blog.zeyu0633.com/2017/03/06/springBootDubbo/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.zeyu0633.com/2017/03/06/springBootDubbo/　　作者: Htime" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
