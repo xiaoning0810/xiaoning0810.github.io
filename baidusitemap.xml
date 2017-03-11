@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</loc>
+    <lastmod>2017-03-11T16:30:36.636Z</lastmod>
+    <data>
+        <display>
+        <title>Mysql Learning Index</title>
+        <pubTime>2017-03-11T15:00:00.000Z</pubTime>
+        
+        <tag>Javar必知必会</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mysql" url="http://blog.zeyu0633.com/categories/Mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/03/11/httpIndex/</loc>
+    <lastmod>2017-03-11T16:30:36.624Z</lastmod>
+    <data>
+        <display>
+        <title>Http Learning Index</title>
+        <pubTime>2017-03-11T15:00:00.000Z</pubTime>
+        
+        <tag>Javar必知必会</tag>
+         
+         
+           
+             
+              <breadCrumb title="HTTP" url="http://blog.zeyu0633.com/categories/HTTP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/03/11/zeIndex/</loc>
+    <lastmod>2017-03-11T16:26:16.434Z</lastmod>
+    <data>
+        <display>
+        <title>正则表达式 Learning Index</title>
+        <pubTime>2017-03-11T15:00:00.000Z</pubTime>
+        
+        <tag>Javar必知必会</tag>
+         
+         
+           
+             
+              <breadCrumb title="正则表达式" url="http://blog.zeyu0633.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.zeyu0633.com/2017/02/26/springBootStart/</loc>
     <lastmod>2017-03-11T16:13:08.865Z</lastmod>
     <data>
