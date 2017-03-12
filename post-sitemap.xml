@@ -7,8 +7,8 @@
     </url>
 
     <url>
-        <loc>http://blog.zeyu0633.com/2017/03/12/ze-Summary/</loc>
-        <lastmod>2017-03-12T03:35:47.383Z</lastmod>
+        <loc>http://blog.zeyu0633.com/2017/03/12/ze-topics/</loc>
+        <lastmod>2017-03-12T04:00:25.680Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +16,15 @@
 
     <url>
         <loc>http://blog.zeyu0633.com/2017/03/11/zeIndex/</loc>
-        <lastmod>2017-03-12T02:42:40.214Z</lastmod>
+        <lastmod>2017-03-12T03:51:12.549Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.zeyu0633.com/2017/03/12/ze-Summary/</loc>
+        <lastmod>2017-03-12T03:35:47.383Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

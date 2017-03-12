@@ -346,7 +346,7 @@
 <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
 <li><a href="http://blog.zeyu0633.com/2017/03/11/zeIndex/">正则表达式 目录</a></li>
 <li><a href="http://blog.zeyu0633.com/2017/03/12/ze-Summary/">正则表达式 概要</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/zeIndex/">正则表达式 知识点</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/12/ze-topics/">正则表达式 知识点</a></li>
 <li><a href="http://blog.zeyu0633.com/2017/03/11/zeIndex/">正则表达式 实践</a></li>
 </ul>
       
@@ -470,6 +470,97 @@
       
       <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/Mysql/">Mysql</a>
+    </div>
+      <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javar必知必会/">Javar必知必会</a></li></ul>
+    </div>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+  
+    <article id="post-ze-topics" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/12/ze-topics/" class="article-date">
+      <time datetime="2017-03-12T04:00:00.000Z" itemprop="datePublished">2017-03-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/12/ze-topics/">正则表达式 知识点</a>
+    </h1>
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="常用知识点详解"><a href="#常用知识点详解" class="headerlink" title="常用知识点详解"></a>常用知识点详解</h2><h3 id="元字符详解"><a href="#元字符详解" class="headerlink" title="元字符详解"></a>元字符详解</h3><h4 id="先来看几个栗子"><a href="#先来看几个栗子" class="headerlink" title="先来看几个栗子"></a>先来看几个栗子</h4><blockquote>
+<ul>
+<li><font color="#B22222">\ba\w<em>\b</em></font>匹配以字母a开头的单词——先是某个单词开始处(\b)，然后是字母a,然后是任意数量的字母或数字(\w)，最后是单词结束处(\b)。</li>
+<li><font color="#B22222">\d+</font>匹配1个或更多连续的数字。这里的+是和<em>类似的元字符，不同的是</em>匹配重复任意次(可能是0次)，而+则匹配重复1次或更多次。</li>
+<li><font color="#B22222">\b\w{6}\b</font>匹配刚好6个字母/数字的单词。</li>
+<li><font color="#B22222">\bhi\b.*\bLucy\b</font>匹配先是一个单词hi,然后是任意个任意字符(但不能是换行)，最后是Lucy这个单词。</li>
+</ul>
+</blockquote>
+<h4 id="常用的元字符"><a href="#常用的元字符" class="headerlink" title="常用的元字符"></a>常用的元字符</h4><table>
+<thead>
+<tr>
+<th>代码</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font color="#0099ff">.</font><br></td>
+<td style="text-align:center">匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td><font color="#0099ff">\w</font><br></td>
+<td style="text-align:center">匹配字母或数字或下划线或汉字</td>
+</tr>
+<tr>
+<td><font color="#0099ff">\s</font><br></td>
+<td style="text-align:center">匹配任意的空白符</td>
+</tr>
+<tr>
+<td><font color="#0099ff">\d</font><br></td>
+<td style="text-align:center">匹配数字</td>
+</tr>
+<tr>
+<td><font color="#0099ff">\b</font><br></td>
+<td style="text-align:center">匹配单词的开始或结束</td>
+</tr>
+<tr>
+<td><font color="#0099ff">^</font><br></td>
+<td style="text-align:center">匹配字符串的开始</td>
+</tr>
+<tr>
+<td><font color="#0099ff">$</font><br></td>
+<td style="text-align:center">匹配字符串的结束</td>
+</tr>
+</tbody>
+</table>
+<h4 id="和"><a href="#和" class="headerlink" title="^和$"></a>^和$</h4><blockquote>
+<p>元字符^（和数字6在同一个键位上的符号）和$都匹配一个位置，这和\b有点类似。^匹配你要用来查找的字符串的开头，$匹配结尾。这两个代码在验证输入的内容时非常有用，比如一个网站如果要求你填写的QQ号必须为5位到12位数字时，可以使用：^\d{5,12}$。<br> 这里的{5,12}和前面介绍过的{2}是类似的，只不过{2}匹配只能不多不少重复2次，{5,12}则是重复的次数不能少于5次，不能多于12次，否则都不匹配。<br> 因为使用了^和$，所以输入的整个字符串都要用来和\d{5,12}来匹配，也就是说整个输入必须是5到12个数字，因此如果输入的QQ号能匹配这个正则表达式的话，那就符合要求了。</p>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/正则表达式/">正则表达式</a>
     </div>
       <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javar必知必会/">Javar必知必会</a></li></ul>
@@ -850,62 +941,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Configuration</span></div><div class="line"><span class="meta">@EnableSwagger</span>2</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Swagger2</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Bean</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">createRestApi</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</div><div class="line">                .apiInfo(apiInfo())</div><div class="line">                .select()</div><div class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">"com.htime.controller"</span>))</div><div class="line">                .paths(PathSelectors.any())</div><div class="line">                .build();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> ApiInfo <span class="title">apiInfo</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ApiInfoBuilder()</div><div class="line">                .title(<span class="string">"Htime API 文档"</span>)</div><div class="line">                .description(<span class="string">"更多内容请关注：http://blog.zeyu0633.com/"</span>)</div><div class="line">                .termsOfServiceUrl(<span class="string">"http://blog.zeyu0633.com/"</span>)</div><div class="line">                .contact(<span class="string">"Htime"</span>)</div><div class="line">                .version(<span class="string">"1.0"</span>)</div><div class="line">                .build();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>然后就是在你的接口函数上用注解的形式对你的接口进项相关描述，具体可以在以上restful那一块的代码中查看</p>
 <h2 id="分一个割-1"><a href="#分一个割-1" class="headerlink" title="分一个割"></a>分一个割</h2><p>接下来的内容是日志管理和统一异常管理~~~</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/SpringBoot/">SpringBoot</a>
-    </div>
-      <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-  
-    <article id="post-springBootStart" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/26/springBootStart/" class="article-date">
-      <time datetime="2017-02-26T11:30:00.000Z" itemprop="datePublished">2017-02-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/26/springBootStart/">SpringBoot HelloWorld</a>
-    </h1>
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><blockquote>
-<p>版本这东西，说不清道不明</p>
-<ul>
-<li>开发工具：IntelliJ IDEA 2016.3.4</li>
-<li>Java version：1.8.8_101</li>
-<li>maven version： 3.3.3</li>
-</ul>
-</blockquote>
-<h2 id="开始创世纪"><a href="#开始创世纪" class="headerlink" title="开始创世纪"></a>开始创世纪</h2><h3 id="新建工程"><a href="#新建工程" class="headerlink" title="新建工程"></a>新建工程</h3><p>直接使用idea方式新建工程<br><img src="http://upload-images.jianshu.io/upload_images/4943424-69f817e5b7cc0144.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="new"><br>新建完毕，idea中会生成如下工程结构<br><img src="http://upload-images.jianshu.io/upload_images/4943424-d379ea5a6680c516.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="structure"></p>
-<h3 id="POM文件"><a href="#POM文件" class="headerlink" title="POM文件"></a>POM文件</h3><p>增加依赖如下<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- WEB --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h3 id="SpringBoot启动"><a href="#SpringBoot启动" class="headerlink" title="SpringBoot启动"></a>SpringBoot启动</h3><p>除了以下这种直接启动，还可以mvn方式和jar方式<br><img src="http://upload-images.jianshu.io/upload_images/4943424-2f301d754ea8b736.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="start"></p>
-<h3 id="Controller层代码"><a href="#Controller层代码" class="headerlink" title="Controller层代码"></a>Controller层代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by HTime on 2017/2/26.</div><div class="line"> */</div><div class="line"><span class="meta">@RestController</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/hello"</span>, method = RequestMethod.GET)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"Hello World!"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Junit测试"><a href="#Junit测试" class="headerlink" title="Junit测试"></a>Junit测试</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RunWith</span>(SpringJUnit4ClassRunner.class)</div><div class="line"><span class="meta">@WebAppConfiguration</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringbootApplicationTests</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">//模拟mvc对象类.</span></div><div class="line">    <span class="keyword">private</span> MockMvc mvc;</div><div class="line"></div><div class="line">    <span class="meta">@Before</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUp</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        mvc = MockMvcBuilders.standaloneSetup(<span class="keyword">new</span> HelloController()).build();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getHello</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        mvc.perform(MockMvcRequestBuilders.get(<span class="string">"/hello"</span>).accept(MediaType.APPLICATION_JSON))</div><div class="line">                .andExpect(status().isOk())</div><div class="line">                .andExpect(content().string(equalTo(<span class="string">"Hello World!"</span>)));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>运行getHello()可以在Console中打印出 “Hello World!”</p>
       
     </div>
     

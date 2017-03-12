@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-03-12T03:35:47.383Z</updated>
+  <updated>2017-03-12T04:00:25.680Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -14,6 +14,76 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正则表达式 知识点</title>
+    <link href="http://blog.zeyu0633.com/2017/03/12/ze-topics/"/>
+    <id>http://blog.zeyu0633.com/2017/03/12/ze-topics/</id>
+    <published>2017-03-12T04:00:00.000Z</published>
+    <updated>2017-03-12T04:00:25.680Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="常用知识点详解"><a href="#常用知识点详解" class="headerlink" title="常用知识点详解"></a>常用知识点详解</h2><h3 id="元字符详解"><a href="#元字符详解" class="headerlink" title="元字符详解"></a>元字符详解</h3><h4 id="先来看几个栗子"><a href="#先来看几个栗子" class="headerlink" title="先来看几个栗子"></a>先来看几个栗子</h4><blockquote>
+<ul>
+<li><font color="#B22222">\ba\w<em>\b</em></font>匹配以字母a开头的单词——先是某个单词开始处(\b)，然后是字母a,然后是任意数量的字母或数字(\w)，最后是单词结束处(\b)。</li>
+<li><font color="#B22222">\d+</font>匹配1个或更多连续的数字。这里的+是和<em>类似的元字符，不同的是</em>匹配重复任意次(可能是0次)，而+则匹配重复1次或更多次。</li>
+<li><font color="#B22222">\b\w{6}\b</font>匹配刚好6个字母/数字的单词。</li>
+<li><font color="#B22222">\bhi\b.*\bLucy\b</font>匹配先是一个单词hi,然后是任意个任意字符(但不能是换行)，最后是Lucy这个单词。</li>
+</ul>
+</blockquote>
+<h4 id="常用的元字符"><a href="#常用的元字符" class="headerlink" title="常用的元字符"></a>常用的元字符</h4><table>
+<thead>
+<tr>
+<th>代码</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font color="#0099ff">.</font><br></td>
+<td style="text-align:center">匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td><font color="#0099ff">\w</font><br></td>
+<td style="text-align:center">匹配字母或数字或下划线或汉字</td>
+</tr>
+<tr>
+<td><font color="#0099ff">\s</font><br></td>
+<td style="text-align:center">匹配任意的空白符</td>
+</tr>
+<tr>
+<td><font color="#0099ff">\d</font><br></td>
+<td style="text-align:center">匹配数字</td>
+</tr>
+<tr>
+<td><font color="#0099ff">\b</font><br></td>
+<td style="text-align:center">匹配单词的开始或结束</td>
+</tr>
+<tr>
+<td><font color="#0099ff">^</font><br></td>
+<td style="text-align:center">匹配字符串的开始</td>
+</tr>
+<tr>
+<td><font color="#0099ff">$</font><br></td>
+<td style="text-align:center">匹配字符串的结束</td>
+</tr>
+</tbody>
+</table>
+<h4 id="和"><a href="#和" class="headerlink" title="^和$"></a>^和$</h4><blockquote>
+<p>元字符^（和数字6在同一个键位上的符号）和$都匹配一个位置，这和\b有点类似。^匹配你要用来查找的字符串的开头，$匹配结尾。这两个代码在验证输入的内容时非常有用，比如一个网站如果要求你填写的QQ号必须为5位到12位数字时，可以使用：^\d{5,12}$。<br> 这里的{5,12}和前面介绍过的{2}是类似的，只不过{2}匹配只能不多不少重复2次，{5,12}则是重复的次数不能少于5次，不能多于12次，否则都不匹配。<br> 因为使用了^和$，所以输入的整个字符串都要用来和\d{5,12}来匹配，也就是说整个输入必须是5到12个数字，因此如果输入的QQ号能匹配这个正则表达式的话，那就符合要求了。</p>
+</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;常用知识点详解&quot;&gt;&lt;a href=&quot;#常用知识点详解&quot; class=&quot;headerlink&quot; title=&quot;常用知识点详解&quot;&gt;&lt;/a&gt;常用知识点详解&lt;/h2&gt;&lt;h3 id=&quot;元字符详解&quot;&gt;&lt;a href=&quot;#元字符详解&quot; class=&quot;headerlink&quot; ti
+    
+    </summary>
+    
+      <category term="正则表达式" scheme="http://blog.zeyu0633.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+    
+      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+  </entry>
   
   <entry>
     <title>正则表达式 概要</title>
@@ -68,30 +138,30 @@
   </entry>
   
   <entry>
-    <title>正则表达式 Learning Index</title>
-    <link href="http://blog.zeyu0633.com/2017/03/11/zeIndex/"/>
-    <id>http://blog.zeyu0633.com/2017/03/11/zeIndex/</id>
+    <title>Http Learning Index</title>
+    <link href="http://blog.zeyu0633.com/2017/03/11/httpIndex/"/>
+    <id>http://blog.zeyu0633.com/2017/03/11/httpIndex/</id>
     <published>2017-03-11T15:00:00.000Z</published>
-    <updated>2017-03-12T02:42:40.214Z</updated>
+    <updated>2017-03-11T16:30:36.624Z</updated>
     
     <content type="html"><![CDATA[<h3 id="正则表达式介绍"><a href="#正则表达式介绍" class="headerlink" title="正则表达式介绍"></a>正则表达式介绍</h3><blockquote>
-<p>在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要。正则表达式就是用于描述这些规则的工具。换句话说，正则表达式就是记录文本规则的代码。</p>
+<p>超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。</p>
 </blockquote>
 <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/zeIndex/">正则表达式 目录</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/12/ze-Summary/">正则表达式 概要</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/zeIndex/">正则表达式 知识点</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/zeIndex/">正则表达式 实践</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/httpIndex/">Http 目录</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/httpIndex/">Http 协议</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/httpIndex/">Http Cookie</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/httpIndex/">Http Session</a></li>
 </ul>]]></content>
     
     <summary type="html">
     
       &lt;h3 id=&quot;正则表达式介绍&quot;&gt;&lt;a href=&quot;#正则表达式介绍&quot; class=&quot;headerlink&quot; title=&quot;正则表达式介绍&quot;&gt;&lt;/a&gt;正则表达式介绍&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要
+&lt;p&gt;超文本传输协议（HTTP，HyperText Transfer Proto
     
     </summary>
     
-      <category term="正则表达式" scheme="http://blog.zeyu0633.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <category term="HTTP" scheme="http://blog.zeyu0633.com/categories/HTTP/"/>
     
     
       <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
@@ -130,30 +200,30 @@
   </entry>
   
   <entry>
-    <title>Http Learning Index</title>
-    <link href="http://blog.zeyu0633.com/2017/03/11/httpIndex/"/>
-    <id>http://blog.zeyu0633.com/2017/03/11/httpIndex/</id>
+    <title>正则表达式 Learning Index</title>
+    <link href="http://blog.zeyu0633.com/2017/03/11/zeIndex/"/>
+    <id>http://blog.zeyu0633.com/2017/03/11/zeIndex/</id>
     <published>2017-03-11T15:00:00.000Z</published>
-    <updated>2017-03-11T16:30:36.624Z</updated>
+    <updated>2017-03-12T03:51:12.549Z</updated>
     
     <content type="html"><![CDATA[<h3 id="正则表达式介绍"><a href="#正则表达式介绍" class="headerlink" title="正则表达式介绍"></a>正则表达式介绍</h3><blockquote>
-<p>超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。</p>
+<p>在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要。正则表达式就是用于描述这些规则的工具。换句话说，正则表达式就是记录文本规则的代码。</p>
 </blockquote>
 <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/httpIndex/">Http 目录</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/httpIndex/">Http 协议</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/httpIndex/">Http Cookie</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/httpIndex/">Http Session</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/zeIndex/">正则表达式 目录</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/12/ze-Summary/">正则表达式 概要</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/12/ze-topics/">正则表达式 知识点</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/zeIndex/">正则表达式 实践</a></li>
 </ul>]]></content>
     
     <summary type="html">
     
       &lt;h3 id=&quot;正则表达式介绍&quot;&gt;&lt;a href=&quot;#正则表达式介绍&quot; class=&quot;headerlink&quot; title=&quot;正则表达式介绍&quot;&gt;&lt;/a&gt;正则表达式介绍&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;超文本传输协议（HTTP，HyperText Transfer Proto
+&lt;p&gt;在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要
     
     </summary>
     
-      <category term="HTTP" scheme="http://blog.zeyu0633.com/categories/HTTP/"/>
+      <category term="正则表达式" scheme="http://blog.zeyu0633.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
     
       <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
