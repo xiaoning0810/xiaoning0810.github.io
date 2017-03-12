@@ -13,16 +13,28 @@
 
 
 
-<meta name="description" content="忙时专注，闲时自省，警惕忙无章法，闲生杂念">
+<meta name="description" content="常用知识点详解匹配汉字或中文
+正则匹配中文汉字根据页面编码不同而略有区别：GBK/GB2312编码：[x80-xff&amp;gt;]+ 或 [xa1-xff]+UTF-8编码：[x{4e00}-x{9fa5}]+/u
+
+匹配身份证号码
+身份证为15位或者18位，15位的全为数字，18位的前17位为数字，最后一位为数字或者大写字母”X“。与之匹配的正则表达式：(^\d{15}$)|(^\d{17}([0-">
 <meta property="og:type" content="article">
-<meta property="og:title" content="鸡汤">
-<meta property="og:url" content="http://blog.zeyu0633.com/2017/02/24/new/index.html">
+<meta property="og:title" content="正则表达式 实践">
+<meta property="og:url" content="http://blog.zeyu0633.com/2017/03/12/ze-practices/index.html">
 <meta property="og:site_name" content="HTime">
-<meta property="og:description" content="忙时专注，闲时自省，警惕忙无章法，闲生杂念">
-<meta property="og:updated_time" content="2017-03-05T06:22:04.483Z">
+<meta property="og:description" content="常用知识点详解匹配汉字或中文
+正则匹配中文汉字根据页面编码不同而略有区别：GBK/GB2312编码：[x80-xff&amp;gt;]+ 或 [xa1-xff]+UTF-8编码：[x{4e00}-x{9fa5}]+/u
+
+匹配身份证号码
+身份证为15位或者18位，15位的全为数字，18位的前17位为数字，最后一位为数字或者大写字母”X“。与之匹配的正则表达式：(^\d{15}$)|(^\d{17}([0-">
+<meta property="og:updated_time" content="2017-03-12T05:58:15.730Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="鸡汤">
-<meta name="twitter:description" content="忙时专注，闲时自省，警惕忙无章法，闲生杂念">
+<meta name="twitter:title" content="正则表达式 实践">
+<meta name="twitter:description" content="常用知识点详解匹配汉字或中文
+正则匹配中文汉字根据页面编码不同而略有区别：GBK/GB2312编码：[x80-xff&amp;gt;]+ 或 [xa1-xff]+UTF-8编码：[x{4e00}-x{9fa5}]+/u
+
+匹配身份证号码
+身份证为15位或者18位，15位的全为数字，18位的前17位为数字，最后一位为数字或者大写字母”X“。与之匹配的正则表达式：(^\d{15}$)|(^\d{17}([0-">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -54,7 +66,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>鸡汤 | HTime</title>
+<title>正则表达式 实践 | HTime</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -256,11 +268,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-new" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ze-practices" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/24/new/" class="article-date">
-      <time datetime="2017-02-24T09:58:27.000Z" itemprop="datePublished">2017-02-24</time>
+      <a href="/2017/03/12/ze-practices/" class="article-date">
+      <time datetime="2017-03-12T07:00:00.000Z" itemprop="datePublished">2017-03-12</time>
 </a>
     </div>
   
@@ -271,16 +283,16 @@
     
       <header class="article-header">
         <h1 class="article-title" itemprop="name">
-      鸡汤
+      正则表达式 实践
     </h1>
       </header>
       
       <div class="article-info article-info-post">
         <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/鸡汤/">鸡汤</a>
+    <a class="article-category-link" href="/categories/正则表达式/">正则表达式</a>
     </div>
         <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/鸡汤/">鸡汤</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javar必知必会/">Javar必知必会</a></li></ul>
     </div>
         <div class="clearfix"></div>
       </div>
@@ -289,20 +301,50 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>忙时专注，闲时自省，警惕忙无章法，闲生杂念</p>
+        <h2 id="常用知识点详解"><a href="#常用知识点详解" class="headerlink" title="常用知识点详解"></a>常用知识点详解</h2><h3 id="匹配汉字或中文"><a href="#匹配汉字或中文" class="headerlink" title="匹配汉字或中文"></a>匹配汉字或中文</h3><blockquote>
+<p>正则匹配中文汉字根据页面编码不同而略有区别：<br>GBK/GB2312编码：[x80-xff&gt;]+ 或 [xa1-xff]+<br>UTF-8编码：[x{4e00}-x{9fa5}]+/u</p>
+</blockquote>
+<h3 id="匹配身份证号码"><a href="#匹配身份证号码" class="headerlink" title="匹配身份证号码"></a>匹配身份证号码</h3><blockquote>
+<p>身份证为15位或者18位，15位的全为数字，18位的前17位为数字，最后一位为数字或者大写字母”X“。<br>与之匹配的正则表达式：(^\d{15}$)|(^\d{17}([0-9]|X)$)</p>
+</blockquote>
+<h3 id="匹配电子邮箱"><a href="#匹配电子邮箱" class="headerlink" title="匹配电子邮箱"></a>匹配电子邮箱</h3><blockquote>
+<p>正则匹配表达式：/^<a href="[a-z0-9]*[-_]?[a-z0-9]+">a-z</a><em>@([a-z0-9]</em>[-<em>]?[a-z0-9]+)+[.][a-z]{2,3}([.][a-z]{2})?$/i<br>说明：<br>①/内容/i 构成一个不区分大小写的正则表达式；^ 匹配开始；$ 匹配结束。<br>②[a-z] E-Mail前缀必需是一个英文字母开头<br>③([a-z0-9]*[-</em>]?[a-z0-9]+)<em> 和_a_2、aaa11、_1_a<em>2匹配，和a1</em>、aaff<em>33a</em>、a__aa不匹配，如果是空字符，也是匹配的，</em>表示0个或者多个。<br>④<em>表示0个或多个前面的字符.<br>⑤[a-z0-9]</em> 匹配0个或多个英文字母或者数字；[-<em>]? 匹配0个或1“-”，因为“-”不能连续出现。<br>⑥[a-z0-9]+ 匹配1个或多个英文字母或者数字，因为“-”不能做为结尾<br>⑦@ 必需有个有@<br>⑧([a-z0-9]*[-</em>]?[a-z0-9]+)+ 见上面([a-z0-9]<em>[-_]?[a-z0-9]+)</em>解释，但是不能为空，+表示一个或者为多个。<br>⑨[.] 将特殊字符(.)当成普通字符；[a-z]{2,3} 匹配2个至3个英文字母，一般为com或者net等。<br>⑩([.][a-z]{2})? 匹配0个或者1个[.][a-z]{2}(比如.cn等) 我不知道一般.com.cn最后部份是不是都是两位的,如果不是请修改{2}为{起始字数,结束字数} </p>
+</blockquote>
+<h3 id="匹配用户密码"><a href="#匹配用户密码" class="headerlink" title="匹配用户密码"></a>匹配用户密码</h3><blockquote>
+<p>密码形式可以根据开发需求自己设定，下面是几个匹配密码的例子：</p>
+</blockquote>
+<p>正则表达式： ^[a-zA-Z]\w{5,17}$<br>匹配：       以字母开头，长度在6~18之间，只能包含字符、数字和下划线<br>不匹配：     </p>
+<p>正则表达式： [^A-Za-z0-9]<br>匹配：       !@#$ | %^&amp;* | ‘&gt;&lt;?.,&quot;<br>不匹配：     ABC123abc | abc123ABC | abc0132ABC</p>
+<p>正则表达式： (?-i)(?=^.{8,}$)((?!.<em>\s)(?=.</em>[A-Z])(?=.<em>[a-z]))(?=(1)(?=.</em>\d)|.<em>[^A-Za-z0-9])^.</em>$<br>匹配：       a3dAbed. | P@ssword1 | aB_1bbbb | myPassw0rd!<br>不匹配：     password | password12 | password__12 | p@ssw0rd</p>
+<h3 id="匹配日期时间"><a href="#匹配日期时间" class="headerlink" title="匹配日期时间"></a>匹配日期时间</h3><p>正则表达式： (\d{2}|\d{4})(?:-)?([0]{1}\d{1}|[1]{1}[0-2]{1})(?:-)?([0-2]{1}\d{1}|[3]{1}[0-1]{1})(?:\s)?([0-1]{1}\d{1}|[2]{1}[0-3]{1})(?::)?([0-5]{1}\d{1})(?::)?([0-5]{1}\d{1})<br>匹配：       00-00-00 00:00:00 | 0000-00-00 00:00:00 | 09-05-22 08:16:00 | 1970-00-00 00:00:00 | 20090522081600<br>不匹配：   2009-13:01 00:00:00 | 2009-12-32 00:00:00 | 2002-12-31 24:00:00 | 2002-12-31 23:60:00 | 02-12-31 23:00:60</p>
+<p>正则表达式： ^[0-9]{4}-(((0[13578]|(10|12))-(0[1-9]|[1-2][0-9]|3[0-1]))|(02-(0[1-9]|[1-2][0-9]))|((0[469]|11)-(0[1-9]|[1-2][0-9]|30)))$<br>匹配：       2004-04-30 | 2004-02-29<br>不匹配：     2004-04-31 | 2004-02-30</p>
+<p>正则表达式： ^([1-9]|1[0-2]|0[1-9]){1}(:[0-5][0-9][aApP][mM]){1}$<br>匹配：       08:00AM | 10:00am | 7:00pm<br>不匹配：     13:00pm | 12:65am</p>
+<p>正则表达式： ^(([1-9])|(0[1-9])|(1[0-2]))\/(([0-9])|([0-2][0-9])|(3[0-1]))\/(([0-9][0-9])|([1-2][0,9][0-9][0-9]))$<br>匹配：       01/01/2001 | 1/1/1999 | 10/20/2080<br>不匹配：     13/01/2001 | 1/1/1800 | 10/32/2080</p>
+<h3 id="匹配电话号码"><a href="#匹配电话号码" class="headerlink" title="匹配电话号码"></a>匹配电话号码</h3><p>正则表达式： \d{3}-\d{8}|\d{4}-\d{7}<br>匹配：       0511-4405222 | 021-87888822<br>不匹配：     02-552255 12345-784787</p>
+<p>正则表达式： (^([0]\d{2}|\d{4}))(\d{6,7}$)<br>匹配：       (021)1234567 | (0411)123456 | (000)000000<br>不匹配：     (123)1234567 | 025123456 | 0252345678</p>
+<p>正则表达式： ^(?<national>+?(?:86)?)(?<separator>\s?-?)(?<phone>(?<vender>(13|15|18)[0-9])(?<area>\d{4})(?<id>\d{4}))$<br>匹配：       +8613012345678 | 86 13012345678 | 13245679087<br>不匹配：     +86130123456781231434352 | 13560012513 | ++8613012345678</id></vender></phone></separator></national></p>
+<h3 id="匹配字母"><a href="#匹配字母" class="headerlink" title="匹配字母"></a>匹配字母</h3><p>匹配特定字符串：<br>只能输入长度为3的字符：”^.{3}$”。<br>只能输入由26个英文字母组成的字符串：”^[A-Za-z]+$”。<br>只能输入由26个大写英文字母组成的字符串：”^[A-Z]+$”。<br>只能输入由26个小写英文字母组成的字符串：”^[a-z]+$”。<br>只能输入由数字和26个英文字母组成的字符串：”^[A-Za-z0-9]+$”。<br>只能输入由数字、26个英文字母或者下划线组成的字符串：”^\w+$”。</p>
+<h3 id="常用正则表达式大全"><a href="#常用正则表达式大全" class="headerlink" title="常用正则表达式大全"></a>常用正则表达式大全</h3><p>部分匹配规则预览：<br>中国电话号码验证<br>匹配形式如:0511-4405222 或者021-87888822 或者 021-44055520-555 或者 (0511)4405222<br>正则表达式 “((d{3,4})|d{3,4}-)?d{7,8}(-d{3})*”</p>
+<p>中国邮政编码验证<br>匹配形式如:215421<br>正则表达式 “d{6}”</p>
+<p>电子邮件验证<br>匹配形式如:justali@justdn.com<br>正则表达式 “w+([-+.]w+)<em>@w+([-.]w+)</em>.w+([-.]w+)*”</p>
+<p>身份证验证<br>匹配形式如:15位或者18位身份证<br>正则表达式 “d{18}|d{15}”</p>
+<p>常用数字验证<br>正则表达式<br>“d{n}” n为规定长度<br>“d{n,m}” n到m的长度范围</p>
+<p>非法字符验证<br>匹配非法字符如:&lt; &gt; &amp; / ‘ |<br>正则表达式 [^&lt;&gt;&amp;/|’]+</p>
+<p>日期验证<br>匹配形式如:20030718,030718<br>范围:1900–2099<br>正则表达式((((19){1}|(20){1})d{2})|d{2})[01]{1}d{1}[0-3]{1}d{1}<br>正则表达式是一个好东西，但是一般情况下，我们需要验证的内容少之又少。</p>
+<h3 id="FOR-JAVA"><a href="#FOR-JAVA" class="headerlink" title="FOR JAVA"></a>FOR JAVA</h3><p>正则表达式并不仅限于某一种语言，但是在每种语言中有细微的差别。我是一名Javar！</p>
       
     </div>
     
   </div>
   
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/24/new/">鸡汤</a></p>
+        <p><span>本文标题:</span><a href="/2017/03/12/ze-practices/">正则表达式 实践</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Htime</a></p>
-        <p><span>发布时间:</span>2017-02-24, 17:58:27</p>
-        <p><span>最后更新:</span>2017-03-05, 14:22:04</p>
+        <p><span>发布时间:</span>2017-03-12, 15:00:00</p>
+        <p><span>最后更新:</span>2017-03-12, 13:58:15</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/24/new/" title="鸡汤">http://blog.zeyu0633.com/2017/02/24/new/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.zeyu0633.com/2017/02/24/new/　　作者: Htime" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/12/ze-practices/" title="正则表达式 实践">http://blog.zeyu0633.com/2017/03/12/ze-practices/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.zeyu0633.com/2017/03/12/ze-practices/　　作者: Htime" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -315,11 +357,17 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/02/26/markdown/">
-                    Markdown 语法
+                <a href="/2017/03/12/ze-java/">
+                    正则表达式 Java
                 </a>
             </div>
         
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/03/12/ze-topics/">
+                    正则表达式 知识点
+                </a>
+            </div>
         
     </nav>
   
@@ -327,7 +375,7 @@
 <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用知识点详解"><span class="toc-number">1.</span> <span class="toc-text">常用知识点详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配汉字或中文"><span class="toc-number">1.1.</span> <span class="toc-text">匹配汉字或中文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配身份证号码"><span class="toc-number">1.2.</span> <span class="toc-text">匹配身份证号码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配电子邮箱"><span class="toc-number">1.3.</span> <span class="toc-text">匹配电子邮箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配用户密码"><span class="toc-number">1.4.</span> <span class="toc-text">匹配用户密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配日期时间"><span class="toc-number">1.5.</span> <span class="toc-text">匹配日期时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配电话号码"><span class="toc-number">1.6.</span> <span class="toc-text">匹配电话号码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配字母"><span class="toc-number">1.7.</span> <span class="toc-text">匹配字母</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用正则表达式大全"><span class="toc-number">1.8.</span> <span class="toc-text">常用正则表达式大全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FOR-JAVA"><span class="toc-number">1.9.</span> <span class="toc-text">FOR JAVA</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -361,7 +409,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"鸡汤　| HTime　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"正则表达式 实践　| HTime　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -387,7 +435,7 @@
 
 <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/02/26/markdown/" title="上一篇: Markdown 语法">
+            <a href="/2017/03/12/ze-java/" title="上一篇: 正则表达式 Java">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -395,7 +443,9 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/03/12/ze-topics/" title="下一篇: 正则表达式 知识点">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
