@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-03-12T03:33:47.691Z</updated>
+  <updated>2017-03-12T03:35:47.383Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.zeyu0633.com/2017/03/12/ze-Summary/"/>
     <id>http://blog.zeyu0633.com/2017/03/12/ze-Summary/</id>
     <published>2017-03-12T02:00:00.000Z</published>
-    <updated>2017-03-12T03:33:47.691Z</updated>
+    <updated>2017-03-12T03:35:47.383Z</updated>
     
     <content type="html"><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ul>
 <li>什么是正则表达式<blockquote>
@@ -44,7 +44,7 @@
 <p>Back in 2000, when I thought I was going to be a professional writer, I spent hours a day on LiveJournal doing writing practice with other aspiring poets and authors. Since then I’ve blogged at three different domains about web standards, print design, photography, Flash, illustration, information architecture, ColdFusion, package management, PHP, CSS, advertising, Ruby, Rails, and Erlang.</p>
 </blockquote>
 <h3 id="写法以及延伸"><a href="#写法以及延伸" class="headerlink" title="写法以及延伸"></a>写法以及延伸</h3><blockquote>
-<p>可以使用正则表达式<font color="#B22222">on</font><br>精确匹配这样的字符串：由两个字符组成，前一个字符是h,后一个是i。<br>不幸的是，很多单词里包含on这两个连续的字符，比如professional,information等等。用on来查找的话，这里边的on也会被找出来<br>如果要精确地查找on这个单词的话，我们应该使用<font color="#B22222">\bon\b</font>。<br>\b是正则表达式规定的一个特殊代码（好吧，某些人叫它元字符，metacharacter），代表着单词的开头或结尾，也就是单词的分界处。虽然通常英文的单词是由空格，标点符号或者换行来分隔的，但是\b并不匹配这些单词分隔字符中的任何一个，它只匹配一个位置。<br>那么，像<font color="#B22222">\bhi\b.*\bLucy\b</font>，<font color="#B22222">0\d{2}-\d{8}</font>等又代表什么意思呢？<br>慢慢学~~~</p>
+<p>可以使用正则表达式<font color="#B22222">on</font><br>精确匹配这样的字符串：由两个字符组成，前一个字符是o,后一个是n。<br>不幸的是，很多单词里包含on这两个连续的字符，比如professional,information等等。用on来查找的话，这里边的on也会被找出来<br>如果要精确地查找on这个单词的话，我们应该使用<font color="#B22222">\bon\b</font>。<br>\b是正则表达式规定的一个特殊代码（好吧，某些人叫它元字符，metacharacter），代表着单词的开头或结尾，也就是单词的分界处。虽然通常英文的单词是由空格，标点符号或者换行来分隔的，但是\b并不匹配这些单词分隔字符中的任何一个，它只匹配一个位置。<br>那么，像<font color="#B22222">\bhi\b.*\bLucy\b</font>，<font color="#B22222">0\d{2}-\d{8}</font>等又代表什么意思呢？<br>慢慢学~~~</p>
 </blockquote>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
 <li>正则表达式定义了字符串的模式。</li>
