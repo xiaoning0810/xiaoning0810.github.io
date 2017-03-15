@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-03-15T16:06:09.154Z</updated>
+  <updated>2017-03-15T16:08:57.290Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Mysql Learning Index</title>
+    <title>Mysql 优化</title>
     <link href="http://blog.zeyu0633.com/2017/03/17/mysql-better/"/>
     <id>http://blog.zeyu0633.com/2017/03/17/mysql-better/</id>
     <published>2017-03-17T12:00:00.000Z</published>
-    <updated>2017-03-15T16:06:09.154Z</updated>
+    <updated>2017-03-15T16:08:57.290Z</updated>
     
     <summary type="html">
     
@@ -34,11 +34,11 @@
   </entry>
   
   <entry>
-    <title>Mysql Learning Index</title>
+    <title>Mysql 存储过程</title>
     <link href="http://blog.zeyu0633.com/2017/03/16/mysql-process/"/>
     <id>http://blog.zeyu0633.com/2017/03/16/mysql-process/</id>
     <published>2017-03-16T12:00:00.000Z</published>
-    <updated>2017-03-15T16:06:09.125Z</updated>
+    <updated>2017-03-15T16:08:57.259Z</updated>
     
     <summary type="html">
     
@@ -52,11 +52,11 @@
   </entry>
   
   <entry>
-    <title>Mysql Learning Index</title>
+    <title>Mysql 基础</title>
     <link href="http://blog.zeyu0633.com/2017/03/15/mysql-basic/"/>
     <id>http://blog.zeyu0633.com/2017/03/15/mysql-basic/</id>
     <published>2017-03-15T12:00:00.000Z</published>
-    <updated>2017-03-15T16:06:09.093Z</updated>
+    <updated>2017-03-15T16:08:42.698Z</updated>
     
     <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
 <p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
