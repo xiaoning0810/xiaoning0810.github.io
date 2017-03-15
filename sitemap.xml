@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.zeyu0633.com/2017/03/17/mysql-better/</loc>
+    
+    <lastmod>2017-03-15T16:06:09.154Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/03/16/mysql-process/</loc>
+    
+    <lastmod>2017-03-15T16:06:09.125Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/03/15/mysql-basic/</loc>
+    
+    <lastmod>2017-03-15T16:06:09.093Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</loc>
     
-    <lastmod>2017-03-15T16:01:28.421Z</lastmod>
+    <lastmod>2017-03-15T16:06:09.043Z</lastmod>
     
   </url>
   
@@ -12,27 +33,6 @@
     <loc>http://blog.zeyu0633.com/2017/03/11/httpIndex/</loc>
     
     <lastmod>2017-03-15T16:01:28.399Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/03/11/mysql-basic/</loc>
-    
-    <lastmod>2017-03-15T16:01:09.208Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/03/11/mysql-better/</loc>
-    
-    <lastmod>2017-03-15T15:56:15.283Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/03/11/mysql-process/</loc>
-    
-    <lastmod>2017-03-15T15:56:15.263Z</lastmod>
     
   </url>
   

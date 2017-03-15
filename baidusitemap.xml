@@ -4,8 +4,68 @@
 
     
   <url>
+    <loc>http://blog.zeyu0633.com/2017/03/17/mysql-better/</loc>
+    <lastmod>2017-03-15T16:06:09.154Z</lastmod>
+    <data>
+        <display>
+        <title>Mysql Learning Index</title>
+        <pubTime>2017-03-17T12:00:00.000Z</pubTime>
+        
+        <tag>Javar必知必会</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mysql" url="http://blog.zeyu0633.com/categories/Mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/03/16/mysql-process/</loc>
+    <lastmod>2017-03-15T16:06:09.125Z</lastmod>
+    <data>
+        <display>
+        <title>Mysql Learning Index</title>
+        <pubTime>2017-03-16T12:00:00.000Z</pubTime>
+        
+        <tag>Javar必知必会</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mysql" url="http://blog.zeyu0633.com/categories/Mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/03/15/mysql-basic/</loc>
+    <lastmod>2017-03-15T16:06:09.093Z</lastmod>
+    <data>
+        <display>
+        <title>Mysql Learning Index</title>
+        <pubTime>2017-03-15T12:00:00.000Z</pubTime>
+        
+        <tag>Javar必知必会</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mysql" url="http://blog.zeyu0633.com/categories/Mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</loc>
-    <lastmod>2017-03-15T16:01:28.421Z</lastmod>
+    <lastmod>2017-03-15T16:06:09.043Z</lastmod>
     <data>
         <display>
         <title>Mysql Learning Index</title>
@@ -37,66 +97,6 @@
            
              
               <breadCrumb title="HTTP" url="http://blog.zeyu0633.com/categories/HTTP/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/03/11/mysql-basic/</loc>
-    <lastmod>2017-03-15T16:01:09.208Z</lastmod>
-    <data>
-        <display>
-        <title>Mysql Learning Index</title>
-        <pubTime>2017-03-11T15:00:00.000Z</pubTime>
-        
-        <tag>Javar必知必会</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mysql" url="http://blog.zeyu0633.com/categories/Mysql/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/03/11/mysql-better/</loc>
-    <lastmod>2017-03-15T15:56:15.283Z</lastmod>
-    <data>
-        <display>
-        <title>Mysql Learning Index</title>
-        <pubTime>2017-03-11T15:00:00.000Z</pubTime>
-        
-        <tag>Javar必知必会</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mysql" url="http://blog.zeyu0633.com/categories/Mysql/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/03/11/mysql-process/</loc>
-    <lastmod>2017-03-15T15:56:15.263Z</lastmod>
-    <data>
-        <display>
-        <title>Mysql Learning Index</title>
-        <pubTime>2017-03-11T15:00:00.000Z</pubTime>
-        
-        <tag>Javar必知必会</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mysql" url="http://blog.zeyu0633.com/categories/Mysql/"/>
           
         </display>
     </data>
