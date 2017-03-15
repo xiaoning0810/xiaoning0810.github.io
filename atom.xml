@@ -555,25 +555,43 @@
   
   <entry>
     <title>Mysql Learning Index</title>
+    <link href="http://blog.zeyu0633.com/2017/03/11/mysql-process/"/>
+    <id>http://blog.zeyu0633.com/2017/03/11/mysql-process/</id>
+    <published>2017-03-11T15:00:00.000Z</published>
+    <updated>2017-03-15T15:56:15.263Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
+    
+    
+      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql Learning Index</title>
     <link href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/"/>
     <id>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</id>
     <published>2017-03-11T15:00:00.000Z</published>
-    <updated>2017-03-11T16:30:36.636Z</updated>
+    <updated>2017-03-15T16:01:28.421Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="正则表达式介绍"><a href="#正则表达式介绍" class="headerlink" title="正则表达式介绍"></a>正则表达式介绍</h3><blockquote>
-<p>超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。</p>
+    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
+<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
 </blockquote>
 <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
 <li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 基础</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 存储过程</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 优化</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/mysql-basic/">Mysql 基础</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/mysql-process/">Mysql 存储过程</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/mysql-better/">Mysql 优化</a></li>
 </ul>]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;正则表达式介绍&quot;&gt;&lt;a href=&quot;#正则表达式介绍&quot; class=&quot;headerlink&quot; title=&quot;正则表达式介绍&quot;&gt;&lt;/a&gt;正则表达式介绍&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;超文本传输协议（HTTP，HyperText Transfer Proto
+      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些
     
     </summary>
     
@@ -617,14 +635,39 @@
   </entry>
   
   <entry>
+    <title>Mysql Learning Index</title>
+    <link href="http://blog.zeyu0633.com/2017/03/11/mysql-basic/"/>
+    <id>http://blog.zeyu0633.com/2017/03/11/mysql-basic/</id>
+    <published>2017-03-11T15:00:00.000Z</published>
+    <updated>2017-03-15T16:01:09.208Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
+<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
+</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些
+    
+    </summary>
+    
+      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
+    
+    
+      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Http Learning Index</title>
     <link href="http://blog.zeyu0633.com/2017/03/11/httpIndex/"/>
     <id>http://blog.zeyu0633.com/2017/03/11/httpIndex/</id>
     <published>2017-03-11T15:00:00.000Z</published>
-    <updated>2017-03-12T06:42:38.021Z</updated>
+    <updated>2017-03-15T16:01:28.399Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="正则表达式介绍"><a href="#正则表达式介绍" class="headerlink" title="正则表达式介绍"></a>正则表达式介绍</h3><blockquote>
-<p>超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。</p>
+    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
+<p>复写一份勤奋的泥瓦匠同学的博客中的http系列文章</p>
 </blockquote>
 <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
 <li><a href="http://blog.zeyu0633.com/2017/03/12/httpIndex/">Http 目录</a></li>
@@ -635,12 +678,32 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;正则表达式介绍&quot;&gt;&lt;a href=&quot;#正则表达式介绍&quot; class=&quot;headerlink&quot; title=&quot;正则表达式介绍&quot;&gt;&lt;/a&gt;正则表达式介绍&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;超文本传输协议（HTTP，HyperText Transfer Proto
+      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;复写一份勤奋的泥瓦匠同学的博客中的http系列文章&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;目录&quot;&gt;&lt;
     
     </summary>
     
       <category term="HTTP" scheme="http://blog.zeyu0633.com/categories/HTTP/"/>
+    
+    
+      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql Learning Index</title>
+    <link href="http://blog.zeyu0633.com/2017/03/11/mysql-better/"/>
+    <id>http://blog.zeyu0633.com/2017/03/11/mysql-better/</id>
+    <published>2017-03-11T15:00:00.000Z</published>
+    <updated>2017-03-15T15:56:15.283Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
     
     
       <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
@@ -1003,28 +1066,6 @@
     
     
       <category term="技能" scheme="http://blog.zeyu0633.com/tags/%E6%8A%80%E8%83%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>鸡汤</title>
-    <link href="http://blog.zeyu0633.com/2017/02/24/new/"/>
-    <id>http://blog.zeyu0633.com/2017/02/24/new/</id>
-    <published>2017-02-24T09:58:27.000Z</published>
-    <updated>2017-03-05T06:22:04.483Z</updated>
-    
-    <content type="html"><![CDATA[<p>忙时专注，闲时自省，警惕忙无章法，闲生杂念</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;忙时专注，闲时自省，警惕忙无章法，闲生杂念&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="鸡汤" scheme="http://blog.zeyu0633.com/categories/%E9%B8%A1%E6%B1%A4/"/>
-    
-    
-      <category term="鸡汤" scheme="http://blog.zeyu0633.com/tags/%E9%B8%A1%E6%B1%A4/"/>
     
   </entry>
   

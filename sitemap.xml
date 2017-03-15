@@ -2,16 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.zeyu0633.com/2017/03/12/http-http/</loc>
+    <loc>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</loc>
     
-    <lastmod>2017-03-15T15:52:17.547Z</lastmod>
+    <lastmod>2017-03-15T16:01:28.421Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.zeyu0633.com/2017/03/11/httpIndex/</loc>
     
-    <lastmod>2017-03-12T06:42:38.021Z</lastmod>
+    <lastmod>2017-03-15T16:01:28.399Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/03/11/mysql-basic/</loc>
+    
+    <lastmod>2017-03-15T16:01:09.208Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/03/11/mysql-better/</loc>
+    
+    <lastmod>2017-03-15T15:56:15.283Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/03/11/mysql-process/</loc>
+    
+    <lastmod>2017-03-15T15:56:15.263Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/03/12/http-http/</loc>
+    
+    <lastmod>2017-03-15T15:52:17.547Z</lastmod>
     
   </url>
   
@@ -68,13 +96,6 @@
     <loc>http://blog.zeyu0633.com/2017/02/26/markdown/</loc>
     
     <lastmod>2017-03-12T02:32:47.204Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</loc>
-    
-    <lastmod>2017-03-11T16:30:36.636Z</lastmod>
     
   </url>
   

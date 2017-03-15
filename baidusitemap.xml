@@ -4,12 +4,32 @@
 
     
   <url>
-    <loc>http://blog.zeyu0633.com/2017/03/12/http-http/</loc>
-    <lastmod>2017-03-15T15:52:17.547Z</lastmod>
+    <loc>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</loc>
+    <lastmod>2017-03-15T16:01:28.421Z</lastmod>
     <data>
         <display>
-        <title>Http 协议</title>
-        <pubTime>2017-03-12T09:00:00.000Z</pubTime>
+        <title>Mysql Learning Index</title>
+        <pubTime>2017-03-11T15:00:00.000Z</pubTime>
+        
+        <tag>Javar必知必会</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mysql" url="http://blog.zeyu0633.com/categories/Mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/03/11/httpIndex/</loc>
+    <lastmod>2017-03-15T16:01:28.399Z</lastmod>
+    <data>
+        <display>
+        <title>Http Learning Index</title>
+        <pubTime>2017-03-11T15:00:00.000Z</pubTime>
         
         <tag>Javar必知必会</tag>
          
@@ -24,12 +44,72 @@
 
     
   <url>
-    <loc>http://blog.zeyu0633.com/2017/03/11/httpIndex/</loc>
-    <lastmod>2017-03-12T06:42:38.021Z</lastmod>
+    <loc>http://blog.zeyu0633.com/2017/03/11/mysql-basic/</loc>
+    <lastmod>2017-03-15T16:01:09.208Z</lastmod>
     <data>
         <display>
-        <title>Http Learning Index</title>
+        <title>Mysql Learning Index</title>
         <pubTime>2017-03-11T15:00:00.000Z</pubTime>
+        
+        <tag>Javar必知必会</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mysql" url="http://blog.zeyu0633.com/categories/Mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/03/11/mysql-better/</loc>
+    <lastmod>2017-03-15T15:56:15.283Z</lastmod>
+    <data>
+        <display>
+        <title>Mysql Learning Index</title>
+        <pubTime>2017-03-11T15:00:00.000Z</pubTime>
+        
+        <tag>Javar必知必会</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mysql" url="http://blog.zeyu0633.com/categories/Mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/03/11/mysql-process/</loc>
+    <lastmod>2017-03-15T15:56:15.263Z</lastmod>
+    <data>
+        <display>
+        <title>Mysql Learning Index</title>
+        <pubTime>2017-03-11T15:00:00.000Z</pubTime>
+        
+        <tag>Javar必知必会</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mysql" url="http://blog.zeyu0633.com/categories/Mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/03/12/http-http/</loc>
+    <lastmod>2017-03-15T15:52:17.547Z</lastmod>
+    <data>
+        <display>
+        <title>Http 协议</title>
+        <pubTime>2017-03-12T09:00:00.000Z</pubTime>
         
         <tag>Javar必知必会</tag>
          
@@ -197,26 +277,6 @@
            
              
               <breadCrumb title="markkdown" url="http://blog.zeyu0633.com/categories/markkdown/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</loc>
-    <lastmod>2017-03-11T16:30:36.636Z</lastmod>
-    <data>
-        <display>
-        <title>Mysql Learning Index</title>
-        <pubTime>2017-03-11T15:00:00.000Z</pubTime>
-        
-        <tag>Javar必知必会</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mysql" url="http://blog.zeyu0633.com/categories/Mysql/"/>
           
         </display>
     </data>
