@@ -140,13 +140,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -258,7 +258,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me">
 </nav>
       <div class="body-wrap"><article id="post-springBootIndex" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -401,8 +401,8 @@
 </blockquote>
 <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
 <li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-basic/">Mysql 基础</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/15/mysql-process/">Mysql 存储过程</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/15/mysql-basic/">Mysql 基础</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
 <li><a href="http://blog.zeyu0633.com/2017/03/15/mysql-better/">Mysql 优化</a></li>
 </ul>
       
@@ -483,11 +483,11 @@
   
 </article>
   
-    <article id="post-mysql-basic" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-mysql-process" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/16/mysql-basic/" class="article-date">
-      <time datetime="2017-03-16T15:00:00.000Z" itemprop="datePublished">2017-03-16</time>
+      <a href="/2017/03/16/mysql-process/" class="article-date">
+      <time datetime="2017-03-16T12:00:00.000Z" itemprop="datePublished">2017-03-16</time>
 </a>
     </div>
   
@@ -498,7 +498,7 @@
     
       <header class="article-header">
         <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/16/mysql-basic/">Mysql 基础</a>
+      <a class="article-title" href="/2017/03/16/mysql-process/">Mysql 存储过程</a>
     </h1>
       </header>
       
@@ -506,8 +506,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
-<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
+        <blockquote>
 <p>列几个最近写了用到的栗子</p>
 <ul>
 <li>对数据表进行分表，写的一个分表的过程</li>
@@ -519,13 +518,58 @@
 <li>分表之后，后台还没写好，但是接口已经给出去啦，为了方便调试和验证，需要造一些数据，然后写了一个过程</li>
 </ul>
 </blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">DROP PROCEDURE if exists create_data_for_msg;</div><div class="line"></div><div class="line">DELIMITER ;; </div><div class="line">CREATE procedure create_data_for_msg()</div><div class="line">BEGIN</div><div class="line">DECLARE `@i` int(20);</div><div class="line">DECLARE `@t` int(20);</div><div class="line">DECLARE `@u` int(20);</div><div class="line">DECLARE `@sqlstr` varchar(4096);</div><div class="line">SET `@u`=9202739;</div><div class="line">SET `@i`=`@u`%512;</div><div class="line">SET `@t`=0;</div><div class="line"></div><div class="line">WHILE `@t` &lt; 1 DO</div><div class="line"></div><div class="line">SET @sqlstr = CONCAT(</div><div class="line">"INSERT INTO user_msg_group_",`@i`,"( `uid`, `gid`, `des`, `groupType`, `status`, `createDate`, `updateTime`) VALUES",</div><div class="line">   "(",`@u`,", 1002, 123, 5, 0, sysDate(), sysDate()) ON DUPLICATE KEY UPDATE `updateTime` = sysDate();");</div><div class="line"></div><div class="line">PREPARE stmt FROM @sqlstr;</div><div class="line">execute stmt;</div><div class="line"></div><div class="line">SET @sqlstr = CONCAT(</div><div class="line">"INSERT INTO user_msg_",`@i`,"( `uid`, `gid`, `groupType`, `msgType`, `data`, `style`, `status`, `createDate`, `updateTime`) VALUES",</div><div class="line">   "(",`@u`,", 1002, 5, 5001, '261', 101, 0, sysDate(), sysDate()),</div><div class="line">   (",`@u`,", 1002, 5, 5001, '2', 101, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '41', 102, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '86', 102, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '51', 103, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '262', 103, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '263', 103, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '94', 104, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '95', 105, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '52', 201, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '42', 201, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '39', 201, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '53', 202, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '222', 202, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '54', 203, 0, sysDate(), sysDate());"</div><div class="line"></div><div class="line">);</div><div class="line">PREPARE stmt FROM @sqlstr;</div><div class="line">execute stmt;</div><div class="line"></div><div class="line">SET `@t` = `@t` + 1;</div><div class="line">END WHILE;</div><div class="line">END;</div><div class="line">call create_data_for_msg();</div><div class="line">drop procedure create_data_for_msg;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">DROP PROCEDURE if exists create_data_for_msg;</div><div class="line"></div><div class="line">CREATE procedure create_data_for_msg()</div><div class="line">BEGIN</div><div class="line">DECLARE `@i` int(20);</div><div class="line">DECLARE `@t` int(20);</div><div class="line">DECLARE `@u` int(20);</div><div class="line">DECLARE `@sqlstr` varchar(4096);</div><div class="line">SET `@u`=9202739;</div><div class="line">SET `@i`=`@u`%512;</div><div class="line">SET `@t`=0;</div><div class="line"></div><div class="line">WHILE `@t` &lt; 1 DO</div><div class="line"></div><div class="line">SET @sqlstr = CONCAT(</div><div class="line">"INSERT INTO user_msg_group_",`@i`,"( `uid`, `gid`, `des`, `groupType`, `status`, `createDate`, `updateTime`) VALUES",</div><div class="line">   "(",`@u`,", 1002, 123, 5, 0, sysDate(), sysDate()) ON DUPLICATE KEY UPDATE `updateTime` = sysDate();");</div><div class="line"></div><div class="line">PREPARE stmt FROM @sqlstr;</div><div class="line">execute stmt;</div><div class="line"></div><div class="line">SET @sqlstr = CONCAT(</div><div class="line">"INSERT INTO user_msg_",`@i`,"( `uid`, `gid`, `groupType`, `msgType`, `data`, `style`, `status`, `createDate`, `updateTime`) VALUES",</div><div class="line">   "(",`@u`,", 1002, 5, 5001, '261', 101, 0, sysDate(), sysDate()),</div><div class="line">   (",`@u`,", 1002, 5, 5001, '2', 101, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '41', 102, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '86', 102, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '51', 103, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '262', 103, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '263', 103, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '94', 104, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '95', 105, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '52', 201, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '42', 201, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '39', 201, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '53', 202, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '222', 202, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '54', 203, 0, sysDate(), sysDate());"</div><div class="line"></div><div class="line">);</div><div class="line">PREPARE stmt FROM @sqlstr;</div><div class="line">execute stmt;</div><div class="line"></div><div class="line">SET `@t` = `@t` + 1;</div><div class="line">END WHILE;</div><div class="line">END;</div><div class="line">call create_data_for_msg();</div><div class="line">drop procedure create_data_for_msg;</div></pre></td></tr></table></figure>
 <blockquote>
 <ul>
 <li>发一个有关送奖品拉新的活动，需要将不同的奖品散列到不同时间段里，写了一个过程</li>
 </ul>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">DROP PROCEDURE if exists award_pool_insert_prc;</div><div class="line"></div><div class="line">DELIMITER ;;  </div><div class="line">CREATE PROCEDURE award_pool_insert_prc ()  </div><div class="line">BEGIN  </div><div class="line">  </div><div class="line">DECLARE i INT DEFAULT 1;</div><div class="line">  </div><div class="line">##iPhone 7 35  1个</div><div class="line">WHILE i&lt;=1 </div><div class="line">DO  </div><div class="line">	insert into btime_event.award_record_pool ( uuid, awID, status, activeTime, createTime) values( REPLACE(uuid(), '-',''), 35, 0, DATE_ADD('2016-12-26 06:00:00',  INTERVAL  FLOOR(1 + (RAND() * 64800))   SECOND ) ,  now());</div><div class="line">	commit;</div><div class="line">	SET i=i+1;  </div><div class="line">END WHILE ; </div><div class="line">SELECT 'awID: 35  inited' ;</div><div class="line"></div><div class="line">##儿童手表 36 5个 </div><div class="line">SET i=1; </div><div class="line">WHILE i&lt;=1 </div><div class="line">DO  </div><div class="line">	insert into btime_event.award_record_pool ( uuid, awID, status, activeTime, createTime) values( REPLACE(uuid(), '-',''), 36, 0, DATE_ADD('2016-12-19 06:00:00',  INTERVAL  FLOOR(1 + (RAND() * 64800 ))   SECOND ) ,  now());</div><div class="line">	insert into btime_event.award_record_pool ( uuid, awID, status, activeTime, createTime) values( REPLACE(uuid(), '-',''), 36, 0, DATE_ADD('2016-12-20 06:00:00',  INTERVAL  FLOOR(1 + (RAND() * 64800 ))   SECOND ) ,  now());</div><div class="line">	insert into btime_event.award_record_pool ( uuid, awID, status, activeTime, createTime) values( REPLACE(uuid(), '-',''), 36, 0, DATE_ADD('2016-12-21 06:00:00',  INTERVAL  FLOOR(1 + (RAND() * 64800 ))   SECOND ) ,  now());</div><div class="line">	insert into btime_event.award_record_pool ( uuid, awID, status, activeTime, createTime) values( REPLACE(uuid(), '-',''), 36, 0, DATE_ADD('2016-12-22 06:00:00',  INTERVAL  FLOOR(1 + (RAND() * 64800 ))   SECOND ) ,  now());</div><div class="line">	insert into btime_event.award_record_pool ( uuid, awID, status, activeTime, createTime) values( REPLACE(uuid(), '-',''), 36, 0, DATE_ADD('2016-12-23 06:00:00',  INTERVAL  FLOOR(1 + (RAND() * 64800 ))   SECOND ) ,  now());</div><div class="line">	SET i=i+1;  </div><div class="line">END WHILE ; </div><div class="line">commit;</div><div class="line">SELECT 'awID: 36  inited' ;</div><div class="line"></div><div class="line">END;;</div><div class="line">  </div><div class="line">CALL award_pool_insert_prc();</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Mysql/">Mysql</a>
+    </div>
+      <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javar必知必会/">Javar必知必会</a></li></ul>
+    </div>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+  
+    <article id="post-mysql-basic" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/15/mysql-basic/" class="article-date">
+      <time datetime="2017-03-15T15:00:00.000Z" itemprop="datePublished">2017-03-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/15/mysql-basic/">Mysql 基础</a>
+    </h1>
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
+<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
+</blockquote>
       
     </div>
     
@@ -561,49 +605,6 @@
       <header class="article-header">
         <h1 itemprop="name">
       <a class="article-title" href="/2017/03/15/mysql-better/">Mysql 优化</a>
-    </h1>
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Mysql/">Mysql</a>
-    </div>
-      <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javar必知必会/">Javar必知必会</a></li></ul>
-    </div>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-  
-    <article id="post-mysql-process" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/03/15/mysql-process/" class="article-date">
-      <time datetime="2017-03-15T12:00:00.000Z" itemprop="datePublished">2017-03-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/15/mysql-process/">Mysql 存储过程</a>
     </h1>
       </header>
       
@@ -816,14 +817,14 @@
                 2017 Htime
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style="display:none">
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -832,7 +833,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style="display:none">
-                        <span id="page-visit" title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit" title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -847,9 +848,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide()" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide()" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window

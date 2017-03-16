@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-03-16T15:40:02.601Z</updated>
+  <updated>2017-03-16T15:44:52.636Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -16,14 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Mysql 基础</title>
-    <link href="http://blog.zeyu0633.com/2017/03/16/mysql-basic/"/>
-    <id>http://blog.zeyu0633.com/2017/03/16/mysql-basic/</id>
-    <published>2017-03-16T15:00:00.000Z</published>
-    <updated>2017-03-16T15:40:02.601Z</updated>
+    <title>Mysql 存储过程</title>
+    <link href="http://blog.zeyu0633.com/2017/03/16/mysql-process/"/>
+    <id>http://blog.zeyu0633.com/2017/03/16/mysql-process/</id>
+    <published>2017-03-16T12:00:00.000Z</published>
+    <updated>2017-03-16T15:44:52.636Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
-<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
+    <content type="html"><![CDATA[<blockquote>
 <p>列几个最近写了用到的栗子</p>
 <ul>
 <li>对数据表进行分表，写的一个分表的过程</li>
@@ -35,13 +34,43 @@
 <li>分表之后，后台还没写好，但是接口已经给出去啦，为了方便调试和验证，需要造一些数据，然后写了一个过程</li>
 </ul>
 </blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">DROP PROCEDURE if exists create_data_for_msg;</div><div class="line"></div><div class="line">DELIMITER ;; </div><div class="line">CREATE procedure create_data_for_msg()</div><div class="line">BEGIN</div><div class="line">DECLARE `@i` int(20);</div><div class="line">DECLARE `@t` int(20);</div><div class="line">DECLARE `@u` int(20);</div><div class="line">DECLARE `@sqlstr` varchar(4096);</div><div class="line">SET `@u`=9202739;</div><div class="line">SET `@i`=`@u`%512;</div><div class="line">SET `@t`=0;</div><div class="line"></div><div class="line">WHILE `@t` &lt; 1 DO</div><div class="line"></div><div class="line">SET @sqlstr = CONCAT(</div><div class="line">"INSERT INTO user_msg_group_",`@i`,"( `uid`, `gid`, `des`, `groupType`, `status`, `createDate`, `updateTime`) VALUES",</div><div class="line">   "(",`@u`,", 1002, 123, 5, 0, sysDate(), sysDate()) ON DUPLICATE KEY UPDATE `updateTime` = sysDate();");</div><div class="line"></div><div class="line">PREPARE stmt FROM @sqlstr;</div><div class="line">execute stmt;</div><div class="line"></div><div class="line">SET @sqlstr = CONCAT(</div><div class="line">"INSERT INTO user_msg_",`@i`,"( `uid`, `gid`, `groupType`, `msgType`, `data`, `style`, `status`, `createDate`, `updateTime`) VALUES",</div><div class="line">   "(",`@u`,", 1002, 5, 5001, '261', 101, 0, sysDate(), sysDate()),</div><div class="line">   (",`@u`,", 1002, 5, 5001, '2', 101, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '41', 102, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '86', 102, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '51', 103, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '262', 103, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '263', 103, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '94', 104, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '95', 105, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '52', 201, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '42', 201, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '39', 201, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '53', 202, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '222', 202, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '54', 203, 0, sysDate(), sysDate());"</div><div class="line"></div><div class="line">);</div><div class="line">PREPARE stmt FROM @sqlstr;</div><div class="line">execute stmt;</div><div class="line"></div><div class="line">SET `@t` = `@t` + 1;</div><div class="line">END WHILE;</div><div class="line">END;</div><div class="line">call create_data_for_msg();</div><div class="line">drop procedure create_data_for_msg;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">DROP PROCEDURE if exists create_data_for_msg;</div><div class="line"></div><div class="line">CREATE procedure create_data_for_msg()</div><div class="line">BEGIN</div><div class="line">DECLARE `@i` int(20);</div><div class="line">DECLARE `@t` int(20);</div><div class="line">DECLARE `@u` int(20);</div><div class="line">DECLARE `@sqlstr` varchar(4096);</div><div class="line">SET `@u`=9202739;</div><div class="line">SET `@i`=`@u`%512;</div><div class="line">SET `@t`=0;</div><div class="line"></div><div class="line">WHILE `@t` &lt; 1 DO</div><div class="line"></div><div class="line">SET @sqlstr = CONCAT(</div><div class="line">"INSERT INTO user_msg_group_",`@i`,"( `uid`, `gid`, `des`, `groupType`, `status`, `createDate`, `updateTime`) VALUES",</div><div class="line">   "(",`@u`,", 1002, 123, 5, 0, sysDate(), sysDate()) ON DUPLICATE KEY UPDATE `updateTime` = sysDate();");</div><div class="line"></div><div class="line">PREPARE stmt FROM @sqlstr;</div><div class="line">execute stmt;</div><div class="line"></div><div class="line">SET @sqlstr = CONCAT(</div><div class="line">"INSERT INTO user_msg_",`@i`,"( `uid`, `gid`, `groupType`, `msgType`, `data`, `style`, `status`, `createDate`, `updateTime`) VALUES",</div><div class="line">   "(",`@u`,", 1002, 5, 5001, '261', 101, 0, sysDate(), sysDate()),</div><div class="line">   (",`@u`,", 1002, 5, 5001, '2', 101, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '41', 102, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '86', 102, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '51', 103, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '262', 103, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '263', 103, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '94', 104, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '95', 105, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '52', 201, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '42', 201, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '39', 201, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '53', 202, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '222', 202, 0, sysDate(), sysDate()),</div><div class="line">	(",`@u`,", 1002, 5, 5001, '54', 203, 0, sysDate(), sysDate());"</div><div class="line"></div><div class="line">);</div><div class="line">PREPARE stmt FROM @sqlstr;</div><div class="line">execute stmt;</div><div class="line"></div><div class="line">SET `@t` = `@t` + 1;</div><div class="line">END WHILE;</div><div class="line">END;</div><div class="line">call create_data_for_msg();</div><div class="line">drop procedure create_data_for_msg;</div></pre></td></tr></table></figure>
 <blockquote>
 <ul>
 <li>发一个有关送奖品拉新的活动，需要将不同的奖品散列到不同时间段里，写了一个过程</li>
 </ul>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">DROP PROCEDURE if exists award_pool_insert_prc;</div><div class="line"></div><div class="line">DELIMITER ;;  </div><div class="line">CREATE PROCEDURE award_pool_insert_prc ()  </div><div class="line">BEGIN  </div><div class="line">  </div><div class="line">DECLARE i INT DEFAULT 1;</div><div class="line">  </div><div class="line">##iPhone 7 35  1个</div><div class="line">WHILE i&lt;=1 </div><div class="line">DO  </div><div class="line">	insert into btime_event.award_record_pool ( uuid, awID, status, activeTime, createTime) values( REPLACE(uuid(), '-',''), 35, 0, DATE_ADD('2016-12-26 06:00:00',  INTERVAL  FLOOR(1 + (RAND() * 64800))   SECOND ) ,  now());</div><div class="line">	commit;</div><div class="line">	SET i=i+1;  </div><div class="line">END WHILE ; </div><div class="line">SELECT 'awID: 35  inited' ;</div><div class="line"></div><div class="line">##儿童手表 36 5个 </div><div class="line">SET i=1; </div><div class="line">WHILE i&lt;=1 </div><div class="line">DO  </div><div class="line">	insert into btime_event.award_record_pool ( uuid, awID, status, activeTime, createTime) values( REPLACE(uuid(), '-',''), 36, 0, DATE_ADD('2016-12-19 06:00:00',  INTERVAL  FLOOR(1 + (RAND() * 64800 ))   SECOND ) ,  now());</div><div class="line">	insert into btime_event.award_record_pool ( uuid, awID, status, activeTime, createTime) values( REPLACE(uuid(), '-',''), 36, 0, DATE_ADD('2016-12-20 06:00:00',  INTERVAL  FLOOR(1 + (RAND() * 64800 ))   SECOND ) ,  now());</div><div class="line">	insert into btime_event.award_record_pool ( uuid, awID, status, activeTime, createTime) values( REPLACE(uuid(), '-',''), 36, 0, DATE_ADD('2016-12-21 06:00:00',  INTERVAL  FLOOR(1 + (RAND() * 64800 ))   SECOND ) ,  now());</div><div class="line">	insert into btime_event.award_record_pool ( uuid, awID, status, activeTime, createTime) values( REPLACE(uuid(), '-',''), 36, 0, DATE_ADD('2016-12-22 06:00:00',  INTERVAL  FLOOR(1 + (RAND() * 64800 ))   SECOND ) ,  now());</div><div class="line">	insert into btime_event.award_record_pool ( uuid, awID, status, activeTime, createTime) values( REPLACE(uuid(), '-',''), 36, 0, DATE_ADD('2016-12-23 06:00:00',  INTERVAL  FLOOR(1 + (RAND() * 64800 ))   SECOND ) ,  now());</div><div class="line">	SET i=i+1;  </div><div class="line">END WHILE ; </div><div class="line">commit;</div><div class="line">SELECT 'awID: 36  inited' ;</div><div class="line"></div><div class="line">END;;</div><div class="line">  </div><div class="line">CALL award_pool_insert_prc();</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;列几个最近写了用到的栗子&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对数据表进行分表，写的一个分表的过程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter
+    
+    </summary>
+    
+      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
+    
+    
+      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql 基础</title>
+    <link href="http://blog.zeyu0633.com/2017/03/15/mysql-basic/"/>
+    <id>http://blog.zeyu0633.com/2017/03/15/mysql-basic/</id>
+    <published>2017-03-15T15:00:00.000Z</published>
+    <updated>2017-03-16T15:44:52.611Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
+<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
+</blockquote>]]></content>
     
     <summary type="html">
     
@@ -63,24 +92,6 @@
     <id>http://blog.zeyu0633.com/2017/03/15/mysql-better/</id>
     <published>2017-03-15T12:00:00.000Z</published>
     <updated>2017-03-16T15:40:02.647Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
-    
-    
-      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mysql 存储过程</title>
-    <link href="http://blog.zeyu0633.com/2017/03/15/mysql-process/"/>
-    <id>http://blog.zeyu0633.com/2017/03/15/mysql-process/</id>
-    <published>2017-03-15T12:00:00.000Z</published>
-    <updated>2017-03-16T15:40:02.624Z</updated>
     
     <summary type="html">
     
@@ -632,38 +643,6 @@
   </entry>
   
   <entry>
-    <title>正则表达式 Learning Index</title>
-    <link href="http://blog.zeyu0633.com/2017/03/11/zeIndex/"/>
-    <id>http://blog.zeyu0633.com/2017/03/11/zeIndex/</id>
-    <published>2017-03-11T15:00:00.000Z</published>
-    <updated>2017-03-12T05:44:04.897Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="正则表达式介绍"><a href="#正则表达式介绍" class="headerlink" title="正则表达式介绍"></a>正则表达式介绍</h3><blockquote>
-<p>在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要。正则表达式就是用于描述这些规则的工具。换句话说，正则表达式就是记录文本规则的代码。</p>
-</blockquote>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/zeIndex/">正则表达式 目录</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/12/ze-Summary/">正则表达式 概要</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/12/ze-topics/">正则表达式 知识点</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/12/ze-practices/">正则表达式 实践</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/12/ze-java/">正则表达式 java</a></li>
-</ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;正则表达式介绍&quot;&gt;&lt;a href=&quot;#正则表达式介绍&quot; class=&quot;headerlink&quot; title=&quot;正则表达式介绍&quot;&gt;&lt;/a&gt;正则表达式介绍&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要
-    
-    </summary>
-    
-      <category term="正则表达式" scheme="http://blog.zeyu0633.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    
-    
-      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Http Learning Index</title>
     <link href="http://blog.zeyu0633.com/2017/03/11/httpIndex/"/>
     <id>http://blog.zeyu0633.com/2017/03/11/httpIndex/</id>
@@ -701,15 +680,15 @@
     <link href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/"/>
     <id>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</id>
     <published>2017-03-11T15:00:00.000Z</published>
-    <updated>2017-03-16T15:40:02.675Z</updated>
+    <updated>2017-03-16T15:44:52.655Z</updated>
     
     <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
 <p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
 </blockquote>
 <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
 <li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-basic/">Mysql 基础</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/15/mysql-process/">Mysql 存储过程</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/15/mysql-basic/">Mysql 基础</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
 <li><a href="http://blog.zeyu0633.com/2017/03/15/mysql-better/">Mysql 优化</a></li>
 </ul>]]></content>
     
@@ -721,6 +700,38 @@
     </summary>
     
       <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
+    
+    
+      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正则表达式 Learning Index</title>
+    <link href="http://blog.zeyu0633.com/2017/03/11/zeIndex/"/>
+    <id>http://blog.zeyu0633.com/2017/03/11/zeIndex/</id>
+    <published>2017-03-11T15:00:00.000Z</published>
+    <updated>2017-03-12T05:44:04.897Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="正则表达式介绍"><a href="#正则表达式介绍" class="headerlink" title="正则表达式介绍"></a>正则表达式介绍</h3><blockquote>
+<p>在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要。正则表达式就是用于描述这些规则的工具。换句话说，正则表达式就是记录文本规则的代码。</p>
+</blockquote>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/zeIndex/">正则表达式 目录</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/12/ze-Summary/">正则表达式 概要</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/12/ze-topics/">正则表达式 知识点</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/12/ze-practices/">正则表达式 实践</a></li>
+<li><a href="http://blog.zeyu0633.com/2017/03/12/ze-java/">正则表达式 java</a></li>
+</ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;正则表达式介绍&quot;&gt;&lt;a href=&quot;#正则表达式介绍&quot; class=&quot;headerlink&quot; title=&quot;正则表达式介绍&quot;&gt;&lt;/a&gt;正则表达式介绍&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要
+    
+    </summary>
+    
+      <category term="正则表达式" scheme="http://blog.zeyu0633.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
     
       <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
