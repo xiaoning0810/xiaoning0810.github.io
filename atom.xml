@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-03-19T04:29:35.547Z</updated>
+  <updated>2017-03-21T15:17:57.823Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -14,6 +14,111 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Http协议 &amp;&amp; Session &amp;&amp; Cookie</title>
+    <link href="http://blog.zeyu0633.com/2017/03/21/http-http/"/>
+    <id>http://blog.zeyu0633.com/2017/03/21/http-http/</id>
+    <published>2017-03-21T15:00:00.000Z</published>
+    <updated>2017-03-21T15:17:57.823Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>本文主要内容<br><em>铺垫一下http协议的内容
+</em>对于cookie和session，结合实际代码，观察客户端和服务端的表现</p>
+</blockquote>
+<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><blockquote>
+<p>HTTP是一个客户端和服务器端请求和响应的标准TCP。其实建立在TCP之上的。<br>那HTTP协议呢？HTTP协议（HyperText Transfer Protocol）,即超文本传输协议是用于服务器传输到客户端浏览器的传输协议。Web上，服务器和客户端利用HTTP协议进行通信会话。有OOP思想的得出结论：其会话的结构是一个简单的请求/响应序列，即浏览器发出请求和服务器做出响应。</p>
+</blockquote>
+<h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><p>既然HTTP是基于传输层的TCP协议，而TCP协议是面向连接的端到端的协议。因此，使用HTTP协议传输前，首先建立TCP连接，就是因此在谈的TCP链接过程的“三次握手”。如图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4943424-243a015df2090079.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="三次握手"></p>
+<p>在Web上，HTTP协议使用TCP协议而不是UDP协议的原因在于一个网页必须传送很多数据，而且保证其完整性。TCP协议提供传输控制，按顺序组织数据和错误纠正的一系列功能。<br>一次HTTP操作称为一个事务，其工作过程可分为四步：</p>
+<blockquote>
+<p>1、客户端与服务器需要建立连接。（比如某个超级链接，HTTP就开始了。）<br>2、建立连接后，发送请求。<br>3、服务器接到请求后，响应其响应信息。<br>4、客户端接收服务器所返回的信息通过浏览器显示在用户的显示屏上，然后客户机与服务器断开连接。</p>
+</blockquote>
+<p>建立连接，其实建立在TCP连接基础之上。图解核心工作过程（即省去连接过程）如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4943424-387f993533270d62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="链接"></p>
+<h3 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h3><p>HTTP报文由从客户机到服务器的请求和从服务器到客户机的响应构成。<br>请求报文格式如下：</p>
+<blockquote>
+<p>请求行 通用信息头 请求头 实体头 （空行） 报文主体</p>
+</blockquote>
+<p>详解：</p>
+<blockquote>
+<p>1、请求行 方法字段 + URL + Http协议版本<br>2、通用信息头 Cache-Control头域：指定请求和响应遵循的缓存机制。 keep-alive 是其连接持续有效【在下面百度的例子，会得到验证】<br>3、请求头 Host头域，脑补吧 Referer头域：允许客户端指定请求URL的资源地址。 User-Agent头域：请求用户信息。【可以看出一些客户端浏览器的内核信息】<br>4、报文主体，一般来说，请求主体少不了请求参数。</p>
+</blockquote>
+<p>应答报文格式如下：</p>
+<blockquote>
+<p>状态行 通用信息头 响应头 实体头 （空行） 报文主体</p>
+</blockquote>
+<p>详解：</p>
+<blockquote>
+<p>1、状态行 HTTP协议版本 + 状态码 + 状态代码的文本描述 【比如，200 代表请求成功】<br>2、通用信息头 keep-alive 是其连接持续有效，Date头域：时间描述<br>3、响应头 Server头：处理请求的原始服务器的软件信息。<br>4、实体头 Content-Type头：便是接收方实体的介质类型。（这也表示了你的报文主体是什么。） （空行）<br>5、报文主体 这里就是HTML响应页面了，在response中可查看。</p>
+</blockquote>
+<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><h3 id="cookie概述"><a href="#cookie概述" class="headerlink" title="cookie概述"></a>cookie概述</h3><blockquote>
+<ul>
+<li>Cookie是请求头域和响应头域的字段。简单地说，就是伴随请求和响应的一组键值对的文本，小文本。所以称之为”Cookie“饼干。Cookie的生命来源于服务器。首先是客户端请求服务端，此时请求为第一次，无Cookie参数。这时候，服务端setCookie发送给客户端。记住，Cookie来源自服务端。</li>
+<li>Cookie来源自服务端，当然服务于客户。就像你我的会话，文字是在我们之间传递的。所以Cookie用于服务端和客户端的会话。因为Http协议是无状态的，Cookie就是维持会话，说白了就是传递数据的额外媒介。</li>
+</ul>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4943424-bdfd65c9acd0ef3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="cookie传输过程"></p>
+<h3 id="以一个栗子说明上图各个步骤"><a href="#以一个栗子说明上图各个步骤" class="headerlink" title="以一个栗子说明上图各个步骤"></a>以一个栗子说明上图各个步骤</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.htime.controller;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.servlet.ServletException;</div><div class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.Cookie;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.io.PrintWriter;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by HTime on 2017/3/20.</div><div class="line"> */</div><div class="line"><span class="meta">@WebServlet</span>(urlPatterns=<span class="string">"/cookie"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CookieServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</div><div class="line">        <span class="comment">// 获取客户端Cookie</span></div><div class="line">        Cookie[] cookies = req.getCookies();</div><div class="line">        <span class="keyword">for</span> (Cookie cookie : cookies)</div><div class="line">            System.out.println(cookie.getName() + <span class="string">"-"</span> + cookie.getValue());</div><div class="line"></div><div class="line">        <span class="comment">// 创建Cookie</span></div><div class="line">        Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"CookieName"</span>, <span class="string">"Htime"</span>);</div><div class="line">        cookie.setMaxAge(<span class="number">10</span>);</div><div class="line">        cookie.setHttpOnly(<span class="keyword">true</span>);</div><div class="line">        resp.addCookie(cookie);</div><div class="line"></div><div class="line">        <span class="comment">// 响应</span></div><div class="line">        PrintWriter pw = resp.getWriter();</div><div class="line">        pw.print(<span class="string">"&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello,Cookie!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>第一次访问时，在请求头中是不会携带服务端的cookie的</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4943424-0c4af19de2ad7b8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="第一次访问请求头"></p>
+<blockquote>
+<p>访问成功之后，我们可以在响应头中，看到服务端写入的cookie，所以，cookie是服务端的产物！！！！</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4943424-dcd1b4ba9b43c0c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="第一次访问响应头"></p>
+<blockquote>
+<p>当服务器接收到cookie之后，会自己保存起来，用于下次访问使用，当对同一url再一次请求时，可以在请求头中看到cookie</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4943424-379a977aa79d8840.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="第二次访问请求头"></p>
+<blockquote>
+<p>在IDEA的控制台中，可以看到将cookie打印出来了，说明cookie成功传到了服务端</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4943424-833935155a4ea426.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="控制台"></p>
+<blockquote>
+<p>cookie是http协议中的一种会话机制，明白了cookie的传输历程，也就明白什么事cookie啦</p>
+</blockquote>
+<h2 id="session"><a href="#session" class="headerlink" title="session"></a>session</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><blockquote>
+<p>Session代表着服务器和客户端一次会话的过程。直到session失效（服务端关闭），或者客户端关闭时结束。<br>Session 是存储在服务端的，并针对每个客户端（客户），通过SessionID来区别不同用户的。Session是以Cookie技术或URL重写实现。默认以Cookie技术实现，服务端会给这次会话创造一个JSESSIONID的Cookie值。</p>
+</blockquote>
+<h3 id="详解session作用过程"><a href="#详解session作用过程" class="headerlink" title="详解session作用过程"></a>详解session作用过程</h3><p><img src="http://upload-images.jianshu.io/upload_images/4943424-7c3a2a67fc8f5536.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="session作用过程"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.htime.controller;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpSession;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by HTime on 2017/3/21.</div><div class="line"> */</div><div class="line"><span class="meta">@RestController</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SessionByCookieController</span>  <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/sessionInCookie"</span>, method = RequestMethod.GET)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">sessionInCookie</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="comment">//获取session</span></div><div class="line">        HttpSession session = req.getSession();</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (session.isNew()) &#123;</div><div class="line">            <span class="comment">// 设置session属性值</span></div><div class="line">            session.setAttribute(<span class="string">"SessionName"</span>, <span class="string">"Htime"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 获取SessionId</span></div><div class="line">        String sessionId = session.getId();</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (session.isNew()) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="string">"第一次请求,sessionId = "</span> + sessionId;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> <span class="string">"第二次请求,sessionId = "</span> + sessionId + <span class="string">" sessionName = "</span> + session.getAttribute(<span class="string">"SessionName"</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>第一次访问时，服务端会先新建一个session，然后将属性值放进去，此时，这时候，我们不用再把session通过cookie技术处理，容器帮我们处理了。<br>浏览器中会打印出第一次请求，并将sessionId打印出来，并执行了set-cookie</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4943424-13287b686e470485.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="session第一次访问"></p>
+<blockquote>
+<p>第二次访问，服务端会从请求中获取session对象，容器会帮你根据Cookie找到唯一的session对象。<br>浏览器中不仅打印出啦sessionId，也打印出啦属性值，并且没有执行set-cookie</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4943424-603699e495a9b95f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="session第二次访问"></p>
+<h2 id="HTTP协议知识补充"><a href="#HTTP协议知识补充" class="headerlink" title="HTTP协议知识补充"></a>HTTP协议知识补充</h2><h3 id="请求报文相关：请求行-请求方法"><a href="#请求报文相关：请求行-请求方法" class="headerlink" title="请求报文相关：请求行-请求方法"></a>请求报文相关：请求行-请求方法</h3><blockquote>
+<p>GET            请求获取Request-URI所标识的资源<br>POST          在Request-URI所标识的资源后附加新的数据<br>HEAD         请求获取由Request-URI所标识的资源的响应消息报头<br>PUT            请求服务器存储一个资源，并用Request-URI作为其标识<br>DELETE       请求服务器删除Request-URI所标识的资源<br>TRACE        请求服务器回送收到的请求信息，主要用于测试或诊断<br>CONNECT  保留将来使用<br>OPTIONS   请求查询服务器的性能，或者查询与资源相关的选项和需求</p>
+</blockquote>
+<h3 id="响应报文相关：响应行-状态码"><a href="#响应报文相关：响应行-状态码" class="headerlink" title="响应报文相关：响应行-状态码"></a>响应报文相关：响应行-状态码</h3><blockquote>
+<p>1xx：指示信息–表示请求已接收，继续处理<br>2xx：成功–表示请求已被成功接收、理解、接受<br>3xx：重定向–要完成请求必须进行更进一步的操作<br>4xx：客户端错误–请求有语法错误或请求无法实现<br>5xx：服务器端错误–服务器未能实现合法的请求</p>
+</blockquote>
+<h3 id="常见的状态码"><a href="#常见的状态码" class="headerlink" title="常见的状态码"></a>常见的状态码</h3><blockquote>
+<p>200 OK 请求成功（其后是对GET和POST请求的应答文档。）<br>304 Not Modified 未按预期修改文档。客户端有缓冲的文档并发出了一个条件性的请求（一般是提供If-Modified-Since头表示客户只想比指定日期更新的文档）。服务器告诉客户，原来缓冲的文档还可以继续使用。<br>404 Not Found 服务器无法找到被请求的页面。<br>500 Internal Server Error 请求未完成。服务器遇到不可预知的情况。</p>
+</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本文主要内容&lt;br&gt;&lt;em&gt;铺垫一下http协议的内容
+&lt;/em&gt;对于cookie和session，结合实际代码，观察客户端和服务端的表现&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;HTTP协议&quot;&gt;&lt;a href=&quot;#HTTP协议&quot; cl
+    
+    </summary>
+    
+      <category term="HTTP" scheme="http://blog.zeyu0633.com/categories/HTTP/"/>
+    
+    
+      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+  </entry>
   
   <entry>
     <title>Mysql 存储过程</title>
@@ -98,108 +203,6 @@
     </summary>
     
       <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
-    
-    
-      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Http Session</title>
-    <link href="http://blog.zeyu0633.com/2017/03/12/http-session/"/>
-    <id>http://blog.zeyu0633.com/2017/03/12/http-session/</id>
-    <published>2017-03-12T11:00:00.000Z</published>
-    <updated>2017-03-12T06:41:58.619Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="HTTP" scheme="http://blog.zeyu0633.com/categories/HTTP/"/>
-    
-    
-      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Http Cookie</title>
-    <link href="http://blog.zeyu0633.com/2017/03/12/http-cookie/"/>
-    <id>http://blog.zeyu0633.com/2017/03/12/http-cookie/</id>
-    <published>2017-03-12T10:00:00.000Z</published>
-    <updated>2017-03-12T06:41:58.609Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="HTTP" scheme="http://blog.zeyu0633.com/categories/HTTP/"/>
-    
-    
-      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Http 协议</title>
-    <link href="http://blog.zeyu0633.com/2017/03/12/http-http/"/>
-    <id>http://blog.zeyu0633.com/2017/03/12/http-http/</id>
-    <published>2017-03-12T09:00:00.000Z</published>
-    <updated>2017-03-15T15:52:17.547Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="技术基石及概述"><a href="#技术基石及概述" class="headerlink" title="技术基石及概述"></a>技术基石及概述</h3><p>问：什么是HTTP?<br>答：HTTP是一个客户端和服务器端请求和响应的标准TCP。其实建立在TCP之上的。</p>
-<p>当我们打开百度网页时，是这样的：</p>
-<blockquote>
-<p><a href="https://www.baidu.com" target="_blank" rel="external">https://www.baidu.com</a></p>
-</blockquote>
-<p>多了个S，其实S表示TLS、SSL。在这里不做解释，因此HTTP的技术基石如图所示：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4943424-d0520da6b1db8d41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="基石"></p>
-<p>那HTTP协议呢？HTTP协议（HyperText Transfer Protocol）,即超文本传输协议是用于服务器传输到客户端浏览器的传输协议。Web上，服务器和客户端利用HTTP协议进行通信会话。有OOP思想的得出结论：其会话的结构是一个简单的请求/响应序列，即浏览器发出请求和服务器做出响应。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4943424-c19ec9346df71398.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="会话过程"></p>
-<h3 id="深入理解技术基石和工作流程"><a href="#深入理解技术基石和工作流程" class="headerlink" title="深入理解技术基石和工作流程"></a>深入理解技术基石和工作流程</h3><p>既然HTTP是基于传输层的TCP协议，而TCP协议是面向连接的端到端的协议。因此，使用HTTP协议传输前，首先建立TCP连接，就是因此在谈的TCP链接过程的“三次握手”。如图</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4943424-243a015df2090079.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="三次握手"></p>
-<p>在Web上，HTTP协议使用TCP协议而不是UDP协议的原因在于一个网页必须传送很多数据，而且保证其完整性。TCP协议提供传输控制，按顺序组织数据和错误纠正的一系列功能。<br>一次HTTP操作称为一个事务，其工作过程可分为四步：</p>
-<blockquote>
-<p>1、客户端与服务器需要建立连接。（比如某个超级链接，HTTP就开始了。）<br>2、建立连接后，发送请求。<br>3、服务器接到请求后，响应其响应信息。<br>4、客户端接收服务器所返回的信息通过浏览器显示在用户的显示屏上，然后客户机与服务器断开连接。</p>
-</blockquote>
-<p>建立连接，其实建立在TCP连接基础之上。图解核心工作过程（即省去连接过程）如下：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4943424-387f993533270d62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="链接"></p>
-<h3 id="详解工作过程的HTTP报文"><a href="#详解工作过程的HTTP报文" class="headerlink" title="详解工作过程的HTTP报文"></a>详解工作过程的HTTP报文</h3><p>HTTP报文由从客户机到服务器的请求和从服务器到客户机的响应构成。<br>请求报文格式如下：</p>
-<blockquote>
-<p>请求行 通用信息头 请求头 实体头 （空行） 报文主体</p>
-</blockquote>
-<p>详解：</p>
-<blockquote>
-<p>1、请求行 方法字段 + URL + Http协议版本<br>2、通用信息头 Cache-Control头域：指定请求和响应遵循的缓存机制。 keep-alive 是其连接持续有效【在下面百度的例子，会得到验证】<br>3、请求头 Host头域，脑补吧 Referer头域：允许客户端指定请求URL的资源地址。 User-Agent头域：请求用户信息。【可以看出一些客户端浏览器的内核信息】<br>4、报文主体，一般来说，请求主体少不了请求参数。</p>
-</blockquote>
-<p>应答报文格式如下：</p>
-<blockquote>
-<p>状态行 通用信息头 响应头 实体头 （空行） 报文主体</p>
-</blockquote>
-<p>详解：</p>
-<blockquote>
-<p>1、状态行 HTTP协议版本 + 状态码 + 状态代码的文本描述 【比如，200 代表请求成功】<br>2、通用信息头 keep-alive 是其连接持续有效，Date头域：时间描述<br>3、响应头 Server头：处理请求的原始服务器的软件信息。<br>4、实体头 Content-Type头：便是接收方实体的介质类型。（这也表示了你的报文主体是什么。） （空行）<br>5、报文主体 这里就是HTML响应页面了，在response中可查看。</p>
-</blockquote>
-<h3 id="HTTP协议知识补充"><a href="#HTTP协议知识补充" class="headerlink" title="HTTP协议知识补充"></a>HTTP协议知识补充</h3><p>请求报文相关：请求行-请求方法</p>
-<blockquote>
-<p>GET            请求获取Request-URI所标识的资源<br>POST          在Request-URI所标识的资源后附加新的数据<br>HEAD         请求获取由Request-URI所标识的资源的响应消息报头<br>PUT            请求服务器存储一个资源，并用Request-URI作为其标识<br>DELETE       请求服务器删除Request-URI所标识的资源<br>TRACE        请求服务器回送收到的请求信息，主要用于测试或诊断<br>CONNECT  保留将来使用<br>OPTIONS   请求查询服务器的性能，或者查询与资源相关的选项和需求</p>
-</blockquote>
-<p>响应报文相关：响应行-状态码</p>
-<blockquote>
-<p>1xx：指示信息–表示请求已接收，继续处理<br>2xx：成功–表示请求已被成功接收、理解、接受<br>3xx：重定向–要完成请求必须进行更进一步的操作<br>4xx：客户端错误–请求有语法错误或请求无法实现<br>5xx：服务器端错误–服务器未能实现合法的请求</p>
-</blockquote>
-<p>常见的状态码</p>
-<blockquote>
-<p>200 OK 请求成功（其后是对GET和POST请求的应答文档。）<br>304 Not Modified 未按预期修改文档。客户端有缓冲的文档并发出了一个条件性的请求（一般是提供If-Modified-Since头表示客户只想比指定日期更新的文档）。服务器告诉客户，原来缓冲的文档还可以继续使用。<br>404 Not Found 服务器无法找到被请求的页面。<br>500 Internal Server Error 请求未完成。服务器遇到不可预知的情况。</p>
-</blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;技术基石及概述&quot;&gt;&lt;a href=&quot;#技术基石及概述&quot; class=&quot;headerlink&quot; title=&quot;技术基石及概述&quot;&gt;&lt;/a&gt;技术基石及概述&lt;/h3&gt;&lt;p&gt;问：什么是HTTP?&lt;br&gt;答：HTTP是一个客户端和服务器端请求和响应的标准TCP。其实建立在TC
-    
-    </summary>
-    
-      <category term="HTTP" scheme="http://blog.zeyu0633.com/categories/HTTP/"/>
     
     
       <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
@@ -675,39 +678,6 @@
   </entry>
   
   <entry>
-    <title>Http Learning Index</title>
-    <link href="http://blog.zeyu0633.com/2017/03/11/httpIndex/"/>
-    <id>http://blog.zeyu0633.com/2017/03/11/httpIndex/</id>
-    <published>2017-03-11T15:00:00.000Z</published>
-    <updated>2017-03-15T16:01:28.399Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
-<p>复写一份勤奋的泥瓦匠同学的博客中的http系列文章</p>
-</blockquote>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li><a href="http://blog.zeyu0633.com/2017/03/12/httpIndex/">Http 目录</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/12/http-http/">Http 协议</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/12/http-cookie/">Http Cookie</a></li>
-<li><a href="http://blog.zeyu0633.com/2017/03/12/http-session/">Http Session</a></li>
-</ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;复写一份勤奋的泥瓦匠同学的博客中的http系列文章&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;目录&quot;&gt;&lt;
-    
-    </summary>
-    
-      <category term="HTTP" scheme="http://blog.zeyu0633.com/categories/HTTP/"/>
-    
-    
-      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Mysql Learning Index</title>
     <link href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/"/>
     <id>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</id>
@@ -1094,6 +1064,28 @@
     
     
       <category term="技能" scheme="http://blog.zeyu0633.com/tags/%E6%8A%80%E8%83%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>鸡汤</title>
+    <link href="http://blog.zeyu0633.com/2017/02/24/new/"/>
+    <id>http://blog.zeyu0633.com/2017/02/24/new/</id>
+    <published>2017-02-24T09:58:27.000Z</published>
+    <updated>2017-03-05T06:22:04.483Z</updated>
+    
+    <content type="html"><![CDATA[<p>忙时专注，闲时自省，警惕忙无章法，闲生杂念</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;忙时专注，闲时自省，警惕忙无章法，闲生杂念&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="鸡汤" scheme="http://blog.zeyu0633.com/categories/%E9%B8%A1%E6%B1%A4/"/>
+    
+    
+      <category term="鸡汤" scheme="http://blog.zeyu0633.com/tags/%E9%B8%A1%E6%B1%A4/"/>
     
   </entry>
   

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.zeyu0633.com/2017/03/21/http-http/</loc>
+    
+    <lastmod>2017-03-21T15:17:57.823Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.zeyu0633.com/2017/03/16/mysql-process/</loc>
     
     <lastmod>2017-03-19T04:29:35.547Z</lastmod>
@@ -26,34 +33,6 @@
     <loc>http://blog.zeyu0633.com/2017/03/15/mysql-better/</loc>
     
     <lastmod>2017-03-16T15:40:02.647Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/03/11/httpIndex/</loc>
-    
-    <lastmod>2017-03-15T16:01:28.399Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/03/12/http-http/</loc>
-    
-    <lastmod>2017-03-15T15:52:17.547Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/03/12/http-session/</loc>
-    
-    <lastmod>2017-03-12T06:41:58.619Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/03/12/http-cookie/</loc>
-    
-    <lastmod>2017-03-12T06:41:58.609Z</lastmod>
     
   </url>
   
