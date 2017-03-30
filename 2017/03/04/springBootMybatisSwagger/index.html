@@ -18,12 +18,7 @@
 
 Mybatis集成
 Restful接口提供
-Swagger2集成
-
-
-分一个割工程结构工程结构尽量做到清晰，分层合理
-springboot集成Mybatispom文件中需引入
-12345678910111213&amp;lt;!-- Spring Boot Mybatis 依赖 --&amp;gt;&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.">
+Swagger2集成">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot Mybatis Restful Swagger2">
 <meta property="og:url" content="http://blog.zeyu0633.com/2017/03/04/springBootMybatisSwagger/index.html">
@@ -33,16 +28,11 @@ springboot集成Mybatispom文件中需引入
 
 Mybatis集成
 Restful接口提供
-Swagger2集成
-
-
-分一个割工程结构工程结构尽量做到清晰，分层合理
-springboot集成Mybatispom文件中需引入
-12345678910111213&amp;lt;!-- Spring Boot Mybatis 依赖 --&amp;gt;&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.">
+Swagger2集成">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-2f4d1f94c3582730.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-97579134276c2413.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-c58f8f779d9e92e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-03-11T16:13:08.855Z">
+<meta property="og:updated_time" content="2017-03-30T05:25:31.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot Mybatis Restful Swagger2">
 <meta name="twitter:description" content="要完成的事情
@@ -50,12 +40,7 @@ springboot集成Mybatispom文件中需引入
 
 Mybatis集成
 Restful接口提供
-Swagger2集成
-
-
-分一个割工程结构工程结构尽量做到清晰，分层合理
-springboot集成Mybatispom文件中需引入
-12345678910111213&amp;lt;!-- Spring Boot Mybatis 依赖 --&amp;gt;&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.">
+Swagger2集成">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4943424-2f4d1f94c3582730.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -331,6 +316,7 @@ springboot集成Mybatispom文件中需引入
 <li>Swagger2集成</li>
 </ul>
 </blockquote>
+<a id="more"></a>
 <h2 id="分一个割"><a href="#分一个割" class="headerlink" title="分一个割"></a>分一个割</h2><h3 id="工程结构"><a href="#工程结构" class="headerlink" title="工程结构"></a>工程结构</h3><p>工程结构尽量做到清晰，分层合理<br><img src="http://upload-images.jianshu.io/upload_images/4943424-2f4d1f94c3582730.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="structure"></p>
 <h3 id="springboot集成Mybatis"><a href="#springboot集成Mybatis" class="headerlink" title="springboot集成Mybatis"></a>springboot集成Mybatis</h3><p>pom文件中需引入</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Spring Boot Mybatis 依赖 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;mybatis-spring-boot&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- MySQL 连接驱动依赖 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;mysql-connector&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -355,7 +341,7 @@ springboot集成Mybatispom文件中需引入
         <p><span>本文标题:</span><a href="/2017/03/04/springBootMybatisSwagger/">SpringBoot Mybatis Restful Swagger2</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Htime</a></p>
         <p><span>发布时间:</span>2017-03-04, 19:30:00</p>
-        <p><span>最后更新:</span>2017-03-12, 00:13:08</p>
+        <p><span>最后更新:</span>2017-03-30, 13:25:31</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/04/springBootMybatisSwagger/" title="SpringBoot Mybatis Restful Swagger2">http://blog.zeyu0633.com/2017/03/04/springBootMybatisSwagger/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.zeyu0633.com/2017/03/04/springBootMybatisSwagger/　　作者: Htime" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

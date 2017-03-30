@@ -16,11 +16,7 @@
 <meta name="description" content="要完成的事情
 只有一点，但是很重要，因为http是无状态的，如果我们设计出来的架构不够安全，那么这一系列的操作都是白搭。
 
-身份认证
-
-
-分一个割身份验证
-首先根据City相关操作，实现一个关于User的相关操作，从controller一直到sql，就不上代码了，比较简单整体思路就是在用户登录时生成一个token，然后以后的所有请求，header中都携带这个token，服务器对token进行检验通">
+身份认证">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot 身份认证">
 <meta property="og:url" content="http://blog.zeyu0633.com/2017/03/05/springBootAuth/index.html">
@@ -28,25 +24,17 @@
 <meta property="og:description" content="要完成的事情
 只有一点，但是很重要，因为http是无状态的，如果我们设计出来的架构不够安全，那么这一系列的操作都是白搭。
 
-身份认证
-
-
-分一个割身份验证
-首先根据City相关操作，实现一个关于User的相关操作，从controller一直到sql，就不上代码了，比较简单整体思路就是在用户登录时生成一个token，然后以后的所有请求，header中都携带这个token，服务器对token进行检验通">
+身份认证">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-224e533671ec1a90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-f005157327dafda6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-cb03eb849051fb59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-03-11T16:11:10.932Z">
+<meta property="og:updated_time" content="2017-03-30T05:25:31.550Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot 身份认证">
 <meta name="twitter:description" content="要完成的事情
 只有一点，但是很重要，因为http是无状态的，如果我们设计出来的架构不够安全，那么这一系列的操作都是白搭。
 
-身份认证
-
-
-分一个割身份验证
-首先根据City相关操作，实现一个关于User的相关操作，从controller一直到sql，就不上代码了，比较简单整体思路就是在用户登录时生成一个token，然后以后的所有请求，header中都携带这个token，服务器对token进行检验通">
+身份认证">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4943424-224e533671ec1a90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -320,6 +308,7 @@
 <li>身份认证</li>
 </ul>
 </blockquote>
+<a id="more"></a>
 <h2 id="分一个割"><a href="#分一个割" class="headerlink" title="分一个割"></a>分一个割</h2><h3 id="身份验证"><a href="#身份验证" class="headerlink" title="身份验证"></a>身份验证</h3><blockquote>
 <p>首先根据City相关操作，实现一个关于User的相关操作，从controller一直到sql，就不上代码了，比较简单<br>整体思路就是在用户登录时生成一个token，然后以后的所有请求，header中都携带这个token，服务器对token进行检验<br>通过AccessTokenVerifyInterceptor，来实现拦截，要避开对auth接口的拦截</p>
 </blockquote>
@@ -351,7 +340,7 @@
         <p><span>本文标题:</span><a href="/2017/03/05/springBootAuth/">SpringBoot 身份认证</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Htime</a></p>
         <p><span>发布时间:</span>2017-03-05, 23:30:00</p>
-        <p><span>最后更新:</span>2017-03-12, 00:11:10</p>
+        <p><span>最后更新:</span>2017-03-30, 13:25:31</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/05/springBootAuth/" title="SpringBoot 身份认证">http://blog.zeyu0633.com/2017/03/05/springBootAuth/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.zeyu0633.com/2017/03/05/springBootAuth/　　作者: Htime" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
