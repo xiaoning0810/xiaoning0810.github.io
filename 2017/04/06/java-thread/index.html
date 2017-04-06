@@ -27,7 +27,7 @@
 认识线程
 认识synchronized
 其他关于线程的知识【中断、协作】">
-<meta property="og:updated_time" content="2017-04-06T14:51:41.125Z">
+<meta property="og:updated_time" content="2017-04-06T14:54:52.922Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 线程">
 <meta name="twitter:description" content="纲要
@@ -325,8 +325,8 @@
 <ul>
 <li>run方法的方法签名是固定的，public，没有参数，没有返回值，不能抛出受检异常</li>
 </ul>
-<p>执行方式</p>
 </blockquote>
+<p>执行方式</p>
 <pre><code>Thread thread = new HelloThread();
 thread.start();
 </code></pre><p>创建一个线程对象，然后调用start方法，这样，线程就起来啦</p>
@@ -342,9 +342,7 @@ thread.start();
 <li>实现Runnable接口<br>通过继承Thread来实现线程虽然比较简单，但我们知道，Java中只支持单继承，每个类最多只能有一个父类，如果类已经有父类了，就不能再继承Thread，这时，可以通过实现java.lang.Runnable接口来实现线程。<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloRunnable</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"hello thread!"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<blockquote>
 <p>执行方式</p>
-</blockquote>
 <pre><code>Thread helloThread = new Thread(new HelloRunnable());
 helloThread.start();
 </code></pre><blockquote>
@@ -364,7 +362,7 @@ helloThread.start();
         <p><span>本文标题:</span><a href="/2017/04/06/java-thread/">Java 线程</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Htime</a></p>
         <p><span>发布时间:</span>2017-04-06, 23:00:00</p>
-        <p><span>最后更新:</span>2017-04-06, 22:51:41</p>
+        <p><span>最后更新:</span>2017-04-06, 22:54:52</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/04/06/java-thread/" title="Java 线程">http://blog.zeyu0633.com/2017/04/06/java-thread/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.zeyu0633.com/2017/04/06/java-thread/　　作者: Htime" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
