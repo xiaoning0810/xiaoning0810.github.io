@@ -13,16 +13,28 @@
 
 
 
-<meta name="description" content="忙时专注，闲时自省，切勿忙无章法，闲生杂念">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://blog.zeyu0633.com/tags/index.html">
+<meta name="description" content="纲要
+
+认识线程
+认识synchronized
+其他关于线程的知识【中断、协作】">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 线程">
+<meta property="og:url" content="http://blog.zeyu0633.com/2017/04/06/java-thread/index.html">
 <meta property="og:site_name" content="HTime">
-<meta property="og:description" content="忙时专注，闲时自省，切勿忙无章法，闲生杂念">
-<meta property="og:updated_time" content="2017-02-24T11:59:27.698Z">
+<meta property="og:description" content="纲要
+
+认识线程
+认识synchronized
+其他关于线程的知识【中断、协作】">
+<meta property="og:updated_time" content="2017-04-06T14:51:41.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="忙时专注，闲时自省，切勿忙无章法，闲生杂念">
+<meta name="twitter:title" content="Java 线程">
+<meta name="twitter:description" content="纲要
+
+认识线程
+认识synchronized
+其他关于线程的知识【中断、协作】">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -54,7 +66,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>tags | HTime</title>
+<title>Java 线程 | HTime</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -64,7 +76,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -256,11 +268,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-java-thread" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-      <time datetime="2017-02-24T11:59:27.000Z" itemprop="datePublished">2017-02-24</time>
+      <a href="/2017/04/06/java-thread/" class="article-date">
+      <time datetime="2017-04-06T15:00:00.000Z" itemprop="datePublished">2017-04-06</time>
 </a>
     </div>
   
@@ -271,13 +283,17 @@
     
       <header class="article-header">
         <h1 class="article-title" itemprop="name">
-      tags
+      Java 线程
     </h1>
       </header>
       
       <div class="article-info article-info-post">
-        
-        
+        <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/线程/">线程</a>
+    </div>
+        <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javar必知必会/">Javar必知必会</a></li></ul>
+    </div>
         <div class="clearfix"></div>
       </div>
       
@@ -285,94 +301,116 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
-
-
-    <!-- Tag Cloud Page -->
-    <hr>
-<br>
-<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mysql/">Mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Quick-Quiz/">Quick Quiz</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/markkdown/">markkdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/正则表达式/">正则表达式</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/线程/">线程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/鸡汤/">鸡汤</a><span class="category-list-count">1</span></li></ul>
-
-<p class="count"></p>
-
-<div class="tags">
-    <a href="/tags/Java/" style="font-size: 25.5px; color: #404040">Java</a> <a href="/tags/Javar必知必会/" style="font-size: 35px; color: #000">Javar必知必会</a> <a href="/tags/全栈/" style="font-size: 16px; color: #808080">全栈</a> <a href="/tags/技能/" style="font-size: 16px; color: #808080">技能</a> <a href="/tags/鸡汤/" style="font-size: 16px; color: #808080">鸡汤</a>
-</div>
-<style>
-    .category-list li{
-        display: inline-block;
-        margin: 0 1em .5em 0;
-        padding: 4px;
-        border: 1px solid lightgray;
-        font-size: 1.2rem;
-    }
-    .category-list a { color: gray; }
-    .category-list-item:hover a {
-        color: gray;
-        text-decoration: none;
-    }
-    .category-list-count {
-        margin-left: 2px;
-        font-size: .9rem;
-    }
-    .article-entry ul li:before{ display: none; }
-    .article-inner { text-align: center; }
-    .tags {
-        max-width: 42em;
-        margin: 2em auto;
-        margin-top: 0em;
-    }
-    .tags a {
-        margin-right: 1em;
-        line-height: 65px;
-        border-bottom: 1px solid gray;
-        white-space: nowrap;
-        transition: border-bottom .5s;
-    }
-    .tags a:hover {
-        border-bottom: 3px dotted gray;
-        text-decoration: none;
-    }
-    #count > span {
-        margin: auto .2em;
-        font-weight: bold;
-    }
-</style>
-
-<!-- Count tags and categories -->
-<p id="count">
-        已有<span><script>document.write($(".category-list-item").length)</script></span>个分类，
-        共计<span><script>document.write($(".tags > a").length)</script></span>个标签
-</p>
-<script>
-    $('#count').appendTo('.count');
-</script>
-          
-        
+        <blockquote>
+<p>纲要</p>
+<ul>
+<li>认识线程</li>
+<li>认识synchronized</li>
+<li>其他关于线程的知识【中断、协作】</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<h2 id="认识线程"><a href="#认识线程" class="headerlink" title="认识线程"></a>认识线程</h2><h3 id="什么是线程"><a href="#什么是线程" class="headerlink" title="什么是线程"></a>什么是线程</h3><blockquote>
+<p>线程表示一条单独的执行流，它有自己的程序执行计数器，有自己的栈。</p>
+</blockquote>
+<h3 id="如何使用线程"><a href="#如何使用线程" class="headerlink" title="如何使用线程"></a>如何使用线程</h3><blockquote>
+<p>在Java中创建线程有两种方式，一种是继承Thread，另外一种是实现Runnable接口</p>
+</blockquote>
+<ul>
+<li>继承Thread<br>Java中java.lang.Thread这个类表示线程，一个类可以继承Thread并重写其run方法来实现一个线程<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"hello thread!"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>注意点</p>
+<ul>
+<li>run方法的方法签名是固定的，public，没有参数，没有返回值，不能抛出受检异常</li>
+</ul>
+<p>执行方式</p>
+</blockquote>
+<pre><code>Thread thread = new HelloThread();
+thread.start();
+</code></pre><p>创建一个线程对象，然后调用start方法，这样，线程就起来啦</p>
+<blockquote>
+<p>注意点</p>
+<ul>
+<li>只有调用start方法，才能启动线程，使其成为一条独立的执行语句</li>
+<li>如果是调用run方法，那么代码依然在原先的线程中执行，run只是一个普通的方法调用</li>
+</ul>
+</blockquote>
+<p>要想验证，Thread有一个静态方法currentThread，返回当前执行的线程对象，每个Thread都有一个id和name<br>可以通过Thread.currentThread().getName()来打印出线程名称来验证。</p>
+<ul>
+<li>实现Runnable接口<br>通过继承Thread来实现线程虽然比较简单，但我们知道，Java中只支持单继承，每个类最多只能有一个父类，如果类已经有父类了，就不能再继承Thread，这时，可以通过实现java.lang.Runnable接口来实现线程。<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloRunnable</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"hello thread!"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>执行方式</p>
+</blockquote>
+<pre><code>Thread helloThread = new Thread(new HelloRunnable());
+helloThread.start();
+</code></pre><blockquote>
+<p>注意点</p>
+<ul>
+<li>仅仅实现Runnable是不够的，要启动线程，还是要创建一个Thread对象，但传递一个Runnable对象</li>
+<li>无论是通过继承Thead还是实现Runnable接口来实现线程，启动线程都是调用Thread对象的start方法。</li>
+</ul>
+</blockquote>
+<h3 id="除此之外？"><a href="#除此之外？" class="headerlink" title="除此之外？"></a>除此之外？</h3>
       
     </div>
     
   </div>
   
-    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/04/06/java-thread/">Java 线程</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Htime</a></p>
+        <p><span>发布时间:</span>2017-04-06, 23:00:00</p>
+        <p><span>最后更新:</span>2017-04-06, 22:51:41</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/04/06/java-thread/" title="Java 线程">http://blog.zeyu0633.com/2017/04/06/java-thread/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.zeyu0633.com/2017/04/06/java-thread/　　作者: Htime" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/03/26/APP-Index-A/">
+                    APP一条龙
+                </a>
+            </div>
+        
+    </nav>
   
 </article>
+<div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#认识线程"><span class="toc-number">1.</span> <span class="toc-text">认识线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是线程"><span class="toc-number">1.1.</span> <span class="toc-text">什么是线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何使用线程"><span class="toc-number">1.2.</span> <span class="toc-text">如何使用线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#除此之外？"><span class="toc-number">1.3.</span> <span class="toc-text">除此之外？</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
 
+    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
     <div class="share">
@@ -388,7 +426,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"tags　| HTime　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Java 线程　| HTime　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -412,7 +450,21 @@
     
 
 
+<div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
 
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/03/26/APP-Index-A/" title="下一篇: APP一条龙">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/04/06/java-thread/">Java 线程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/26/APP-Index-A/">APP一条龙</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/http-http/">Http协议 && Session && Cookie</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/16/mysql-process/">Mysql 存储过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/15/mysql-basic/">Mysql 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/15/mysql-better/">Mysql 优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/ze-java/">正则表达式 Java</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/ze-practices/">正则表达式 实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/ze-topics/">正则表达式 知识点</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/ze-Summary/">正则表达式 概要</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/11/mysqlIndex/">Mysql Learning Index</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/11/zeIndex/">正则表达式 Learning Index</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/06/springBootDubbo/">SpringBoot 集成Dubbo</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/springBootAuth/">SpringBoot 身份认证</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/05/springBootExceptionAOPLog4j/">SpringBoot 日志管理，统一异常处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/04/springBootMybatisSwagger/">SpringBoot Mybatis Restful Swagger2</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/springBootStart/">SpringBoot HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/springBootIndex/">SpringBoot Learning Index</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/26/markdown/">Markdown 语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/24/new/">鸡汤</a></li></ul>
 
 
     <script>
