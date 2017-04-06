@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-04-06T14:54:52.922Z</updated>
+  <updated>2017-04-06T15:34:45.553Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.zeyu0633.com/2017/04/06/java-thread/"/>
     <id>http://blog.zeyu0633.com/2017/04/06/java-thread/</id>
     <published>2017-04-06T15:00:00.000Z</published>
-    <updated>2017-04-06T14:54:52.922Z</updated>
+    <updated>2017-04-06T15:34:45.553Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>纲要</p>
@@ -31,12 +31,8 @@
 </ul>
 </blockquote>
 <a id="more"></a>
-<h2 id="认识线程"><a href="#认识线程" class="headerlink" title="认识线程"></a>认识线程</h2><h3 id="什么是线程"><a href="#什么是线程" class="headerlink" title="什么是线程"></a>什么是线程</h3><blockquote>
-<p>线程表示一条单独的执行流，它有自己的程序执行计数器，有自己的栈。</p>
-</blockquote>
-<h3 id="如何使用线程"><a href="#如何使用线程" class="headerlink" title="如何使用线程"></a>如何使用线程</h3><blockquote>
-<p>在Java中创建线程有两种方式，一种是继承Thread，另外一种是实现Runnable接口</p>
-</blockquote>
+<h2 id="认识线程"><a href="#认识线程" class="headerlink" title="认识线程"></a>认识线程</h2><h3 id="什么是线程"><a href="#什么是线程" class="headerlink" title="什么是线程"></a>什么是线程</h3><p>线程表示一条单独的执行流，它有自己的程序执行计数器，有自己的栈。</p>
+<h3 id="如何使用线程"><a href="#如何使用线程" class="headerlink" title="如何使用线程"></a>如何使用线程</h3><p>在Java中创建线程有两种方式，一种是继承Thread，另外一种是实现Runnable接口。</p>
 <ul>
 <li>继承Thread<br>Java中java.lang.Thread这个类表示线程，一个类可以继承Thread并重写其run方法来实现一个线程<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"hello thread!"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
@@ -73,7 +69,31 @@ helloThread.start();
 <li>无论是通过继承Thead还是实现Runnable接口来实现线程，启动线程都是调用Thread对象的start方法。</li>
 </ul>
 </blockquote>
-<h3 id="除此之外？"><a href="#除此之外？" class="headerlink" title="除此之外？"></a>除此之外？</h3>]]></content>
+<h3 id="除此之外？"><a href="#除此之外？" class="headerlink" title="除此之外？"></a>除此之外？</h3><ul>
+<li>优先级</li>
+<li>状态</li>
+<li>sleep方法</li>
+<li>yield方法</li>
+<li>join方法</li>
+<li>过时方法</li>
+<li>共享内存</li>
+<li>竞态条件</li>
+<li>内存可见性</li>
+</ul>
+<h2 id="认识synchronized"><a href="#认识synchronized" class="headerlink" title="认识synchronized"></a>认识synchronized</h2><h3 id="为什么要用"><a href="#为什么要用" class="headerlink" title="为什么要用"></a>为什么要用</h3><p>多线程共享内存的两个问题，一个是竞态条件，另一个是内存可见性，我们提到，解决这两个问题的一个方案是使用synchronized关键字</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Counter</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> count;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">incr</span><span class="params">()</span></span>&#123;</div><div class="line">        count ++;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Counter是一个简单的计数器类，incr方法和getCount方法都加了synchronized修饰。加了synchronized后，方法内的代码就变成了原子操作，当多个线程并发更新同一个Counter对象的时候，也不会出现问题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CounterThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</div><div class="line">    Counter counter;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CounterThread</span><span class="params">(Counter counter)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.counter = counter;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Thread.sleep((<span class="keyword">int</span>) (Math.random() * <span class="number">10</span>));</div><div class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">        &#125;</div><div class="line">        counter.incr();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</div><div class="line">        <span class="keyword">int</span> num = <span class="number">100</span>;</div><div class="line">        Counter counter = <span class="keyword">new</span> Counter();</div><div class="line">        Thread[] threads = <span class="keyword">new</span> Thread[num];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</div><div class="line">            threads[i] = <span class="keyword">new</span> CounterThread(counter);</div><div class="line">            threads[i].start();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</div><div class="line">            threads[i].join();</div><div class="line">        &#125;</div><div class="line">        System.out.println(counter.getCount());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>创建了100个线程，传递了相同的counter对象，每个线程主要就是调用Counter的incr方法，main线程等待子线程结束后输出counter的值，这次，不论运行多少次，结果都是正确的100。<br>666~</p>
+<p>synchronized实例方法实际保护的是同一个对象的方法调用，确保同时只能有一个线程执行。再具体来说，synchronized实例方法保护的是当前实例对象，即this，this对象有一个锁和一个等待队列，锁只能被一个线程持有，其他试图获得同样锁的线程需要等待，执行synchronized实例方法的过程大概如下：</p>
+<ul>
+<li>尝试获得锁，如果能够获得锁，继续下一步，否则加入等待队列，阻塞并等待唤醒</li>
+<li>执行实例方法体代码</li>
+<li>释放锁，如果等待队列上有等待的线程，从中取一个并唤醒，如果有多个等待的线程，唤醒哪一个是不一定的，不保证公平性</li>
+</ul>
+<blockquote>
+<p>注意点<br>synchronized同样可以用于静态方法<br>synchronized保护的是对象，对实例方法，保护的是当前实例对象this，对静态方法，保护的是哪个对象呢？是类对象，这里是StaticCounter.class，实际上，每个对象都有一个锁和一个等待队列，类对象也不例外。<br>synchronized静态方法和synchronized实例方法保护的是不同的对象，不同的两个线程，可以同时，一个执行synchronized静态方法，另一个执行synchronized实例方法。<br>synchronized同步的对象可以是任意对象，任意对象都有一个锁和等待队列，或者说，任何对象都可以作为锁对象。</p>
+</blockquote>]]></content>
     
     <summary type="html">
     
