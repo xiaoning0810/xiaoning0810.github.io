@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://blog.zeyu0633.com/2017/03/26/APP-Index-A/</loc>
+    <lastmod>2017-04-10T04:14:03.913Z</lastmod>
+    <data>
+        <display>
+        <title>有的时候也做一个叫“产品”的梦</title>
+        <pubTime>2017-03-26T15:58:27.000Z</pubTime>
+        
+        <tag>全栈</tag>
+         
+         
+           
+             
+              <breadCrumb title="Quick Quiz" url="http://blog.zeyu0633.com/categories/Quick-Quiz/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.zeyu0633.com/2017/04/06/java-thread/</loc>
     <lastmod>2017-04-06T15:38:31.041Z</lastmod>
     <data>
@@ -17,26 +37,6 @@
            
              
               <breadCrumb title="线程" url="http://blog.zeyu0633.com/categories/%E7%BA%BF%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.zeyu0633.com/2017/03/26/APP-Index-A/</loc>
-    <lastmod>2017-03-31T00:58:51.184Z</lastmod>
-    <data>
-        <display>
-        <title>APP一条龙</title>
-        <pubTime>2017-03-26T15:58:27.000Z</pubTime>
-        
-        <tag>全栈</tag>
-         
-         
-           
-             
-              <breadCrumb title="Quick Quiz" url="http://blog.zeyu0633.com/categories/Quick-Quiz/"/>
           
         </display>
     </data>
