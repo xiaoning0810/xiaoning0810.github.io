@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-04-06T15:38:31.041Z</updated>
+  <updated>2017-04-12T04:44:31.941Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -14,6 +14,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何搭建个人主页、博客和在线简历</title>
+    <link href="http://blog.zeyu0633.com/2017/04/12/createSelfPages/"/>
+    <id>http://blog.zeyu0633.com/2017/04/12/createSelfPages/</id>
+    <published>2017-04-12T04:20:27.000Z</published>
+    <updated>2017-04-12T04:44:31.941Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="分享一下如下内容的搭建方式，让大家能够在网络上有一个自己的窝"><a href="#分享一下如下内容的搭建方式，让大家能够在网络上有一个自己的窝" class="headerlink" title="分享一下如下内容的搭建方式，让大家能够在网络上有一个自己的窝"></a>分享一下如下内容的搭建方式，让大家能够在网络上有一个自己的窝</h2><blockquote>
+<p>主页<br>博客<br>在线简历</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="你需要准备"><a href="#你需要准备" class="headerlink" title="你需要准备"></a>你需要准备</h2><ul>
+<li>conding账号</li>
+<li>万网域名</li>
+<li>github账号</li>
+<li>有言账号</li>
+<li>掌握基本的Markdown语法</li>
+</ul>
+<h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2><p>效果<a href="https://page.zeyu0633.com/" target="_blank" rel="external">主页传送门</a></p>
+<blockquote>
+<p>参照</p>
+<ol>
+<li><a href="http://code.youmeek.com/2016/02/29/2016/02/Hexo-Intensify/" target="_blank" rel="external">http://code.youmeek.com/2016/02/29/2016/02/Hexo-Intensify/</a></li>
+<li><a href="http://code.youmeek.com/2016/02/28/2016/02/Hexo/" target="_blank" rel="external">http://code.youmeek.com/2016/02/28/2016/02/Hexo/</a></li>
+</ol>
+</blockquote>
+<ul>
+<li>评论插件我用的是<code>友言</code>系统</li>
+<li>按照以上两篇博文，一步一步操作即可</li>
+</ul>
+<h2 id="个人主页搭建"><a href="#个人主页搭建" class="headerlink" title="个人主页搭建"></a>个人主页搭建</h2><p>效果<a href="http://blog.zeyu0633.com/">博客传送门</a></p>
+<ol>
+<li>主页模板我是从<a href="https://html5up.net/" target="_blank" rel="external">https://html5up.net/</a>中找的，找到你喜欢的模板下载下来</li>
+<li>在<a href="https://coding.net/" target="_blank" rel="external">https://coding.net/</a>上新建一个项目然后将模板上传上去</li>
+<li>开启该项目的pages服务，然后绑定你的域名即可</li>
+</ol>
+<h2 id="在线简历搭建"><a href="#在线简历搭建" class="headerlink" title="在线简历搭建"></a>在线简历搭建</h2><p>效果<a href="http://resume.zeyu0633.com/" target="_blank" rel="external">在线简历传送门</a></p>
+<ol>
+<li>简历模板我实在<a href="http://jekyllthemes.org/" target="_blank" rel="external">http://jekyllthemes.org/</a>找到的，找到你喜欢的模板下载下来</li>
+<li>在<a href="https://coding.net/" target="_blank" rel="external">https://coding.net/</a>上新建一个项目然后将模板上传上去，因为coding已经完美支持jekyll，所以无需额外配置</li>
+<li>开启该项目的pages服务，然后绑定你的域名即可</li>
+</ol>
+<blockquote>
+<p>我在使用jekyll时遇到的问题：</p>
+<p>绑定自己的域名之后发现图片等资源都没有引入，经过一些列捯饬，选择将静态资源都已绝对路径的形式访问，得以解决。</p>
+</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;分享一下如下内容的搭建方式，让大家能够在网络上有一个自己的窝&quot;&gt;&lt;a href=&quot;#分享一下如下内容的搭建方式，让大家能够在网络上有一个自己的窝&quot; class=&quot;headerlink&quot; title=&quot;分享一下如下内容的搭建方式，让大家能够在网络上有一个自己的窝&quot;&gt;&lt;/a&gt;分享一下如下内容的搭建方式，让大家能够在网络上有一个自己的窝&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;主页&lt;br&gt;博客&lt;br&gt;在线简历&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="技能" scheme="http://blog.zeyu0633.com/categories/%E6%8A%80%E8%83%BD/"/>
+    
+    
+      <category term="技能" scheme="http://blog.zeyu0633.com/tags/%E6%8A%80%E8%83%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>Java 线程</title>
@@ -831,37 +893,6 @@ helloThread.start();
   </entry>
   
   <entry>
-    <title>Mysql Learning Index</title>
-    <link href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/"/>
-    <id>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</id>
-    <published>2017-03-11T15:00:00.000Z</published>
-    <updated>2017-03-30T15:16:11.478Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
-<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
-</blockquote>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
-<li>Mysql 基础</li>
-<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
-<li>Mysql 优化</li>
-</ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些
-    
-    </summary>
-    
-      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
-    
-    
-      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
     <title>正则表达式 Learning Index</title>
     <link href="http://blog.zeyu0633.com/2017/03/11/zeIndex/"/>
     <id>http://blog.zeyu0633.com/2017/03/11/zeIndex/</id>
@@ -887,6 +918,37 @@ helloThread.start();
     </summary>
     
       <category term="正则表达式" scheme="http://blog.zeyu0633.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+    
+      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql Learning Index</title>
+    <link href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/"/>
+    <id>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</id>
+    <published>2017-03-11T15:00:00.000Z</published>
+    <updated>2017-03-30T15:16:11.478Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
+<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
+</blockquote>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
+<li>Mysql 基础</li>
+<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
+<li>Mysql 优化</li>
+</ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些
+    
+    </summary>
+    
+      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
     
     
       <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
@@ -1282,28 +1344,6 @@ helloThread.start();
     
     
       <category term="技能" scheme="http://blog.zeyu0633.com/tags/%E6%8A%80%E8%83%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>鸡汤</title>
-    <link href="http://blog.zeyu0633.com/2017/02/24/new/"/>
-    <id>http://blog.zeyu0633.com/2017/02/24/new/</id>
-    <published>2017-02-24T09:58:27.000Z</published>
-    <updated>2017-03-05T06:22:04.483Z</updated>
-    
-    <content type="html"><![CDATA[<p>忙时专注，闲时自省，警惕忙无章法，闲生杂念</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;忙时专注，闲时自省，警惕忙无章法，闲生杂念&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="鸡汤" scheme="http://blog.zeyu0633.com/categories/%E9%B8%A1%E6%B1%A4/"/>
-    
-    
-      <category term="鸡汤" scheme="http://blog.zeyu0633.com/tags/%E9%B8%A1%E6%B1%A4/"/>
     
   </entry>
   
