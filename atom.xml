@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-04-13T16:51:30.754Z</updated>
+  <updated>2017-04-14T01:13:55.577Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.zeyu0633.com/2017/04/14/product/"/>
     <id>http://blog.zeyu0633.com/2017/04/14/product/</id>
     <published>2017-04-14T15:20:27.000Z</published>
-    <updated>2017-04-13T16:51:30.754Z</updated>
+    <updated>2017-04-14T01:13:55.577Z</updated>
     
     <content type="html"><![CDATA[<h3 id="小板凳搬过来坐好，现在以第一人称陈述冯总的产品思维"><a href="#小板凳搬过来坐好，现在以第一人称陈述冯总的产品思维" class="headerlink" title="小板凳搬过来坐好，现在以第一人称陈述冯总的产品思维"></a>小板凳搬过来坐好，现在以第一人称陈述冯总的产品思维</h3><blockquote>
 <p>把自己逼到死角，想出最好的方案<br>　　　　　　　　　　　　—Van</p>
@@ -44,7 +44,7 @@
 <li><p>我认为创新还有一个点，创新一定不是凭空想出来的，他一定是在一定基础上做出来的，我认为最好的办法就是学习最好的东西，也就是找标杆，要找普世的标杆，比如说苹果的设计、谷歌的设计或者微软的一些解决方案等等。你会发现很多东西这些标杆们确实已经做到极致啦，我们可以从这里面学到很多东西，学完之后，要对这些东西做一些变通，增加一些自己的元素进去，我觉得这就是一个创新的过程。你要做到创新的过程是很辛苦的，但是你一旦达到啦，那结果一定让你大吃一惊。</p>
 </li>
 </ul>
-<h3 id="专注"><a href="#专注" class="headerlink" title="专注"></a>专注</h3><p><img src="http://upload-images.jianshu.io/upload_images/4943424-7db41d3a786312d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="专注"></p>
+<h2 id="未完-待续…"><a href="#未完-待续…" class="headerlink" title="未完.待续…"></a>未完.待续…</h2><h3 id="专注"><a href="#专注" class="headerlink" title="专注"></a>专注</h3><p><img src="http://upload-images.jianshu.io/upload_images/4943424-7db41d3a786312d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="专注"></p>
 <h3 id="简洁易用"><a href="#简洁易用" class="headerlink" title="简洁易用"></a>简洁易用</h3><p><img src="http://upload-images.jianshu.io/upload_images/4943424-91aec767f34913c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="简洁易用"></p>
 <h3 id="快速迭代"><a href="#快速迭代" class="headerlink" title="快速迭代"></a>快速迭代</h3><p><img src="http://upload-images.jianshu.io/upload_images/4943424-79b6834befdb5e68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="快速迭代"></p>
 <h3 id="系统思维"><a href="#系统思维" class="headerlink" title="系统思维"></a>系统思维</h3><p><img src="http://upload-images.jianshu.io/upload_images/4943424-85eb6e5951997250.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="系统思维"></p>
@@ -956,37 +956,6 @@ helloThread.start();
   </entry>
   
   <entry>
-    <title>Mysql Learning Index</title>
-    <link href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/"/>
-    <id>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</id>
-    <published>2017-03-11T15:00:00.000Z</published>
-    <updated>2017-03-30T15:16:11.478Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
-<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
-</blockquote>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
-<li>Mysql 基础</li>
-<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
-<li>Mysql 优化</li>
-</ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些
-    
-    </summary>
-    
-      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
-    
-    
-      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
     <title>正则表达式 Learning Index</title>
     <link href="http://blog.zeyu0633.com/2017/03/11/zeIndex/"/>
     <id>http://blog.zeyu0633.com/2017/03/11/zeIndex/</id>
@@ -1012,6 +981,37 @@ helloThread.start();
     </summary>
     
       <category term="正则表达式" scheme="http://blog.zeyu0633.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+    
+      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql Learning Index</title>
+    <link href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/"/>
+    <id>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</id>
+    <published>2017-03-11T15:00:00.000Z</published>
+    <updated>2017-03-30T15:16:11.478Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
+<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
+</blockquote>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
+<li>Mysql 基础</li>
+<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
+<li>Mysql 优化</li>
+</ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些
+    
+    </summary>
+    
+      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
     
     
       <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
