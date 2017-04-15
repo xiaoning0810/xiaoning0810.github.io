@@ -4,28 +4,8 @@
 
     
   <url>
-    <loc>http://blog.zeyu0633.com/2017/04/14/product/</loc>
-    <lastmod>2017-04-14T01:13:55.577Z</lastmod>
-    <data>
-        <display>
-        <title>我们的产品思维</title>
-        <pubTime>2017-04-14T15:20:27.000Z</pubTime>
-        
-        <tag>产品</tag>
-         
-         
-           
-             
-              <breadCrumb title="Van" url="http://blog.zeyu0633.com/categories/Van/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.zeyu0633.com/2017/04/12/createSelfPages/</loc>
-    <lastmod>2017-04-12T04:55:28.412Z</lastmod>
+    <lastmod>2017-04-15T12:10:12.121Z</lastmod>
     <data>
         <display>
         <title>如何搭建个人主页、博客和在线简历</title>
@@ -37,6 +17,26 @@
            
              
               <breadCrumb title="技能" url="http://blog.zeyu0633.com/categories/%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/04/14/product/</loc>
+    <lastmod>2017-04-15T12:08:34.380Z</lastmod>
+    <data>
+        <display>
+        <title>我们的产品思维</title>
+        <pubTime>2017-04-14T15:20:27.000Z</pubTime>
+        
+        <tag>产品</tag>
+         
+         
+           
+             
+              <breadCrumb title="Van" url="http://blog.zeyu0633.com/categories/Van/"/>
           
         </display>
     </data>
