@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-04-19T00:27:36.653Z</updated>
+  <updated>2017-04-19T00:29:54.311Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -20,9 +20,12 @@
     <link href="http://blog.zeyu0633.com/2017/04/18/skill-git-manage/"/>
     <id>http://blog.zeyu0633.com/2017/04/18/skill-git-manage/</id>
     <published>2017-04-18T15:20:27.000Z</published>
-    <updated>2017-04-19T00:27:36.653Z</updated>
+    <updated>2017-04-19T00:29:54.311Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a>
+    <content type="html"><![CDATA[<h3 id="纲要"><a href="#纲要" class="headerlink" title="纲要"></a>纲要</h3><blockquote>
+<p>介绍使用Git这种有主干分支概念的工具开发项目时，进行版本管理的方法。</p>
+</blockquote>
+<a id="more"></a>
 <h3 id="如图是黄勇（特赞CTO）分享的分支管理规范图"><a href="#如图是黄勇（特赞CTO）分享的分支管理规范图" class="headerlink" title="如图是黄勇（特赞CTO）分享的分支管理规范图"></a>如图是黄勇（特赞CTO）分享的分支管理规范图</h3><p><img src="http://upload-images.jianshu.io/upload_images/4943424-fe5f4423600b7b44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="分支管理规范"></p>
 <h3 id="解读"><a href="#解读" class="headerlink" title="解读"></a>解读</h3><ul>
 <li>最稳定的代码放在master分支上（相当于SVN的trunk分支），我们不要直接在master分支上提交代码，只能在该分支上进行代码合并操作，例如将其他分支的代码合并到master分支上。</li>
@@ -37,8 +40,9 @@
     
     <summary type="html">
     
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;如图是黄勇（特赞CTO）分享的分支管理规范图&quot;&gt;&lt;a href=&quot;#如图是黄勇（特赞CTO）分享的分支管理规范图&quot; class=&quot;headerlink&quot; title=&quot;如图是黄勇（特赞CTO）分享的分支管理规范图&quot;&gt;&lt;/a&gt;如图
+      &lt;h3 id=&quot;纲要&quot;&gt;&lt;a href=&quot;#纲要&quot; class=&quot;headerlink&quot; title=&quot;纲要&quot;&gt;&lt;/a&gt;纲要&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;介绍使用Git这种有主干分支概念的工具开发项目时，进行版本管理的方法。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     

@@ -13,26 +13,20 @@
 
 
 
-<meta name="description" content="如图是黄勇（特赞CTO）分享的分支管理规范图
-解读
-最稳定的代码放在master分支上（相当于SVN的trunk分支），我们不要直接在master分支上提交代码，只能在该分支上进行代码合并操作，例如将其他分支的代码合并到master分支上。
-我们日常开发中的代码需要从master分支上拉一条develop分支出来，该分支所有人都能访问，但一般情况下，我们也不会直接在该分支上提交代码，代码同样是从">
+<meta name="description" content="纲要
+介绍使用Git这种有主干分支概念的工具开发项目时，进行版本管理的方法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GIT版本管理策略">
 <meta property="og:url" content="http://blog.zeyu0633.com/2017/04/18/skill-git-manage/index.html">
 <meta property="og:site_name" content="HTime">
-<meta property="og:description" content="如图是黄勇（特赞CTO）分享的分支管理规范图
-解读
-最稳定的代码放在master分支上（相当于SVN的trunk分支），我们不要直接在master分支上提交代码，只能在该分支上进行代码合并操作，例如将其他分支的代码合并到master分支上。
-我们日常开发中的代码需要从master分支上拉一条develop分支出来，该分支所有人都能访问，但一般情况下，我们也不会直接在该分支上提交代码，代码同样是从">
+<meta property="og:description" content="纲要
+介绍使用Git这种有主干分支概念的工具开发项目时，进行版本管理的方法。">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4943424-fe5f4423600b7b44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-04-19T00:27:36.653Z">
+<meta property="og:updated_time" content="2017-04-19T00:29:54.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GIT版本管理策略">
-<meta name="twitter:description" content="如图是黄勇（特赞CTO）分享的分支管理规范图
-解读
-最稳定的代码放在master分支上（相当于SVN的trunk分支），我们不要直接在master分支上提交代码，只能在该分支上进行代码合并操作，例如将其他分支的代码合并到master分支上。
-我们日常开发中的代码需要从master分支上拉一条develop分支出来，该分支所有人都能访问，但一般情况下，我们也不会直接在该分支上提交代码，代码同样是从">
+<meta name="twitter:description" content="纲要
+介绍使用Git这种有主干分支概念的工具开发项目时，进行版本管理的方法。">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4943424-fe5f4423600b7b44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -307,7 +301,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <a id="more"></a>
+        <h3 id="纲要"><a href="#纲要" class="headerlink" title="纲要"></a>纲要</h3><blockquote>
+<p>介绍使用Git这种有主干分支概念的工具开发项目时，进行版本管理的方法。</p>
+</blockquote>
+<a id="more"></a>
 <h3 id="如图是黄勇（特赞CTO）分享的分支管理规范图"><a href="#如图是黄勇（特赞CTO）分享的分支管理规范图" class="headerlink" title="如图是黄勇（特赞CTO）分享的分支管理规范图"></a>如图是黄勇（特赞CTO）分享的分支管理规范图</h3><p><img src="http://upload-images.jianshu.io/upload_images/4943424-fe5f4423600b7b44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="分支管理规范"></p>
 <h3 id="解读"><a href="#解读" class="headerlink" title="解读"></a>解读</h3><ul>
 <li>最稳定的代码放在master分支上（相当于SVN的trunk分支），我们不要直接在master分支上提交代码，只能在该分支上进行代码合并操作，例如将其他分支的代码合并到master分支上。</li>
@@ -328,7 +325,7 @@
         <p><span>本文标题:</span><a href="/2017/04/18/skill-git-manage/">GIT版本管理策略</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Htime</a></p>
         <p><span>发布时间:</span>2017-04-18, 23:20:27</p>
-        <p><span>最后更新:</span>2017-04-19, 08:27:36</p>
+        <p><span>最后更新:</span>2017-04-19, 08:29:54</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/04/18/skill-git-manage/" title="GIT版本管理策略">http://blog.zeyu0633.com/2017/04/18/skill-git-manage/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.zeyu0633.com/2017/04/18/skill-git-manage/　　作者: Htime" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -356,7 +353,7 @@
 <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#如图是黄勇（特赞CTO）分享的分支管理规范图"><span class="toc-number">1.</span> <span class="toc-text">如图是黄勇（特赞CTO）分享的分支管理规范图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解读"><span class="toc-number">2.</span> <span class="toc-text">解读</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">3.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补充"><span class="toc-number">4.</span> <span class="toc-text">补充</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#纲要"><span class="toc-number">1.</span> <span class="toc-text">纲要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如图是黄勇（特赞CTO）分享的分支管理规范图"><span class="toc-number">2.</span> <span class="toc-text">如图是黄勇（特赞CTO）分享的分支管理规范图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解读"><span class="toc-number">3.</span> <span class="toc-text">解读</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">4.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补充"><span class="toc-number">5.</span> <span class="toc-text">补充</span></a></li></ol>
         
     </div>
     <style>
