@@ -3,6 +3,37 @@
   
     
     <entry>
+      <title><![CDATA[GIT版本管理策略]]></title>
+      <url>/2017/04/18/skill-git-manage/</url>
+      <content type="html"><![CDATA[<a id="more"></a>
+<h3 id="如图是黄勇（特赞CTO）分享的分支管理规范图"><a href="#如图是黄勇（特赞CTO）分享的分支管理规范图" class="headerlink" title="如图是黄勇（特赞CTO）分享的分支管理规范图"></a>如图是黄勇（特赞CTO）分享的分支管理规范图</h3><p><img src="http://upload-images.jianshu.io/upload_images/4943424-fe5f4423600b7b44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="分支管理规范"></p>
+<h3 id="解读"><a href="#解读" class="headerlink" title="解读"></a>解读</h3><ul>
+<li>最稳定的代码放在master分支上（相当于SVN的trunk分支），我们不要直接在master分支上提交代码，只能在该分支上进行代码合并操作，例如将其他分支的代码合并到master分支上。</li>
+<li>我们日常开发中的代码需要从master分支上拉一条develop分支出来，该分支所有人都能访问，但一般情况下，我们也不会直接在该分支上提交代码，代码同样是从其他分支合并到develop分支上去的。</li>
+<li>当我们需要开发某个特性时，需要从develop分支上拉出一条feature分支，例如feature-1和feature-2，在这些分支上并行的开发具体特性。</li>
+<li>当特性开发完毕后，我们决定发布某个版本啦，此时需要从develop分支上拉出一条release分支，例如release-1.0.0，并将需要发布的特性从相关feature分支一同合并到release分支上，随后针对release分支部署测试环境，测试工程师在该分支上做功能测试，开发工程师在该分支上修改bug。待测试工程师无法找到任何bug时，我们可将该release分支部署到预发布环境中。再次验证后，如无任何bug，此时可将release分支部署到生产环境中。待上线完成后，将release分支上的代码同时合并到develop分支和master分支上，并在master分支上带一个tag，例如v1.0.0。</li>
+<li>当在生产环境发现bug时，我们需要从对应的tag上（例如v1.0.0）拉出一条hotfix分支（例如hotfix-1.01），并在该分支上进行bug修复。待bug修复完全后，需将hotfix分支上的代码同时合并到develop分支和master分支上。</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>对于版本号，格式为：x.y.z，其中，x用于有重大重构是才会升级，y用于有新的特性发布时才会升级，z用于修改了某个bug之后才会升级。</p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>实际上，黄勇的开发规范就是业界知名的GitFlow，传送门<a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="external">GitFlow</a></p>
+<p>比较好的博客：<br>1.<a href="http://blog.jobbole.com/76867/" target="_blank" rel="external">Git工作流指南：Gitflow工作流</a></p>]]></content>
+      
+        <categories>
+            
+            <category> GIT </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 技能 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[我们的产品思维]]></title>
       <url>/2017/04/14/product/</url>
       <content type="html"><![CDATA[<h3 id="小板凳搬过来坐好，现在以第一人称陈述冯总的产品思维"><a href="#小板凳搬过来坐好，现在以第一人称陈述冯总的产品思维" class="headerlink" title="小板凳搬过来坐好，现在以第一人称陈述冯总的产品思维"></a>小板凳搬过来坐好，现在以第一人称陈述冯总的产品思维</h3><blockquote>
