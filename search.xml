@@ -4,6 +4,30 @@
     
     <entry>
       <title><![CDATA[GIT版本管理策略]]></title>
+      <url>/2017/04/19/docker-index/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>学习慕课网《第一个docker化的java应用》做的笔记</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h2><h2 id="了解docker"><a href="#了解docker" class="headerlink" title="了解docker"></a>了解docker</h2><h3 id="docker思想"><a href="#docker思想" class="headerlink" title="docker思想"></a>docker思想</h3><h3 id="dicker解决了什么问题"><a href="#dicker解决了什么问题" class="headerlink" title="dicker解决了什么问题"></a>dicker解决了什么问题</h3><h2 id="走进docker"><a href="#走进docker" class="headerlink" title="走进docker"></a>走进docker</h2><h3 id="docker核心技术"><a href="#docker核心技术" class="headerlink" title="docker核心技术"></a>docker核心技术</h3><h3 id="docker镜像"><a href="#docker镜像" class="headerlink" title="docker镜像"></a>docker镜像</h3><h3 id="docker容器"><a href="#docker容器" class="headerlink" title="docker容器"></a>docker容器</h3><h3 id="docker仓库"><a href="#docker仓库" class="headerlink" title="docker仓库"></a>docker仓库</h3><h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><h3 id="windows安装docker"><a href="#windows安装docker" class="headerlink" title="windows安装docker"></a>windows安装docker</h3><h3 id="macos安装docker"><a href="#macos安装docker" class="headerlink" title="macos安装docker"></a>macos安装docker</h3><h3 id="linux安装docker"><a href="#linux安装docker" class="headerlink" title="linux安装docker"></a>linux安装docker</h3><h2 id="docker初体验"><a href="#docker初体验" class="headerlink" title="docker初体验"></a>docker初体验</h2><h3 id="第一个docker镜像"><a href="#第一个docker镜像" class="headerlink" title="第一个docker镜像"></a>第一个docker镜像</h3><h3 id="第一个docker容器"><a href="#第一个docker容器" class="headerlink" title="第一个docker容器"></a>第一个docker容器</h3><h2 id="docker运行nginx静态网站"><a href="#docker运行nginx静态网站" class="headerlink" title="docker运行nginx静态网站"></a>docker运行nginx静态网站</h2><h3 id="运行nginx镜像"><a href="#运行nginx镜像" class="headerlink" title="运行nginx镜像"></a>运行nginx镜像</h3><h3 id="docker网络"><a href="#docker网络" class="headerlink" title="docker网络"></a>docker网络</h3><h2 id="第一个java-web应用"><a href="#第一个java-web应用" class="headerlink" title="第一个java web应用"></a>第一个java web应用</h2><h3 id="制作自己的镜像"><a href="#制作自己的镜像" class="headerlink" title="制作自己的镜像"></a>制作自己的镜像</h3><h3 id="运行自己的容器"><a href="#运行自己的容器" class="headerlink" title="运行自己的容器"></a>运行自己的容器</h3><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>]]></content>
+      
+        <categories>
+            
+            <category> docker </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 运维 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[GIT版本管理策略]]></title>
       <url>/2017/04/18/skill-git-manage/</url>
       <content type="html"><![CDATA[<h3 id="纲要"><a href="#纲要" class="headerlink" title="纲要"></a>纲要</h3><blockquote>
 <p>介绍使用Git这种有主干分支概念的工具开发项目时，进行版本管理的方法。</p>

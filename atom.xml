@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-04-19T00:29:54.311Z</updated>
+  <updated>2017-04-20T01:15:20.465Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GIT版本管理策略</title>
+    <link href="http://blog.zeyu0633.com/2017/04/19/docker-index/"/>
+    <id>http://blog.zeyu0633.com/2017/04/19/docker-index/</id>
+    <published>2017-04-19T15:20:27.000Z</published>
+    <updated>2017-04-20T01:15:20.465Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>学习慕课网《第一个docker化的java应用》做的笔记</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h2><h2 id="了解docker"><a href="#了解docker" class="headerlink" title="了解docker"></a>了解docker</h2><h3 id="docker思想"><a href="#docker思想" class="headerlink" title="docker思想"></a>docker思想</h3><h3 id="dicker解决了什么问题"><a href="#dicker解决了什么问题" class="headerlink" title="dicker解决了什么问题"></a>dicker解决了什么问题</h3><h2 id="走进docker"><a href="#走进docker" class="headerlink" title="走进docker"></a>走进docker</h2><h3 id="docker核心技术"><a href="#docker核心技术" class="headerlink" title="docker核心技术"></a>docker核心技术</h3><h3 id="docker镜像"><a href="#docker镜像" class="headerlink" title="docker镜像"></a>docker镜像</h3><h3 id="docker容器"><a href="#docker容器" class="headerlink" title="docker容器"></a>docker容器</h3><h3 id="docker仓库"><a href="#docker仓库" class="headerlink" title="docker仓库"></a>docker仓库</h3><h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><h3 id="windows安装docker"><a href="#windows安装docker" class="headerlink" title="windows安装docker"></a>windows安装docker</h3><h3 id="macos安装docker"><a href="#macos安装docker" class="headerlink" title="macos安装docker"></a>macos安装docker</h3><h3 id="linux安装docker"><a href="#linux安装docker" class="headerlink" title="linux安装docker"></a>linux安装docker</h3><h2 id="docker初体验"><a href="#docker初体验" class="headerlink" title="docker初体验"></a>docker初体验</h2><h3 id="第一个docker镜像"><a href="#第一个docker镜像" class="headerlink" title="第一个docker镜像"></a>第一个docker镜像</h3><h3 id="第一个docker容器"><a href="#第一个docker容器" class="headerlink" title="第一个docker容器"></a>第一个docker容器</h3><h2 id="docker运行nginx静态网站"><a href="#docker运行nginx静态网站" class="headerlink" title="docker运行nginx静态网站"></a>docker运行nginx静态网站</h2><h3 id="运行nginx镜像"><a href="#运行nginx镜像" class="headerlink" title="运行nginx镜像"></a>运行nginx镜像</h3><h3 id="docker网络"><a href="#docker网络" class="headerlink" title="docker网络"></a>docker网络</h3><h2 id="第一个java-web应用"><a href="#第一个java-web应用" class="headerlink" title="第一个java web应用"></a>第一个java web应用</h2><h3 id="制作自己的镜像"><a href="#制作自己的镜像" class="headerlink" title="制作自己的镜像"></a>制作自己的镜像</h3><h3 id="运行自己的容器"><a href="#运行自己的容器" class="headerlink" title="运行自己的容器"></a>运行自己的容器</h3><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;学习慕课网《第一个docker化的java应用》做的笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="docker" scheme="http://blog.zeyu0633.com/categories/docker/"/>
+    
+    
+      <category term="运维" scheme="http://blog.zeyu0633.com/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>GIT版本管理策略</title>
@@ -1045,37 +1073,6 @@ helloThread.start();
   </entry>
   
   <entry>
-    <title>Mysql Learning Index</title>
-    <link href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/"/>
-    <id>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</id>
-    <published>2017-03-11T15:00:00.000Z</published>
-    <updated>2017-03-30T15:16:11.478Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
-<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
-</blockquote>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
-<li>Mysql 基础</li>
-<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
-<li>Mysql 优化</li>
-</ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些
-    
-    </summary>
-    
-      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
-    
-    
-      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
     <title>正则表达式 Learning Index</title>
     <link href="http://blog.zeyu0633.com/2017/03/11/zeIndex/"/>
     <id>http://blog.zeyu0633.com/2017/03/11/zeIndex/</id>
@@ -1101,6 +1098,37 @@ helloThread.start();
     </summary>
     
       <category term="正则表达式" scheme="http://blog.zeyu0633.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+    
+      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql Learning Index</title>
+    <link href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/"/>
+    <id>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</id>
+    <published>2017-03-11T15:00:00.000Z</published>
+    <updated>2017-03-30T15:16:11.478Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
+<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
+</blockquote>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
+<li>Mysql 基础</li>
+<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
+<li>Mysql 优化</li>
+</ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些
+    
+    </summary>
+    
+      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
     
     
       <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
@@ -1359,49 +1387,6 @@ helloThread.start();
 &lt;li&gt;Mybatis集成&lt;/li&gt;
 &lt;li&gt;Restful接口提供&lt;/li&gt;
 &lt;li&gt;Swagger2集成&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="http://blog.zeyu0633.com/categories/SpringBoot/"/>
-    
-    
-      <category term="Java" scheme="http://blog.zeyu0633.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot HelloWorld</title>
-    <link href="http://blog.zeyu0633.com/2017/02/26/springBootStart/"/>
-    <id>http://blog.zeyu0633.com/2017/02/26/springBootStart/</id>
-    <published>2017-02-26T11:30:00.000Z</published>
-    <updated>2017-03-30T05:25:31.603Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><blockquote>
-<p>版本这东西，说不清道不明</p>
-<ul>
-<li>开发工具：IntelliJ IDEA 2016.3.4</li>
-<li>Java version：1.8.8_101</li>
-<li>maven version： 3.3.3</li>
-</ul>
-</blockquote>
-<a id="more"></a>
-<h2 id="开始创世纪"><a href="#开始创世纪" class="headerlink" title="开始创世纪"></a>开始创世纪</h2><h3 id="新建工程"><a href="#新建工程" class="headerlink" title="新建工程"></a>新建工程</h3><p>直接使用idea方式新建工程<br><img src="http://upload-images.jianshu.io/upload_images/4943424-69f817e5b7cc0144.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="new"><br>新建完毕，idea中会生成如下工程结构<br><img src="http://upload-images.jianshu.io/upload_images/4943424-d379ea5a6680c516.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="structure"></p>
-<h3 id="POM文件"><a href="#POM文件" class="headerlink" title="POM文件"></a>POM文件</h3><p>增加依赖如下<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- WEB --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h3 id="SpringBoot启动"><a href="#SpringBoot启动" class="headerlink" title="SpringBoot启动"></a>SpringBoot启动</h3><p>除了以下这种直接启动，还可以mvn方式和jar方式<br><img src="http://upload-images.jianshu.io/upload_images/4943424-2f301d754ea8b736.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="start"></p>
-<h3 id="Controller层代码"><a href="#Controller层代码" class="headerlink" title="Controller层代码"></a>Controller层代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by HTime on 2017/2/26.</div><div class="line"> */</div><div class="line"><span class="meta">@RestController</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/hello"</span>, method = RequestMethod.GET)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"Hello World!"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Junit测试"><a href="#Junit测试" class="headerlink" title="Junit测试"></a>Junit测试</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RunWith</span>(SpringJUnit4ClassRunner.class)</div><div class="line"><span class="meta">@WebAppConfiguration</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringbootApplicationTests</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">//模拟mvc对象类.</span></div><div class="line">    <span class="keyword">private</span> MockMvc mvc;</div><div class="line"></div><div class="line">    <span class="meta">@Before</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUp</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        mvc = MockMvcBuilders.standaloneSetup(<span class="keyword">new</span> HelloController()).build();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getHello</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        mvc.perform(MockMvcRequestBuilders.get(<span class="string">"/hello"</span>).accept(MediaType.APPLICATION_JSON))</div><div class="line">                .andExpect(status().isOk())</div><div class="line">                .andExpect(content().string(equalTo(<span class="string">"Hello World!"</span>)));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>运行getHello()可以在Console中打印出 “Hello World!”</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;开发环境&quot;&gt;&lt;a href=&quot;#开发环境&quot; class=&quot;headerlink&quot; title=&quot;开发环境&quot;&gt;&lt;/a&gt;开发环境&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;版本这东西，说不清道不明&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;开发工具：IntelliJ IDEA 2016.3.4&lt;/li&gt;
-&lt;li&gt;Java version：1.8.8_101&lt;/li&gt;
-&lt;li&gt;maven version： 3.3.3&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
     
