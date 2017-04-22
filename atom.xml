@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-04-22T07:13:17.383Z</updated>
+  <updated>2017-04-22T09:17:28.871Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -20,18 +20,32 @@
     <link href="http://blog.zeyu0633.com/2017/04/22/docker-index-B/"/>
     <id>http://blog.zeyu0633.com/2017/04/22/docker-index-B/</id>
     <published>2017-04-22T07:20:27.000Z</published>
-    <updated>2017-04-22T07:13:17.383Z</updated>
+    <updated>2017-04-22T09:17:28.871Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
-<p>学习慕课网《第一个docker化的java应用》做的笔记</p>
+<p>自学笔记</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><h3 id="windows安装docker"><a href="#windows安装docker" class="headerlink" title="windows安装docker"></a>windows安装docker</h3><h3 id="macos安装docker"><a href="#macos安装docker" class="headerlink" title="macos安装docker"></a>macos安装docker</h3><h3 id="linux安装docker"><a href="#linux安装docker" class="headerlink" title="linux安装docker"></a>linux安装docker</h3><h2 id="docker初体验"><a href="#docker初体验" class="headerlink" title="docker初体验"></a>docker初体验</h2><h3 id="第一个docker镜像"><a href="#第一个docker镜像" class="headerlink" title="第一个docker镜像"></a>第一个docker镜像</h3><h3 id="第一个docker容器"><a href="#第一个docker容器" class="headerlink" title="第一个docker容器"></a>第一个docker容器</h3><h2 id="docker运行nginx静态网站"><a href="#docker运行nginx静态网站" class="headerlink" title="docker运行nginx静态网站"></a>docker运行nginx静态网站</h2><h3 id="运行nginx镜像"><a href="#运行nginx镜像" class="headerlink" title="运行nginx镜像"></a>运行nginx镜像</h3><h3 id="docker网络"><a href="#docker网络" class="headerlink" title="docker网络"></a>docker网络</h3><h2 id="第一个java-web应用"><a href="#第一个java-web应用" class="headerlink" title="第一个java web应用"></a>第一个java web应用</h2><h3 id="制作自己的镜像"><a href="#制作自己的镜像" class="headerlink" title="制作自己的镜像"></a>制作自己的镜像</h3><h3 id="运行自己的容器"><a href="#运行自己的容器" class="headerlink" title="运行自己的容器"></a>运行自己的容器</h3><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>]]></content>
+<h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><h3 id="macos安装docker"><a href="#macos安装docker" class="headerlink" title="macos安装docker"></a>macos安装docker</h3><p>我windows没有安装成功，所以就用macOS啦，macOS真的是太方便啦，dmg文件双击即可。</p>
+<p>安装完成之后，用<code>docker version</code>来查看是否安装成功。<br><img src="http://upload-images.jianshu.io/upload_images/4943424-4cc4657b5b20ff56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="安装"></p>
+<h2 id="docker初体验"><a href="#docker初体验" class="headerlink" title="docker初体验"></a>docker初体验</h2><h3 id="第一个docker镜像"><a href="#第一个docker镜像" class="headerlink" title="第一个docker镜像"></a>第一个docker镜像</h3><p>有两条命令需要学习</p>
+<pre><code>* docker pull [OPTIONS] NAME[:TAG]：拉去一个镜像到我们的本地，Name表示拉取的镜像的名称。
+* docker images[OPTIONS][RESPOSITORY[:TAG]]：查看我们本机都有哪些镜像
+</code></pre><p>我拉这个hello-world真的是费劲，还好拉下来了，如下<br><img src="http://upload-images.jianshu.io/upload_images/4943424-3d9667536f710026.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="第一个镜像"></p>
+<h3 id="第一个docker容器"><a href="#第一个docker容器" class="headerlink" title="第一个docker容器"></a>第一个docker容器</h3><p>有一条命令需要学习</p>
+<pre><code>* docker run [OPTIONS] IMAGE[:TAG][COMMAND][ARG...]：运行一个叫做IMAGE名字的镜像
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/4943424-98ac0c6ca9b0df27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="第一个容器"></p>
+<p>以上是docker操作的比较简单的步骤，已图的形式来讲解一下：<br><img src="http://upload-images.jianshu.io/upload_images/4943424-0d8ae92171e53e17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="docker使用流程"></p>
+<pre><code>* Client是我们在本机执行命令的部分
+* 中间的一部分也在我们本机，是docker daemon来管理的内容
+* 最右边的是远程仓库
+</code></pre><p>流程：执行<code>docker pull</code>，会先到daemon中查找有没有对应的镜像，如果存在且版本正确，就不会做任何操作，<br>如果不存在，它会到远成仓库拉取对应的docker镜像； <code>docker run</code>实际上相当于先执行一次<code>docker pull</code>，然后<br>已一定的方式将镜像运行起来，形成容器。</p>
+<h2 id="docker运行nginx静态网站"><a href="#docker运行nginx静态网站" class="headerlink" title="docker运行nginx静态网站"></a>docker运行nginx静态网站</h2><h3 id="运行nginx镜像"><a href="#运行nginx镜像" class="headerlink" title="运行nginx镜像"></a>运行nginx镜像</h3><h3 id="docker网络"><a href="#docker网络" class="headerlink" title="docker网络"></a>docker网络</h3><h2 id="第一个java-web应用"><a href="#第一个java-web应用" class="headerlink" title="第一个java web应用"></a>第一个java web应用</h2><h3 id="制作自己的镜像"><a href="#制作自己的镜像" class="headerlink" title="制作自己的镜像"></a>制作自己的镜像</h3><h3 id="运行自己的容器"><a href="#运行自己的容器" class="headerlink" title="运行自己的容器"></a>运行自己的容器</h3><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>]]></content>
     
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;学习慕课网《第一个docker化的java应用》做的笔记&lt;/p&gt;
+&lt;p&gt;自学笔记&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -48,10 +62,10 @@
     <link href="http://blog.zeyu0633.com/2017/04/19/docker-index-A/"/>
     <id>http://blog.zeyu0633.com/2017/04/19/docker-index-A/</id>
     <published>2017-04-19T15:20:27.000Z</published>
-    <updated>2017-04-22T07:13:17.408Z</updated>
+    <updated>2017-04-22T09:17:28.880Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
-<p>学习慕课网《第一个docker化的java应用》做的笔记</p>
+<p>自学笔记</p>
 </blockquote>
 <a id="more"></a>
 <h2 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h2><p>docker是一个用来装应用的容器，就像杯子可以装水，笔筒可以放笔，书包可以放书一样。我们可以讲HelloWorld放到docker里，也可以把<br>网站放docker里，也可以把任何你想得到的程序放docker里。官网官网传送门<a href="https://www.docker.com/" target="_blank" rel="external">官网</a></p>
@@ -109,7 +123,7 @@
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;学习慕课网《第一个docker化的java应用》做的笔记&lt;/p&gt;
+&lt;p&gt;自学笔记&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -1151,6 +1165,37 @@ helloThread.start();
   </entry>
   
   <entry>
+    <title>Mysql Learning Index</title>
+    <link href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/"/>
+    <id>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</id>
+    <published>2017-03-11T15:00:00.000Z</published>
+    <updated>2017-03-30T15:16:11.478Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
+<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
+</blockquote>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
+<li>Mysql 基础</li>
+<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
+<li>Mysql 优化</li>
+</ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些
+    
+    </summary>
+    
+      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
+    
+    
+      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+  </entry>
+  
+  <entry>
     <title>正则表达式 Learning Index</title>
     <link href="http://blog.zeyu0633.com/2017/03/11/zeIndex/"/>
     <id>http://blog.zeyu0633.com/2017/03/11/zeIndex/</id>
@@ -1176,37 +1221,6 @@ helloThread.start();
     </summary>
     
       <category term="正则表达式" scheme="http://blog.zeyu0633.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    
-    
-      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mysql Learning Index</title>
-    <link href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/"/>
-    <id>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</id>
-    <published>2017-03-11T15:00:00.000Z</published>
-    <updated>2017-03-30T15:16:11.478Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
-<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
-</blockquote>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
-<li>Mysql 基础</li>
-<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
-<li>Mysql 优化</li>
-</ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些
-    
-    </summary>
-    
-      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
     
     
       <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
