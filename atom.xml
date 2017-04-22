@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-04-20T01:16:07.498Z</updated>
+  <updated>2017-04-22T07:13:17.383Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -16,17 +16,95 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>第一个docker化的java应用</title>
-    <link href="http://blog.zeyu0633.com/2017/04/19/docker-index/"/>
-    <id>http://blog.zeyu0633.com/2017/04/19/docker-index/</id>
-    <published>2017-04-19T15:20:27.000Z</published>
-    <updated>2017-04-20T01:16:07.498Z</updated>
+    <title>第一个docker化的java应用（实践篇）</title>
+    <link href="http://blog.zeyu0633.com/2017/04/22/docker-index-B/"/>
+    <id>http://blog.zeyu0633.com/2017/04/22/docker-index-B/</id>
+    <published>2017-04-22T07:20:27.000Z</published>
+    <updated>2017-04-22T07:13:17.383Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>学习慕课网《第一个docker化的java应用》做的笔记</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h2><h2 id="了解docker"><a href="#了解docker" class="headerlink" title="了解docker"></a>了解docker</h2><h3 id="docker思想"><a href="#docker思想" class="headerlink" title="docker思想"></a>docker思想</h3><h3 id="dicker解决了什么问题"><a href="#dicker解决了什么问题" class="headerlink" title="dicker解决了什么问题"></a>dicker解决了什么问题</h3><h2 id="走进docker"><a href="#走进docker" class="headerlink" title="走进docker"></a>走进docker</h2><h3 id="docker核心技术"><a href="#docker核心技术" class="headerlink" title="docker核心技术"></a>docker核心技术</h3><h3 id="docker镜像"><a href="#docker镜像" class="headerlink" title="docker镜像"></a>docker镜像</h3><h3 id="docker容器"><a href="#docker容器" class="headerlink" title="docker容器"></a>docker容器</h3><h3 id="docker仓库"><a href="#docker仓库" class="headerlink" title="docker仓库"></a>docker仓库</h3><h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><h3 id="windows安装docker"><a href="#windows安装docker" class="headerlink" title="windows安装docker"></a>windows安装docker</h3><h3 id="macos安装docker"><a href="#macos安装docker" class="headerlink" title="macos安装docker"></a>macos安装docker</h3><h3 id="linux安装docker"><a href="#linux安装docker" class="headerlink" title="linux安装docker"></a>linux安装docker</h3><h2 id="docker初体验"><a href="#docker初体验" class="headerlink" title="docker初体验"></a>docker初体验</h2><h3 id="第一个docker镜像"><a href="#第一个docker镜像" class="headerlink" title="第一个docker镜像"></a>第一个docker镜像</h3><h3 id="第一个docker容器"><a href="#第一个docker容器" class="headerlink" title="第一个docker容器"></a>第一个docker容器</h3><h2 id="docker运行nginx静态网站"><a href="#docker运行nginx静态网站" class="headerlink" title="docker运行nginx静态网站"></a>docker运行nginx静态网站</h2><h3 id="运行nginx镜像"><a href="#运行nginx镜像" class="headerlink" title="运行nginx镜像"></a>运行nginx镜像</h3><h3 id="docker网络"><a href="#docker网络" class="headerlink" title="docker网络"></a>docker网络</h3><h2 id="第一个java-web应用"><a href="#第一个java-web应用" class="headerlink" title="第一个java web应用"></a>第一个java web应用</h2><h3 id="制作自己的镜像"><a href="#制作自己的镜像" class="headerlink" title="制作自己的镜像"></a>制作自己的镜像</h3><h3 id="运行自己的容器"><a href="#运行自己的容器" class="headerlink" title="运行自己的容器"></a>运行自己的容器</h3><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>]]></content>
+<h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><h3 id="windows安装docker"><a href="#windows安装docker" class="headerlink" title="windows安装docker"></a>windows安装docker</h3><h3 id="macos安装docker"><a href="#macos安装docker" class="headerlink" title="macos安装docker"></a>macos安装docker</h3><h3 id="linux安装docker"><a href="#linux安装docker" class="headerlink" title="linux安装docker"></a>linux安装docker</h3><h2 id="docker初体验"><a href="#docker初体验" class="headerlink" title="docker初体验"></a>docker初体验</h2><h3 id="第一个docker镜像"><a href="#第一个docker镜像" class="headerlink" title="第一个docker镜像"></a>第一个docker镜像</h3><h3 id="第一个docker容器"><a href="#第一个docker容器" class="headerlink" title="第一个docker容器"></a>第一个docker容器</h3><h2 id="docker运行nginx静态网站"><a href="#docker运行nginx静态网站" class="headerlink" title="docker运行nginx静态网站"></a>docker运行nginx静态网站</h2><h3 id="运行nginx镜像"><a href="#运行nginx镜像" class="headerlink" title="运行nginx镜像"></a>运行nginx镜像</h3><h3 id="docker网络"><a href="#docker网络" class="headerlink" title="docker网络"></a>docker网络</h3><h2 id="第一个java-web应用"><a href="#第一个java-web应用" class="headerlink" title="第一个java web应用"></a>第一个java web应用</h2><h3 id="制作自己的镜像"><a href="#制作自己的镜像" class="headerlink" title="制作自己的镜像"></a>制作自己的镜像</h3><h3 id="运行自己的容器"><a href="#运行自己的容器" class="headerlink" title="运行自己的容器"></a>运行自己的容器</h3><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;学习慕课网《第一个docker化的java应用》做的笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="docker" scheme="http://blog.zeyu0633.com/categories/docker/"/>
+    
+    
+      <category term="运维" scheme="http://blog.zeyu0633.com/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一个docker化的java应用（概念篇）</title>
+    <link href="http://blog.zeyu0633.com/2017/04/19/docker-index-A/"/>
+    <id>http://blog.zeyu0633.com/2017/04/19/docker-index-A/</id>
+    <published>2017-04-19T15:20:27.000Z</published>
+    <updated>2017-04-22T07:13:17.408Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>学习慕课网《第一个docker化的java应用》做的笔记</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h2><p>docker是一个用来装应用的容器，就像杯子可以装水，笔筒可以放笔，书包可以放书一样。我们可以讲HelloWorld放到docker里，也可以把<br>网站放docker里，也可以把任何你想得到的程序放docker里。官网官网传送门<a href="https://www.docker.com/" target="_blank" rel="external">官网</a></p>
+<h2 id="了解docker"><a href="#了解docker" class="headerlink" title="了解docker"></a>了解docker</h2><h3 id="docker思想"><a href="#docker思想" class="headerlink" title="docker思想"></a>docker思想</h3><p>docker的logo是一条鲸鱼，上面驮着很多集装箱，在大海里遨游！这个logo非常形象的体现啦docker的思想。</p>
+<pre><code>* 集装箱
+    * 我们可以将货物装到集装箱里，箱子很大而且是密封的，货物不容易丢失，可以保证我们的货物安全原样的送到目的地。
+    * 将我们的程序类比货物，加入目前你要将程序运行到一台新的机器上去，那也许会跑不起来，比如少了什么配置文件啊什么的，有了
+    docker的集装箱，就会帮我们解决这些问题，它能保证我们的程序不管运行到哪里都不会缺东西。
+* 标准化
+    * 运输方式：docker运输货物有一个超级码头，任何地方需要货物都是先让鲸鱼将货物送到超级码头，然后再由鲸鱼
+    将货物送到目的地去。
+    * 存储方式：不需要关心应用存在什么地方，因为他在集装箱里，你只需要一条命令就能运行它。
+    * API接口： docker提供了一系列的API接口，去控制你的程序。
+* 隔离
+    * 基于linux的内核限制机制，隔离进程和资源
+</code></pre><h3 id="docker解决了什么问题"><a href="#docker解决了什么问题" class="headerlink" title="docker解决了什么问题"></a>docker解决了什么问题</h3><p>一个基本的java web应用的启动一般依赖：</p>
+<pre><code>* 操作系统
+* jdk、tomcat
+* 代码
+* 配置文件 
+</code></pre><p>这些以来的变化都有可能导致程序无法运行。</p>
+<p>docker的做法：</p>
+<pre><code>* 将操作系统、jdk、tomcat、代码、配置文件等等全部装到一个集装箱里
+* 打包放到鲸鱼上，鲸鱼送到超级码头，然后再送到服务器上
+* 所以程序运行是不会有变化的
+</code></pre><p>其他：</p>
+<pre><code>* 将大家的程序都放到docker里运行然后再放到同一台服务器上运行，如果别人的程序有死循环，疯狂
+占用CPU，或者打日志将磁盘写满啦，或者占用大量内存导致内存泄漏，这种情况只会导致某人自己的程序崩溃，因为在docker启动的时候就限定好了程序使用的最大CPU和硬盘，
+如果超过啦，那就会被杀掉。
+* 临时扩展机器，给运维带来方便，点下鼠标就会能有100实例产生，给动态扩展、弹性伸缩带来方便。
+</code></pre><h2 id="走进docker"><a href="#走进docker" class="headerlink" title="走进docker"></a>走进docker</h2><h3 id="docker核心技术"><a href="#docker核心技术" class="headerlink" title="docker核心技术"></a>docker核心技术</h3><p>docker有三个核心的词汇：</p>
+<pre><code>* 镜像：集装箱（Build）
+* 仓库：超级码头（Ship）
+* 容器：运行程序的地方(Run)
+</code></pre><p>docker运行一个程序的过程就是：到仓库把镜像拉倒本地，然后用一条命令将镜像运行起来，变成容器。</p>
+<h3 id="docker镜像"><a href="#docker镜像" class="headerlink" title="docker镜像"></a>docker镜像</h3><p>镜像就是一些列的文件，可以包括应用程序的文件也可以包括应用运行环境的文件，镜像会存到本地，存储<br>技术叫做联合文件系统。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4943424-b2575d03db5e2190.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="镜像&amp;容器"></p>
+<p>1.操作系统的引导<br>2.具体的一个linux操作系统<br>3.具体的软件，可以使tomcat和jdk<br>4.应用代码</p>
+<p>每一层我们都可以自己控制。最上面一层是容器相关，下面说。<br>docker镜像每一层文件都是只读的，都加载完成之后，会被看成是一个目录（联合文件系统），相当于只有一个文件系统。</p>
+<h3 id="docker容器"><a href="#docker容器" class="headerlink" title="docker容器"></a>docker容器</h3><p>容器的本质就是一个进程。</p>
+<p>理解：还是这张图<br><img src="http://upload-images.jianshu.io/upload_images/4943424-b2575d03db5e2190.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="镜像&amp;容器"><br>可以先将容器想象成一个虚拟机，每个虚拟机都有自己的文件系统，可以将上线这张图看做是容器的文件系统，这个文件系统是<br>一层一层的，并且下面的n层都是只读的，只有最上面的一层是可写的。</p>
+<p>为什么要有可写的一层？</p>
+<pre><code>如果程序要是运行起来，势必会要写一些日志或者是对文件做一些修改，这是大部分程序都有的需求，所以容器在
+最上面一层创建了一个可读可写的文件层。
+</code></pre><p>如果程序在运行期间要写一个镜像里的文件，怎么办？</p>
+<pre><code>因为镜像里的每一层都是只读的，所以在写这个文件之前，会把这个文件这一层加载到最上层，然后再对它进行修改。
+修改完之后，当应用要读一个文件时，会从最顶层开始查找，如果没有才会找下一层。
+</code></pre><p><code>由于容器这一层是可以修改的，但是镜像是不可以修改的，这样就能保证：同一个镜像，可以生成多个容器独立运行，并且相互之间没有
+干扰。</code></p>
+<h3 id="docker仓库"><a href="#docker仓库" class="headerlink" title="docker仓库"></a>docker仓库</h3><p>docker为我们提供啦一个仓库，地址是<a href="https://hub.docker.com/" target="_blank" rel="external">docker仓库</a></p>
+<p>速度比较好的仓库是<a href="https://c.163.com/" target="_blank" rel="external">网易蜂巢镜像中心</a></p>
+<p>如果你的景象比较私密，只是内部使用，docker支持自己搭建镜像中心，可以在自己的内网中搭建一个仓库。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>下一篇将动手操作。</p>]]></content>
     
     <summary type="html">
     
@@ -1335,58 +1413,6 @@ helloThread.start();
 &lt;ul&gt;
 &lt;li&gt;统一异常处理&lt;/li&gt;
 &lt;li&gt;集成Log4j AOP统一处理web请求&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="http://blog.zeyu0633.com/categories/SpringBoot/"/>
-    
-    
-      <category term="Java" scheme="http://blog.zeyu0633.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot Mybatis Restful Swagger2</title>
-    <link href="http://blog.zeyu0633.com/2017/03/04/springBootMybatisSwagger/"/>
-    <id>http://blog.zeyu0633.com/2017/03/04/springBootMybatisSwagger/</id>
-    <published>2017-03-04T11:30:00.000Z</published>
-    <updated>2017-03-30T05:25:31.629Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="要完成的事情"><a href="#要完成的事情" class="headerlink" title="要完成的事情"></a>要完成的事情</h3><blockquote>
-<p>主要分为以下三点</p>
-<ul>
-<li>Mybatis集成</li>
-<li>Restful接口提供</li>
-<li>Swagger2集成</li>
-</ul>
-</blockquote>
-<a id="more"></a>
-<h2 id="分一个割"><a href="#分一个割" class="headerlink" title="分一个割"></a>分一个割</h2><h3 id="工程结构"><a href="#工程结构" class="headerlink" title="工程结构"></a>工程结构</h3><p>工程结构尽量做到清晰，分层合理<br><img src="http://upload-images.jianshu.io/upload_images/4943424-2f4d1f94c3582730.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="structure"></p>
-<h3 id="springboot集成Mybatis"><a href="#springboot集成Mybatis" class="headerlink" title="springboot集成Mybatis"></a>springboot集成Mybatis</h3><p>pom文件中需引入</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Spring Boot Mybatis 依赖 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;mybatis-spring-boot&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- MySQL 连接驱动依赖 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;mysql-connector&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>在application.properties中配置<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## 数据源配置</span></div><div class="line">spring.datasource.url=jdbc:mysql:<span class="regexp">//localhost</span>:<span class="number">3306</span>/springbootdb?useUnicode=true&amp;characterEncoding=utf8</div><div class="line">spring.datasource.username=root</div><div class="line">spring.datasource.password=ning081<span class="number">0</span></div><div class="line">spring.datasource.driver-class-name=com.mysql.jdbc.Driver</div><div class="line"></div><div class="line"><span class="comment">## Mybatis 配置</span></div><div class="line">mybatis.typeAliasesPackage=com.htime.domain</div><div class="line">mybatis.mapperLocations=classpath:mapper/*.xml</div></pre></td></tr></table></figure></p>
-<p>application.properties中已经指定了实体类和xml的扫描位置，还有dao层的扫描需要配置，需要在启动类中指定</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SpringBootApplication</span></div><div class="line"><span class="comment">// mapper 接口类扫描包配置</span></div><div class="line"><span class="meta">@MapperScan</span>(<span class="string">"com.htime.dao"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringbootLearningApplication</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        <span class="comment">// 程序启动入口</span></div><div class="line">        <span class="comment">// 启动嵌入式的 Tomcat 并初始化 Spring 环境及其各 Spring 组件</span></div><div class="line">        SpringApplication.run(SpringbootLearningApplication.class, args);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="springboot提供Restful接口"><a href="#springboot提供Restful接口" class="headerlink" title="springboot提供Restful接口"></a>springboot提供Restful接口</h3><p>集成restful接口就比较简单啦，只需要在加上类注解@RestController，然后不同的api的指定遵循rest方式，代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by HTime on 2017/3/3.</div><div class="line"> */</div><div class="line"><span class="meta">@RestController</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CityResController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    <span class="keyword">private</span> CityService cityService;</div><div class="line"></div><div class="line">    <span class="meta">@ApiOperation</span>(value=<span class="string">"获取城市详细信息"</span>, notes=<span class="string">"根据城市ID来获取城市详细信息"</span>)</div><div class="line">    <span class="meta">@ApiImplicitParam</span>(name = <span class="string">"id"</span>, value = <span class="string">"城市ID"</span>, required = <span class="keyword">true</span>, dataType = <span class="string">"Long"</span>)</div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/api/city/&#123;id&#125;"</span>, method = RequestMethod.GET)</div><div class="line">    <span class="function"><span class="keyword">public</span> City <span class="title">findOneCity</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Long id) </span>&#123;</div><div class="line">        <span class="keyword">return</span> cityService.findCityById(id);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@ApiOperation</span>(value=<span class="string">"获取所有城市"</span>, notes=<span class="string">"获取所有城市信息"</span>)</div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/api/city"</span>, method = RequestMethod.GET)</div><div class="line">    <span class="function"><span class="keyword">public</span> List&lt;City&gt; <span class="title">findAllCity</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> cityService.findAllCity();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@ApiOperation</span>(value=<span class="string">"创建城市"</span>, notes=<span class="string">"根据City实体创建城市"</span>)</div><div class="line">    <span class="meta">@ApiImplicitParam</span>(name = <span class="string">"city"</span>, value = <span class="string">"城市详细实体city"</span>, required = <span class="keyword">true</span>, dataType = <span class="string">"City"</span>)</div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/api/city"</span>, method = RequestMethod.POST)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">createCity</span><span class="params">(@RequestBody City city)</span> </span>&#123;</div><div class="line">        cityService.saveCity(city);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@ApiOperation</span>(value=<span class="string">"更新城市"</span>, notes=<span class="string">"根据传过来的City实体对是实体中的City ID进行更新"</span>)</div><div class="line">    <span class="meta">@ApiImplicitParams</span>(&#123;</div><div class="line">            <span class="meta">@ApiImplicitParam</span>(name = <span class="string">"id"</span>, value = <span class="string">"城市ID"</span>, required = <span class="keyword">true</span>, dataType = <span class="string">"Long"</span>),</div><div class="line">            <span class="meta">@ApiImplicitParam</span>(name = <span class="string">"city"</span>, value = <span class="string">"城市详细实体city"</span>, required = <span class="keyword">true</span>, dataType = <span class="string">"City"</span>)</div><div class="line">    &#125;)</div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/api/city/&#123;id&#125;"</span>, method = RequestMethod.PUT)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">modifyCity</span><span class="params">(@PathVariable Long id, @RequestBody City city)</span> </span>&#123;</div><div class="line">        City c = cityService.findCityById(id);</div><div class="line">        c.setCityName(city.getCityName());</div><div class="line">        c.setDescription(city.getDescription());</div><div class="line">        c.setProvinceId(city.getProvinceId());</div><div class="line">        cityService.updateCity(c);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@ApiOperation</span>(value=<span class="string">"删除城市"</span>, notes=<span class="string">"根据指定的城市ID来删除城市"</span>)</div><div class="line">    <span class="meta">@ApiImplicitParam</span>(name = <span class="string">"id"</span>, value = <span class="string">"城市ID"</span>, required = <span class="keyword">true</span>, dataType = <span class="string">"Long"</span>)</div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/api/city/&#123;id&#125;"</span>, method = RequestMethod.DELETE)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteCity</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Long id) </span>&#123;</div><div class="line">        cityService.deleteCity(id);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="springboot集成Swagger2"><a href="#springboot集成Swagger2" class="headerlink" title="springboot集成Swagger2"></a>springboot集成Swagger2</h3><p>目前大多数开发都是前后端完全分离，这样的工作模式需要有很好的开发文档的支撑，swagger2就为我们提供啦这个功能<br>先看看swagger为我们提供了一个怎样的文档形式<br><img src="http://upload-images.jianshu.io/upload_images/4943424-97579134276c2413.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="swagger main"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4943424-c58f8f779d9e92e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="swagger detail"></p>
-<p>首先我们需要引入依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Swagger2 RESTful API文档 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>定义一个和Application同级的类Swagger2</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Configuration</span></div><div class="line"><span class="meta">@EnableSwagger</span>2</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Swagger2</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Bean</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">createRestApi</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</div><div class="line">                .apiInfo(apiInfo())</div><div class="line">                .select()</div><div class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">"com.htime.controller"</span>))</div><div class="line">                .paths(PathSelectors.any())</div><div class="line">                .build();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> ApiInfo <span class="title">apiInfo</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ApiInfoBuilder()</div><div class="line">                .title(<span class="string">"Htime API 文档"</span>)</div><div class="line">                .description(<span class="string">"更多内容请关注：http://blog.zeyu0633.com/"</span>)</div><div class="line">                .termsOfServiceUrl(<span class="string">"http://blog.zeyu0633.com/"</span>)</div><div class="line">                .contact(<span class="string">"Htime"</span>)</div><div class="line">                .version(<span class="string">"1.0"</span>)</div><div class="line">                .build();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后就是在你的接口函数上用注解的形式对你的接口进项相关描述，具体可以在以上restful那一块的代码中查看</p>
-<h2 id="分一个割-1"><a href="#分一个割-1" class="headerlink" title="分一个割"></a>分一个割</h2><p>接下来的内容是日志管理和统一异常管理~~~</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;要完成的事情&quot;&gt;&lt;a href=&quot;#要完成的事情&quot; class=&quot;headerlink&quot; title=&quot;要完成的事情&quot;&gt;&lt;/a&gt;要完成的事情&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;主要分为以下三点&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Mybatis集成&lt;/li&gt;
-&lt;li&gt;Restful接口提供&lt;/li&gt;
-&lt;li&gt;Swagger2集成&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
     

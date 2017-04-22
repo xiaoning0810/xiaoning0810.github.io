@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.zeyu0633.com/2017/04/19/docker-index/</loc>
+    <loc>http://blog.zeyu0633.com/2017/04/19/docker-index-A/</loc>
     
-    <lastmod>2017-04-20T01:16:07.498Z</lastmod>
+    <lastmod>2017-04-22T07:13:17.408Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/04/22/docker-index-B/</loc>
+    
+    <lastmod>2017-04-22T07:13:17.383Z</lastmod>
     
   </url>
   
