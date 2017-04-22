@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-04-22T09:17:28.871Z</updated>
+  <updated>2017-04-22T09:21:19.288Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>第一个docker化的java应用（实践篇）</title>
+    <title>docker学习（实践篇）</title>
     <link href="http://blog.zeyu0633.com/2017/04/22/docker-index-B/"/>
     <id>http://blog.zeyu0633.com/2017/04/22/docker-index-B/</id>
     <published>2017-04-22T07:20:27.000Z</published>
-    <updated>2017-04-22T09:17:28.871Z</updated>
+    <updated>2017-04-22T09:21:19.288Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>自学笔记</p>
@@ -58,11 +58,11 @@
   </entry>
   
   <entry>
-    <title>第一个docker化的java应用（概念篇）</title>
+    <title>docker学习（概念篇）</title>
     <link href="http://blog.zeyu0633.com/2017/04/19/docker-index-A/"/>
     <id>http://blog.zeyu0633.com/2017/04/19/docker-index-A/</id>
     <published>2017-04-19T15:20:27.000Z</published>
-    <updated>2017-04-22T09:17:28.880Z</updated>
+    <updated>2017-04-22T09:21:19.301Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>自学笔记</p>
@@ -72,8 +72,8 @@
 <h2 id="了解docker"><a href="#了解docker" class="headerlink" title="了解docker"></a>了解docker</h2><h3 id="docker思想"><a href="#docker思想" class="headerlink" title="docker思想"></a>docker思想</h3><p>docker的logo是一条鲸鱼，上面驮着很多集装箱，在大海里遨游！这个logo非常形象的体现啦docker的思想。</p>
 <pre><code>* 集装箱
     * 我们可以将货物装到集装箱里，箱子很大而且是密封的，货物不容易丢失，可以保证我们的货物安全原样的送到目的地。
-    * 将我们的程序类比货物，加入目前你要将程序运行到一台新的机器上去，那也许会跑不起来，比如少了什么配置文件啊什么的，有了
-    docker的集装箱，就会帮我们解决这些问题，它能保证我们的程序不管运行到哪里都不会缺东西。
+    * 将我们的程序类比货物，如果目前你要将程序运行到一台新的机器上去，那也许会跑不起来，比如少了什么配置文件啊
+    什么的，有了docker的集装箱，就会帮我们解决这些问题，它能保证我们的程序不管运行到哪里都不会缺东西。
 * 标准化
     * 运输方式：docker运输货物有一个超级码头，任何地方需要货物都是先让鲸鱼将货物送到超级码头，然后再由鲸鱼
     将货物送到目的地去。
@@ -117,7 +117,7 @@
 干扰。</code></p>
 <h3 id="docker仓库"><a href="#docker仓库" class="headerlink" title="docker仓库"></a>docker仓库</h3><p>docker为我们提供啦一个仓库，地址是<a href="https://hub.docker.com/" target="_blank" rel="external">docker仓库</a></p>
 <p>速度比较好的仓库是<a href="https://c.163.com/" target="_blank" rel="external">网易蜂巢镜像中心</a></p>
-<p>如果你的景象比较私密，只是内部使用，docker支持自己搭建镜像中心，可以在自己的内网中搭建一个仓库。</p>
+<p>如果你的镜像比较私密，只是内部使用，docker支持自己搭建镜像中心，可以在自己的内网中搭建一个仓库。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>下一篇将动手操作。</p>]]></content>
     
     <summary type="html">
@@ -1165,37 +1165,6 @@ helloThread.start();
   </entry>
   
   <entry>
-    <title>Mysql Learning Index</title>
-    <link href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/"/>
-    <id>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</id>
-    <published>2017-03-11T15:00:00.000Z</published>
-    <updated>2017-03-30T15:16:11.478Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
-<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
-</blockquote>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
-<li>Mysql 基础</li>
-<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
-<li>Mysql 优化</li>
-</ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些
-    
-    </summary>
-    
-      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
-    
-    
-      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
     <title>正则表达式 Learning Index</title>
     <link href="http://blog.zeyu0633.com/2017/03/11/zeIndex/"/>
     <id>http://blog.zeyu0633.com/2017/03/11/zeIndex/</id>
@@ -1221,6 +1190,37 @@ helloThread.start();
     </summary>
     
       <category term="正则表达式" scheme="http://blog.zeyu0633.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+    
+      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql Learning Index</title>
+    <link href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/"/>
+    <id>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</id>
+    <published>2017-03-11T15:00:00.000Z</published>
+    <updated>2017-03-30T15:16:11.478Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
+<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
+</blockquote>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
+<li>Mysql 基础</li>
+<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
+<li>Mysql 优化</li>
+</ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些
+    
+    </summary>
+    
+      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
     
     
       <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
