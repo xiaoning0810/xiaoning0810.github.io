@@ -23,7 +23,16 @@
 * 中间的一部分也在我们本机，是docker daemon来管理的内容
 * 最右边的是远程仓库
 </code></pre><p>流程：执行<code>docker pull</code>，会先到daemon中查找有没有对应的镜像，如果存在且版本正确，就不会做任何操作，<br>如果不存在，它会到远成仓库拉取对应的docker镜像； <code>docker run</code>实际上相当于先执行一次<code>docker pull</code>，然后<br>已一定的方式将镜像运行起来，形成容器。</p>
-<h2 id="docker运行nginx静态网站"><a href="#docker运行nginx静态网站" class="headerlink" title="docker运行nginx静态网站"></a>docker运行nginx静态网站</h2><h3 id="运行nginx镜像"><a href="#运行nginx镜像" class="headerlink" title="运行nginx镜像"></a>运行nginx镜像</h3><h3 id="docker网络"><a href="#docker网络" class="headerlink" title="docker网络"></a>docker网络</h3><h2 id="第一个java-web应用"><a href="#第一个java-web应用" class="headerlink" title="第一个java web应用"></a>第一个java web应用</h2><h3 id="制作自己的镜像"><a href="#制作自己的镜像" class="headerlink" title="制作自己的镜像"></a>制作自己的镜像</h3><h3 id="运行自己的容器"><a href="#运行自己的容器" class="headerlink" title="运行自己的容器"></a>运行自己的容器</h3><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>]]></content>
+<h2 id="docker运行nginx静态网站"><a href="#docker运行nginx静态网站" class="headerlink" title="docker运行nginx静态网站"></a>docker运行nginx静态网站</h2><h3 id="运行nginx镜像"><a href="#运行nginx镜像" class="headerlink" title="运行nginx镜像"></a>运行nginx镜像</h3><p>运行nginx之前：<br>1.nginx是一个web服务器，需要持久不间断的运行，所以它是一个持久运行容器。<br>2.之前运行的hello-world是在前台运，前台运行的容器是可以用ctrl+c去结束掉的。nginx可以选择前台运行也可以选择后台运行，所以，nginx最好的运行方式是选择后台运行。<br>3.将nginx启动之后，要进入到容器内部去看一下容器内部的模样。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4943424-8a92d87ac489688b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="拉取nginx容器"></p>
+<p>开始运行：<br>1.从网易蜂巢镜像中心将镜像拉取到本地<code>docker pull hub.c.163.com/library/nginx:latest</code>,然后<code>docker run hub.c.163.com/library/nginx</code>运行该镜像,发现并没有什么反应，可以用<code>docker ps</code>查看目前正在这台机器上运行的容器，会发现又一个nginx的容器已经启动啦，但我们这种启动方式是前台启动，用<code>ctrl+c</code>把它停掉。<br>2.运行nginx最好还是后台运行，执行<code>docker run -d</code>（具体命令可以用<code>docker run --help</code>来查看）。<br><img src="http://upload-images.jianshu.io/upload_images/4943424-ff51ac9cc92f8559.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="运行nginx容器"><br>3.容器运行起来之后，比如看一下日志或者看一下系统是否正常，可以用<code>docker exec -it 容器ID</code>（具体命令可以用<code>docker exec --help</code>来查看）来让docker分配一个伪终端。<br><img src="http://upload-images.jianshu.io/upload_images/4943424-8df58ce4b19dc1b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="进入nginx"></p>
+<h3 id="docker网络"><a href="#docker网络" class="headerlink" title="docker网络"></a>docker网络</h3><p><img src="http://upload-images.jianshu.io/upload_images/4943424-c527015fdad0f1a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="docker网络"></p>
+<p>为了在浏览器中访问到nginx！！！！fighting！！！！<br>1.网络类型<br>网络也是docker的隔离性的一部分。docker在默认情况下会分配一个独立的network namespace，虚拟出自己的网卡、路由等，也就是网络类型中的Bridge（桥接）。<br>2.端口映射<br>使得容器内的端口能够在主机上访问到。</p>
+<p>用<code>docker stop 容器ID</code>将容器停掉先。<br>然后使用<code>docker run -d -p 8080:80 hub.c.163.com/library/nginx</code>来重新将容器运行起来，这个意思是说将主机的8080端口映射到容器的80端口，因为nginx的监听是在80端口。<br>在浏览器中输入<code>localhost:8080</code>，发现启动成功。<br><img src="http://upload-images.jianshu.io/upload_images/4943424-d52d999df56a74a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="启动成功"><br>另外，还可以使用<code>docker run -d -P hub.c.163.com/library/nginx</code>来用随机端口映射。</p>
+<h2 id="第一个java-web应用"><a href="#第一个java-web应用" class="headerlink" title="第一个java web应用"></a>第一个java web应用</h2><h3 id="制作自己的镜像"><a href="#制作自己的镜像" class="headerlink" title="制作自己的镜像"></a>制作自己的镜像</h3><p>1.Dockerfile<br>这个文件要告诉docker怎么样制作镜像，每一步操作具体干什么。<br>2.docker build<br>执行Dockerfile里面定义的每一步操作，最终构建出来一个docker镜像。</p>
+<p>以制作Jpress为例制作镜像。<br>1.到<code>https://git.oschina.net/fuhai/jpress</code>上的war文件夹中直接将war包下载下来。<br>2.首先我们要有一个基础镜像，就选用tomcat，因为tomcat镜像中一定会有jdk，从网易蜂巢镜像中心拉取tomcat镜像到本地。<br>3.写Dockerfile<br><img src="http://upload-images.jianshu.io/upload_images/4943424-e4a16cc8601fd9dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Dockerfile"><br>4.执行<code>docker build -t jpress:latest .</code>之后，可以看到<br><img src="http://upload-images.jianshu.io/upload_images/4943424-12d9d3d7e39fdbff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="jpress镜像"></p>
+<h3 id="运行自己的容器"><a href="#运行自己的容器" class="headerlink" title="运行自己的容器"></a>运行自己的容器</h3><p>执行<code>docker run -d -p 8888:8080 jpress</code>来启动jpress镜像。<br>可以执行<code>netstat -na|grep 8888</code>来查看端口是否处于监听。<br><img src="http://upload-images.jianshu.io/upload_images/4943424-165a2c8a8ad8aa11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="运行成功"></p>
+<p>end！</p>]]></content>
       
         <categories>
             
@@ -1079,6 +1088,34 @@ helloThread.start();
     </entry>
     
     <entry>
+      <title><![CDATA[Mysql Learning Index]]></title>
+      <url>/2017/03/11/mysqlIndex/</url>
+      <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
+<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
+</blockquote>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
+<li>Mysql 基础</li>
+<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
+<li>Mysql 优化</li>
+</ul>]]></content>
+      
+        <categories>
+            
+            <category> Mysql </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Javar必知必会 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[正则表达式 Learning Index]]></title>
       <url>/2017/03/11/zeIndex/</url>
       <content type="html"><![CDATA[<h3 id="正则表达式介绍"><a href="#正则表达式介绍" class="headerlink" title="正则表达式介绍"></a>正则表达式介绍</h3><blockquote>
@@ -1095,34 +1132,6 @@ helloThread.start();
         <categories>
             
             <category> 正则表达式 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Javar必知必会 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Mysql Learning Index]]></title>
-      <url>/2017/03/11/mysqlIndex/</url>
-      <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
-<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
-</blockquote>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
-<li>Mysql 基础</li>
-<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
-<li>Mysql 优化</li>
-</ul>]]></content>
-      
-        <categories>
-            
-            <category> Mysql </category>
             
         </categories>
         
