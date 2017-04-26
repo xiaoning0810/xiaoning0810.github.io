@@ -4,6 +4,56 @@
 
     
   <url>
+    <loc>http://blog.zeyu0633.com/2017/04/26/springBootDocker/</loc>
+    <lastmod>2017-04-26T15:45:23.594Z</lastmod>
+    <data>
+        <display>
+        <title>SpringBoot整合Docker</title>
+        <pubTime>2017-04-26T15:20:27.000Z</pubTime>
+        
+        <tag>运维</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="http://blog.zeyu0633.com/categories/docker/"/>
+          
+             
+              <breadCrumb title="SpringBoot" url="http://blog.zeyu0633.com/categories/docker/SpringBoot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zeyu0633.com/2017/04/26/docker-index-C/</loc>
+    <lastmod>2017-04-26T15:44:59.120Z</lastmod>
+    <data>
+        <display>
+        <title>GitLab+Docker+Jenkins自动化发布</title>
+        <pubTime>2017-04-26T15:40:27.000Z</pubTime>
+        
+        <tag>运维</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="http://blog.zeyu0633.com/categories/docker/"/>
+          
+             
+              <breadCrumb title="SpringBoot" url="http://blog.zeyu0633.com/categories/docker/SpringBoot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.zeyu0633.com/2017/04/22/docker-index-B/</loc>
     <lastmod>2017-04-23T05:28:37.323Z</lastmod>
     <data>

@@ -3,6 +3,62 @@
   
     
     <entry>
+      <title><![CDATA[GitLab+Docker+Jenkins自动化发布]]></title>
+      <url>/2017/04/26/docker-index-C/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>自学笔记</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="正在写"><a href="#正在写" class="headerlink" title="正在写"></a>正在写</h2>]]></content>
+      
+        <categories>
+            
+            <category> docker </category>
+            
+            <category> SpringBoot </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 运维 </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[SpringBoot整合Docker]]></title>
+      <url>/2017/04/26/springBootDocker/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>自学笔记</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="正在写···"><a href="#正在写···" class="headerlink" title="正在写···"></a>正在写···</h2>]]></content>
+      
+        <categories>
+            
+            <category> docker </category>
+            
+            <category> SpringBoot </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 运维 </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[docker学习（实践篇）]]></title>
       <url>/2017/04/22/docker-index-B/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -1088,34 +1144,6 @@ helloThread.start();
     </entry>
     
     <entry>
-      <title><![CDATA[Mysql Learning Index]]></title>
-      <url>/2017/03/11/mysqlIndex/</url>
-      <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
-<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
-</blockquote>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
-<li>Mysql 基础</li>
-<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
-<li>Mysql 优化</li>
-</ul>]]></content>
-      
-        <categories>
-            
-            <category> Mysql </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Javar必知必会 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[正则表达式 Learning Index]]></title>
       <url>/2017/03/11/zeIndex/</url>
       <content type="html"><![CDATA[<h3 id="正则表达式介绍"><a href="#正则表达式介绍" class="headerlink" title="正则表达式介绍"></a>正则表达式介绍</h3><blockquote>
@@ -1132,6 +1160,34 @@ helloThread.start();
         <categories>
             
             <category> 正则表达式 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Javar必知必会 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Mysql Learning Index]]></title>
+      <url>/2017/03/11/mysqlIndex/</url>
+      <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
+<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
+</blockquote>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
+<li>Mysql 基础</li>
+<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
+<li>Mysql 优化</li>
+</ul>]]></content>
+      
+        <categories>
+            
+            <category> Mysql </category>
             
         </categories>
         

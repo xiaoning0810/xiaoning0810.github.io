@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zeyu0633.com/"/>
-  <updated>2017-04-23T05:28:37.323Z</updated>
+  <updated>2017-04-26T15:44:59.120Z</updated>
   <id>http://blog.zeyu0633.com/</id>
   
   <author>
@@ -14,6 +14,70 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GitLab+Docker+Jenkins自动化发布</title>
+    <link href="http://blog.zeyu0633.com/2017/04/26/docker-index-C/"/>
+    <id>http://blog.zeyu0633.com/2017/04/26/docker-index-C/</id>
+    <published>2017-04-26T15:40:27.000Z</published>
+    <updated>2017-04-26T15:44:59.120Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>自学笔记</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="正在写"><a href="#正在写" class="headerlink" title="正在写"></a>正在写</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;自学笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="docker" scheme="http://blog.zeyu0633.com/categories/docker/"/>
+    
+      <category term="SpringBoot" scheme="http://blog.zeyu0633.com/categories/docker/SpringBoot/"/>
+    
+    
+      <category term="运维" scheme="http://blog.zeyu0633.com/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+      <category term="Java" scheme="http://blog.zeyu0633.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot整合Docker</title>
+    <link href="http://blog.zeyu0633.com/2017/04/26/springBootDocker/"/>
+    <id>http://blog.zeyu0633.com/2017/04/26/springBootDocker/</id>
+    <published>2017-04-26T15:20:27.000Z</published>
+    <updated>2017-04-26T15:45:23.594Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>自学笔记</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="正在写···"><a href="#正在写···" class="headerlink" title="正在写···"></a>正在写···</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;自学笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="docker" scheme="http://blog.zeyu0633.com/categories/docker/"/>
+    
+      <category term="SpringBoot" scheme="http://blog.zeyu0633.com/categories/docker/SpringBoot/"/>
+    
+    
+      <category term="运维" scheme="http://blog.zeyu0633.com/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+      <category term="Java" scheme="http://blog.zeyu0633.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>docker学习（实践篇）</title>
@@ -1174,37 +1238,6 @@ helloThread.start();
   </entry>
   
   <entry>
-    <title>Mysql Learning Index</title>
-    <link href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/"/>
-    <id>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</id>
-    <published>2017-03-11T15:00:00.000Z</published>
-    <updated>2017-03-30T15:16:11.478Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
-<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
-</blockquote>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
-<li>Mysql 基础</li>
-<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
-<li>Mysql 优化</li>
-</ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些
-    
-    </summary>
-    
-      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
-    
-    
-      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
     <title>正则表达式 Learning Index</title>
     <link href="http://blog.zeyu0633.com/2017/03/11/zeIndex/"/>
     <id>http://blog.zeyu0633.com/2017/03/11/zeIndex/</id>
@@ -1230,6 +1263,37 @@ helloThread.start();
     </summary>
     
       <category term="正则表达式" scheme="http://blog.zeyu0633.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+    
+      <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql Learning Index</title>
+    <link href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/"/>
+    <id>http://blog.zeyu0633.com/2017/03/11/mysqlIndex/</id>
+    <published>2017-03-11T15:00:00.000Z</published>
+    <updated>2017-03-30T15:16:11.478Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><blockquote>
+<p>最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些内容</p>
+</blockquote>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><a href="http://blog.zeyu0633.com/2017/03/11/mysqlIndex/">Mysql 目录</a></li>
+<li>Mysql 基础</li>
+<li><a href="http://blog.zeyu0633.com/2017/03/16/mysql-process/">Mysql 存储过程</a></li>
+<li>Mysql 优化</li>
+</ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;最近看了《MySQL 存储过程编程》这本书，再结合在慕课网上的《与MySQL的零距离接触》教程，决定在这里总结一些
+    
+    </summary>
+    
+      <category term="Mysql" scheme="http://blog.zeyu0633.com/categories/Mysql/"/>
     
     
       <category term="Javar必知必会" scheme="http://blog.zeyu0633.com/tags/Javar%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
@@ -1309,133 +1373,6 @@ helloThread.start();
 &lt;li&gt;远程通信，向本地调用一样调用远程方法。&lt;/li&gt;
 &lt;li&gt;集群容错&lt;/li&gt;
 &lt;li&gt;服务自动发现和注册，可平滑添加或者删除服务提供者。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="http://blog.zeyu0633.com/categories/SpringBoot/"/>
-    
-    
-      <category term="Java" scheme="http://blog.zeyu0633.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot 身份认证</title>
-    <link href="http://blog.zeyu0633.com/2017/03/05/springBootAuth/"/>
-    <id>http://blog.zeyu0633.com/2017/03/05/springBootAuth/</id>
-    <published>2017-03-05T15:30:00.000Z</published>
-    <updated>2017-03-30T05:25:31.550Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="要完成的事情"><a href="#要完成的事情" class="headerlink" title="要完成的事情"></a>要完成的事情</h3><blockquote>
-<p>只有一点，但是很重要，因为http是无状态的，如果我们设计出来的架构不够安全，那么这一系列的操作都是白搭。</p>
-<ul>
-<li>身份认证</li>
-</ul>
-</blockquote>
-<a id="more"></a>
-<h2 id="分一个割"><a href="#分一个割" class="headerlink" title="分一个割"></a>分一个割</h2><h3 id="身份验证"><a href="#身份验证" class="headerlink" title="身份验证"></a>身份验证</h3><blockquote>
-<p>首先根据City相关操作，实现一个关于User的相关操作，从controller一直到sql，就不上代码了，比较简单<br>整体思路就是在用户登录时生成一个token，然后以后的所有请求，header中都携带这个token，服务器对token进行检验<br>通过AccessTokenVerifyInterceptor，来实现拦截，要避开对auth接口的拦截</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccessTokenVerifyInterceptor</span> <span class="keyword">extends</span> <span class="title">HandlerInterceptorAdapter</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    ValidationService validationService;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    UserService userService;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Logger logger = Logger.getLogger(getClass());</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        logger.info(<span class="string">"AccessToken executing ..."</span>);</div><div class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</div><div class="line">        String requestUrl = request.getRequestURL().toString();</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> != requestUrl &amp;&amp; requestUrl.contains(<span class="string">"/auth"</span>)) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// token</span></div><div class="line">        String accessToken = request.getHeader(<span class="string">"token"</span>);</div><div class="line">        <span class="keyword">if</span> (StringUtils.isNotBlank(accessToken)) &#123;</div><div class="line">            ValidationModel model = <span class="keyword">new</span> ValidationModel();</div><div class="line"></div><div class="line">            <span class="comment">// 验证token</span></div><div class="line">            Boolean isOk = validationService.verifyAccessToken(accessToken, model);</div><div class="line"></div><div class="line">            <span class="comment">// 用户验证</span></div><div class="line">            <span class="keyword">if</span> (isOk) &#123;</div><div class="line">                User user = userService.getUserById(model.getUid());</div><div class="line">                <span class="keyword">if</span>(user != <span class="keyword">null</span>) &#123;</div><div class="line">                    request.setAttribute(CommonConst.PARAM_USER, user);</div><div class="line">                    logger.info(<span class="string">"AccessToken SUCCESS ...  user:"</span> + user.getUserName() + <span class="string">" - "</span> + accessToken);</div><div class="line">                    flag = <span class="keyword">true</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (!flag) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RcException(CommonRes.RES_NEED_AUTH, <span class="string">"auth fail"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> flag;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>通过ValidationService，完成对token的操作，包括生成与校验</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Service</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ValidationService</span> </span>&#123;</div><div class="line"></div><div class="line">    Gson gson = GsonUtil.createGson();</div><div class="line"></div><div class="line">    <span class="comment">//生成token</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">createToken</span><span class="params">(User user)</span> </span>&#123;</div><div class="line">        Map&lt;String, String&gt; param = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</div><div class="line">        param.put(<span class="string">"user"</span>, user.getUid().toString());</div><div class="line">        param.put(<span class="string">"time"</span>, <span class="keyword">new</span> Date().getTime() + <span class="string">""</span>);</div><div class="line">        String accessToken = gson.toJson(param);</div><div class="line">        <span class="keyword">return</span> accessToken;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//验证token</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Boolean <span class="title">verifyAccessToken</span><span class="params">(String accessToken, ValidationModel model)</span> </span>&#123;</div><div class="line">        Boolean isOk = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">        Map&lt;String, String&gt; param = gson.fromJson(accessToken, <span class="keyword">new</span> TypeToken&lt;HashMap&lt;String, String&gt;&gt;() &#123;&#125;.getType());</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> == param || <span class="keyword">null</span> == param.get(<span class="string">"user"</span>) || <span class="keyword">null</span> == param.get(<span class="string">"time"</span>))</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line"></div><div class="line">        <span class="comment">//验证UID</span></div><div class="line">        <span class="keyword">if</span>(!StringUtil.isNumber(param.get(<span class="string">"user"</span>).toString()))</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        Long uid = Long.parseLong(param.get(<span class="string">"user"</span>));</div><div class="line">        model.setUid(uid);</div><div class="line"></div><div class="line">        <span class="comment">//验证时间</span></div><div class="line">        Date time = <span class="keyword">new</span> Date(Long.parseLong(param.get(<span class="string">"time"</span>)));</div><div class="line">        Integer days = DateUtil.calculateDays(time, <span class="keyword">new</span> Date());</div><div class="line">        <span class="comment">//token的有效期为1天</span></div><div class="line">        <span class="keyword">if</span>(days &gt; <span class="number">1</span>)</div><div class="line">            isOk = <span class="keyword">false</span>;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> isOk;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>通过WebMvcConfig来配置拦截，对所有请求都拦截</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Configuration</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebMvcConfig</span> <span class="keyword">extends</span> <span class="title">WebMvcConfigurerAdapter</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Bean</span></div><div class="line">    <span class="function"><span class="keyword">public</span> AccessTokenVerifyInterceptor <span class="title">tokenVerifyInterceptor</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> AccessTokenVerifyInterceptor();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> </span>&#123;</div><div class="line">        registry.addInterceptor(tokenVerifyInterceptor()).addPathPatterns(<span class="string">"/*"</span>);</div><div class="line">        <span class="keyword">super</span>.addInterceptors(registry);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>通过UserRestController来进行auth操作，都是明文的~~~</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RestController</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserRestController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    UserService userService;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    ValidationService validationService;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/auth"</span>, method = RequestMethod.GET)</div><div class="line">    <span class="function"><span class="keyword">public</span> UserRes <span class="title">auth</span><span class="params">(</span></span></div><div class="line">            @RequestParam(  value = <span class="string">"userName"</span>,required = <span class="keyword">true</span> ) String userName ,</div><div class="line">            @<span class="title">RequestParam</span><span class="params">(  value = <span class="string">"userPwd"</span>,required = <span class="keyword">true</span> )</span> String userPwd) &#123;</div><div class="line"></div><div class="line">        UserRes res = <span class="keyword">new</span> UserRes();</div><div class="line">        User user = userService.getUserByAccount(userName, userPwd);</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> == user) &#123;</div><div class="line">             res.setError(CommonRes.RES_NOT_ALLOW, <span class="string">"账号密码错误"</span>);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            res.setUser(user);</div><div class="line">            <span class="comment">//生成token</span></div><div class="line">            String token = validationService.createToken(user);</div><div class="line">            res.setToken(token);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><blockquote>
-<p>首先在不auth的情况下对/hello接口进行访问，我们用postman来进行测试，结果如下，报错啦<br><img src="http://upload-images.jianshu.io/upload_images/4943424-224e533671ec1a90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="auth fail"></p>
-<p>进行auth操作，获取token，我对token的处理很简单粗暴，意思就是这么个意思<br><img src="http://upload-images.jianshu.io/upload_images/4943424-f005157327dafda6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="suth ing"></p>
-<p>将token放到header中再对/hello接口进行访问，成功返回，made it！！！<br><img src="http://upload-images.jianshu.io/upload_images/4943424-cb03eb849051fb59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="auth success"></p>
-</blockquote>
-<h2 id="分一个割-1"><a href="#分一个割-1" class="headerlink" title="分一个割"></a>分一个割</h2><p>到这里，这个工程就不更新了，接下来与dubbo的集成，将使用新的工程</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;要完成的事情&quot;&gt;&lt;a href=&quot;#要完成的事情&quot; class=&quot;headerlink&quot; title=&quot;要完成的事情&quot;&gt;&lt;/a&gt;要完成的事情&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;只有一点，但是很重要，因为http是无状态的，如果我们设计出来的架构不够安全，那么这一系列的操作都是白搭。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;身份认证&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="http://blog.zeyu0633.com/categories/SpringBoot/"/>
-    
-    
-      <category term="Java" scheme="http://blog.zeyu0633.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot 日志管理，统一异常处理</title>
-    <link href="http://blog.zeyu0633.com/2017/03/05/springBootExceptionAOPLog4j/"/>
-    <id>http://blog.zeyu0633.com/2017/03/05/springBootExceptionAOPLog4j/</id>
-    <published>2017-03-05T01:30:00.000Z</published>
-    <updated>2017-03-30T05:25:31.590Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="要完成的事情"><a href="#要完成的事情" class="headerlink" title="要完成的事情"></a>要完成的事情</h3><blockquote>
-<p>主要分为以下两点</p>
-<ul>
-<li>统一异常处理</li>
-<li>集成Log4j AOP统一处理web请求</li>
-</ul>
-</blockquote>
-<a id="more"></a>
-<h2 id="分一个割"><a href="#分一个割" class="headerlink" title="分一个割"></a>分一个割</h2><h3 id="统一异常处理"><a href="#统一异常处理" class="headerlink" title="统一异常处理"></a>统一异常处理</h3><blockquote>
-<p>在服务上提供接口，为了统一状态，我们最好定义一个固定的格式来返回一些状态信息,定义一个CommonRes类</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonRes</span>  <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">6094615237599920640L</span>;</div><div class="line">    </div><div class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span> RES_OK 					= <span class="number">0</span> ;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span> RES_UNKNOW_ERROR 		= <span class="number">1000</span> ;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span> RES_UNSUPPORT 			= <span class="number">1001</span> ;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span> RES_INVALID_PARAM 		= <span class="number">1002</span> ;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span> RES_DAOEXCEPTION 		= <span class="number">1003</span> ;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span> RES_RUNTIME_EXCEPTION 	= <span class="number">1004</span> ;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span> RES_NO_RIGHT 			= <span class="number">1005</span> ;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span> RES_NEED_SIGNIN 		= <span class="number">1006</span> ;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span> RES_AUTH_FAILED 		= <span class="number">1007</span> ;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span> RES_INVALID_TOKEN 		= <span class="number">1008</span> ;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span> RES_NEED_AUTH 			= <span class="number">1009</span> ;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span> RES_TIMEOUT 			= <span class="number">1010</span> ;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">int</span> RES_NOT_ALLOW 			= <span class="number">1011</span> ;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Integer rc = RES_OK;</div><div class="line">    <span class="keyword">private</span> String msgInfo;			<span class="comment">//client show info tip</span></div><div class="line">    <span class="keyword">private</span> String errorInfo ; 		<span class="comment">//client show error tip</span></div><div class="line">    <span class="keyword">private</span> String redirect ; 		<span class="comment">//the redirected api server</span></div><div class="line">    <span class="keyword">private</span> String redirectSign ; 	<span class="comment">// the the signture of redirect</span></div><div class="line">    <span class="keyword">private</span> Integer ccdVersion ; 	<span class="comment">// the client configure data version ;</span></div><div class="line">    <span class="keyword">private</span> String requestUrl;      <span class="comment">// request url</span></div><div class="line">    <span class="keyword">private</span> Date serverTime ; 		<span class="comment">//the server current system time</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> CommonRes <span class="title">retOK</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> CommonRes();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> CommonRes <span class="title">retError</span><span class="params">(<span class="keyword">int</span> errorType,String errorInfo)</span> </span>&#123;</div><div class="line">        CommonRes commonRes= <span class="keyword">new</span> CommonRes();</div><div class="line">        commonRes.rc=errorType;</div><div class="line">        commonRes.errorInfo=errorInfo;</div><div class="line">        <span class="keyword">return</span> commonRes;</div><div class="line">    &#125;</div><div class="line">  </div><div class="line">    <span class="comment">//省略get&amp;set方法</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>创建一个自定义异常</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RcException</span> <span class="keyword">extends</span> <span class="title">Exception</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">protected</span> Integer rc;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getRc</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> rc;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRc</span><span class="params">(Integer rc)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.rc = rc;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RcException</span><span class="params">(String message)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(message);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RcException</span><span class="params">(<span class="keyword">int</span> rc,String info)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(info);</div><div class="line">        <span class="keyword">this</span>.setRc(rc);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>为RcException和Exception异常创建对应的处理</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@ControllerAdvice</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GlobalExceptionHandler</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@ExceptionHandler</span>(value = RcException.class)</div><div class="line">    <span class="meta">@ResponseBody</span></div><div class="line">    <span class="function"><span class="keyword">public</span> CommonRes <span class="title">jsonSelfErrorHandler</span><span class="params">(HttpServletRequest req, RcException e)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        CommonRes res = <span class="keyword">new</span> CommonRes();</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> == e.getRc())</div><div class="line">            res.setRc(CommonRes.RES_RUNTIME_EXCEPTION);</div><div class="line">        <span class="keyword">else</span></div><div class="line">            res.setRc(e.getRc());</div><div class="line">        res.setErrorInfo(e.getMessage());</div><div class="line">        res.setServerTime(<span class="keyword">new</span> Date());</div><div class="line">        res.setRequestUrl(req.getRequestURL().toString());</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@ExceptionHandler</span>(value = Exception.class)</div><div class="line">    <span class="meta">@ResponseBody</span></div><div class="line">    <span class="function"><span class="keyword">public</span> CommonRes <span class="title">jsonErrorHandler</span><span class="params">(HttpServletRequest req, Exception e)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        CommonRes res = <span class="keyword">new</span> CommonRes();</div><div class="line">        res.setRc(CommonRes.RES_RUNTIME_EXCEPTION);</div><div class="line">        res.setErrorInfo(e.getMessage());</div><div class="line">        res.setServerTime(<span class="keyword">new</span> Date());</div><div class="line">        res.setRequestUrl(req.getRequestURL().toString());</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>进行测试</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RestController</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloRestController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Logger logger = Logger.getLogger(getClass());</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/hello"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        logger.info(<span class="string">"HelloRestController hello"</span>);</div><div class="line">        <span class="keyword">return</span> <span class="string">"Hello World!"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/hello/1"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello1</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"runtime 异常"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/hello/2"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello2</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RcException(<span class="string">"使用默认的error code"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/hello/3"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello3</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RcException(CommonRes.RES_DAOEXCEPTION, <span class="string">"指定error code"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>我们访问hello1(),hello2(),hello3(),可以看到已经成功捕获了我们定义的异常<br><img src="http://upload-images.jianshu.io/upload_images/4943424-7c5bbde67a1d5356.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="exception"></p>
-<h3 id="集成log4j与用AOP统一处理web请求"><a href="#集成log4j与用AOP统一处理web请求" class="headerlink" title="集成log4j与用AOP统一处理web请求"></a>集成log4j与用AOP统一处理web请求</h3><blockquote>
-<p>需要引入依赖</p>
-</blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Spring Boot Web 依赖 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j-over-slf4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- log4j 日志 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- AOP 依赖 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>src/main/resources目录下加入log4j.properties配置文件，配置日志级别为INFO，并在控制台和文件中进行输出</p>
-</blockquote>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># LOG4J配置</span></div><div class="line">log4j.rootCategory=INFO, stdout, file</div><div class="line"><span class="comment"># 控制台输出</span></div><div class="line">log4j.appender.stdout=org.apache.log4j.ConsoleAppender</div><div class="line">log4j.appender.stdout.layout=org.apache.log4j.PatternLayout</div><div class="line">log4j.appender.stdout.layout.ConversionPattern=%d&#123;yyyy-MM-dd HH:mm:ss,SSS&#125; %5p %c<span class="string">&#123;1&#125;</span>:%L - %m%n</div><div class="line"><span class="comment"># root日志输出</span></div><div class="line">log4j.appender.file=org.apache.log4j.DailyRollingFileAppender</div><div class="line">log4j.appender.file.file=logs/all.log</div><div class="line">log4j.appender.file.DatePattern=<span class="string">'.'</span>yyyy-MM-dd</div><div class="line">log4j.appender.file.layout=org.apache.log4j.PatternLayout</div><div class="line">log4j.appender.file.layout.ConversionPattern=%d&#123;yyyy-MM-dd HH:mm:ss,SSS&#125; %5p %c<span class="string">&#123;1&#125;</span>:%L - %m%n</div></pre></td></tr></table></figure>
-<p>以上就完成了对log4j的全部配置，程序中就可以使用啦<br>接下来在用AOP同一处理WEB请求中演示log4j的使用</p>
-<blockquote>
-<p>在application.properties配置，需要使用CGLIB来实现AOP的时候，需要配置spring.aop.proxy-target-class=true，不然默认使用的是标准Java的实现。</p>
-</blockquote>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># AOP</span></div><div class="line"><span class="comment"># Add @EnableAspectJAutoProxy.</span></div><div class="line">spring.aop.auto=true</div><div class="line"><span class="comment"># Whether subclass-based (CGLIB) proxies are to be created (true) as opposed to standard Java interface-based proxies (false).</span></div><div class="line">spring.aop.proxy-target-class=false</div></pre></td></tr></table></figure>
-<blockquote>
-<p>新建一个类RequestLogAspect来进行切面逻辑的处理</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Aspect</span></div><div class="line"><span class="meta">@Order</span>(<span class="number">5</span>)</div><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RequestLogAspect</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Logger logger = Logger.getLogger(getClass());</div><div class="line"></div><div class="line">    ThreadLocal&lt;Long&gt; startTime = <span class="keyword">new</span> ThreadLocal&lt;&gt;();<span class="comment">//记录请求消耗的时间</span></div><div class="line"></div><div class="line">    <span class="meta">@Pointcut</span>(<span class="string">"execution(public * com.htime.controller..*.*(..))"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">requestLog</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Before</span>(<span class="string">"requestLog()"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doBefore</span><span class="params">(JoinPoint joinPoint)</span> <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">        startTime.set(System.currentTimeMillis());</div><div class="line">        <span class="comment">// 接收到请求，记录请求内容</span></div><div class="line">        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();</div><div class="line">        HttpServletRequest request = attributes.getRequest();</div><div class="line">        <span class="comment">// 记录下请求内容</span></div><div class="line">        logger.info(<span class="string">"URL : "</span> + request.getRequestURL().toString());</div><div class="line">        logger.info(<span class="string">"HTTP_METHOD : "</span> + request.getMethod());</div><div class="line">        logger.info(<span class="string">"IP : "</span> + request.getRemoteAddr());</div><div class="line">        logger.info(<span class="string">"CLASS_METHOD : "</span> + joinPoint.getSignature().getDeclaringTypeName() + <span class="string">"."</span> + joinPoint.getSignature().getName());</div><div class="line">        logger.info(<span class="string">"ARGS : "</span> + Arrays.toString(joinPoint.getArgs()));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@AfterReturning</span>(returning = <span class="string">"ret"</span>, pointcut = <span class="string">"requestLog()"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAfterReturning</span><span class="params">(Object ret)</span> <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">        <span class="comment">// 处理完请求，返回内容</span></div><div class="line">        logger.info(<span class="string">"RESPONSE : "</span> + ret);</div><div class="line">        logger.info(<span class="string">"SPEND TIME : "</span> + (System.currentTimeMillis() - startTime.get()) + <span class="string">" ms"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这时，在对接口进行请求，在console中可以看到打印出如下内容<br><img src="http://upload-images.jianshu.io/upload_images/4943424-7093fc3c5a6b5111.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="swagger main"></p>
-<h3 id="目前的工程结构"><a href="#目前的工程结构" class="headerlink" title="目前的工程结构"></a>目前的工程结构</h3><p>清晰很重要<br><img src="http://upload-images.jianshu.io/upload_images/4943424-3685ac162ce9a55b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="structure"></p>
-<h2 id="分一个割-1"><a href="#分一个割-1" class="headerlink" title="分一个割"></a>分一个割</h2><p>接下来的内容是登录认证与权限控制</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;要完成的事情&quot;&gt;&lt;a href=&quot;#要完成的事情&quot; class=&quot;headerlink&quot; title=&quot;要完成的事情&quot;&gt;&lt;/a&gt;要完成的事情&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;主要分为以下两点&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;统一异常处理&lt;/li&gt;
-&lt;li&gt;集成Log4j AOP统一处理web请求&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
     
